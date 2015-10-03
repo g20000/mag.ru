@@ -40,6 +40,7 @@ function deleteBuyer(id) {
 <h1 class="page-header">Покупатели</h1>
 
 <div class="pull-right" style="margin: 1em 0 1em 1em;"><a href="<?php echo $cfg['options']['siteurl']; ?>/addUser" class="btn btn-info">Создать пользователя</a></div>
+<div style="clear: both"></div>
 
 <div class="table-responsive">
 <table class="table table-striped">
