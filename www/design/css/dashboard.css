@@ -1,0 +1,204 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    /* overflow-x: hidden; */
+    overflow-y: auto;/* Scrollable contents if viewport is shorter than content. */
+    background-color: #FFFFFF;
+    border-right: 1px solid #000;
+    width: 300px;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px;/* 20px padding + 1px border */
+  margin-bottom: 0px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #E87E22;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 120px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/*
+ * Submenu css
+ */
+.sub-menu {
+	display: none;
+	border-left: 1px solid #ddd;
+	padding-right: 15px;
+}
+.dropdown:hover {
+	background-color: #F37F00;
+}
+.dropdown:hover  a[class="dropdown-toggle"] {
+	color: #fff;
+}
+.dropdown:hover > .sub-menu {
+	display: inline-block;
+	position: fixed;
+	max-width: 500px;
+	height: 100%;
+	overflow-y: auto;
+	left: 282px;
+	top: 0;
+	padding-top: 68px;
+	padding-bottom: 51px;
+	padding-right: 41px;
+	background-color: #fff;
+	color: #000;
+	list-style: none;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+.submenu_title {
+	font-weight: bold;
+	text-decoration: underline;
+	padding-top: 10px;
+	display: block;
+}
+.submenu_title:hover {
+	color: #F37F00;
+}
+.submenu_subitems {
+	list-style: none;
+	display: block;
+	padding: 0;
+}
+.submenu_subitems a:hover {
+	color: #F37F00;
+	text-decoration: none;
+}
+.procent_items {
+	color: #7ACFF5;
+	font-weight: bold;
+}
+.cat_ico {
+	width: 25px;
+	float: left;
+	padding-right: 50px;
+	text-align: center;
+}
+.cat_ico img {
+	padding-right: 0px;
+	background-color: #fff;
+	padding: 3px;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.modal-title, .modal-body {
+	color: #000;
+	text-shadow: none;
+}
+@media screen and (min-width:700px) and (max-width:1035px) {
+	.nav>li>a {
+		font-size: 12px;
+	}
+	.cat_ico {
+		float: none;
+		margin: 3px auto;
+		padding-left: 10px;
+	}
+	.dropdown-toggle {
+		text-align: center;
+	}
+}
+@media screen and (max-width:947px) {
+	.navbar-right {
+		display: none;
+	}
+}
+@media screen and (max-width:768px) {
+	.sub-menu {
+		display: none !important;
+	}
+	.cat_ico img {
+		margin: -7px auto !important;
+	}
+}

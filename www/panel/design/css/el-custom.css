@@ -1,0 +1,76 @@
+.fa-heart {
+	font-size: .95em !important;
+}
+
+/* фикс бейджа, а то маргин отрывает соседний таб на 1 пиксел */
+.badge {
+	padding: 3px 5px 3px 5px;
+	margin-top: -1px;
+}
+
+.fa-star-o {
+	font-size: 1.1em !important;
+}
+
+input, select, textarea, checkbox {
+	background-color: #343639 !important;
+	border: 1px solid #222 !important;
+	color: white !important;
+}
+
+td.person_fresh {
+	color: green !important;
+}
+
+td.person_active {
+	color: yellow !important;
+}
+
+td.person_offline {
+	color: gray !important;
+}
+
+td.person_free {
+	color: skyblue !important;
+}
+
+td.person_trouble {
+	color: red !important;
+}
+
+.helper-item-hover {
+	color: #000 !important;
+	cursor: pointer;
+	background-color: #5BC0DE !important;
+}
+
+/* for chat new messages list */
+.bg-unread, .bg-unread td {
+	background-color: #484e55 !important;
+}
+
+.cursor-pointer { cursor: pointer !important; }
+
+.highlighted {
+	opacity: 0.4;
+}
+
+.tbl-notes {
+	overflow: hidden;
+	width: 100%;
+	height: 20px !important;
+}
+
+td.tbl-notes p {
+	display: inline;
+	width:100%;
+	text-overflow: ellipsis;	
+}
+
+#ui-datepicker-div table thead tr th span {
+	color: white;
+}
+
+#ui-datepicker-div table thead tr th.ui-datepicker-week-end span {
+	color: red;
+}

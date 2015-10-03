@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'MyriadProBold';
+	src: url('font/myriadpro-bold.eot');
+	src: url('font/myriadpro-bold.eot') format('embedded-opentype'),
+	url('font/myriadpro-bold.woff2') format('woff2'),
+	url('font/myriadpro-bold.woff') format('woff'),
+	url('font/myriadpro-bold.ttf') format('truetype'),
+	url('font/myriadpro-bold.svg#MyriadProBold') format('svg');
+}
+@font-face {
+	font-family: 'MyriadProItalic';
+	src: url('font/myriadpro-it.eot');
+	src: url('font/myriadpro-it.eot') format('embedded-opentype'),
+	url('font/myriadpro-it.woff2') format('woff2'),
+	url('font/myriadpro-it.woff') format('woff'),
+	url('font/myriadpro-it.ttf') format('truetype'),
+	url('font/myriadpro-it.svg#MyriadProItalic') format('svg');
+}
+@font-face {
+	font-family: 'MyriadProRegular';
+	src: url('font/myriadpro-regular.eot');
+	src: url('font/myriadpro-regular.eot') format('embedded-opentype'),
+	url('font/myriadpro-regular.woff2') format('woff2'),
+	url('font/myriadpro-regular.woff') format('woff'),
+	url('font/myriadpro-regular.ttf') format('truetype'),
+	url('font/myriadpro-regular.svg#MyriadProRegular') format('svg');
+}
+@font-face {
+	font-family: 'CharterITCRegular';
+	src: url('font/charteritc.eot');
+	src: url('font/charteritc.eot') format('embedded-opentype'),
+	url('font/charteritc.woff2') format('woff2'),
+	url('font/charteritc.woff') format('woff'),
+	url('font/charteritc.ttf') format('truetype'),
+	url('font/charteritc.svg#CharterITCRegular') format('svg');
+}
+@font-face {
+	font-family: 'CharterITCBold';
+	src: url('font/charteritcbold.eot');
+	src: url('font/charteritcbold.eot') format('embedded-opentype'),
+	url('font/charteritcbold.woff2') format('woff2'),
+	url('font/charteritcbold.woff') format('woff'),
+	url('font/charteritcbold.ttf') format('truetype'),
+	url('font/charteritcbold.svg#CharterITCBold') format('svg');
+}
+@font-face {
+	font-family: 'CharterITCBoldItalic';
+	src: url('font/charteritcbolditalic.eot');
+	src: url('font/charteritcbolditalic.eot') format('embedded-opentype'),
+	url('font/charteritcbolditalic.woff2') format('woff2'),
+	url('font/charteritcbolditalic.woff') format('woff'),
+	url('font/charteritcbolditalic.ttf') format('truetype'),
+	url('font/charteritcbolditalic.svg#CharterITCBoldItalic') format('svg');
+}
+@font-face {
+	font-family: 'CharterITCItalic';
+	src: url('font/charteritcitalic.eot');
+	src: url('font/charteritcitalic.eot') format('embedded-opentype'),
+	url('font/charteritcitalic.woff2') format('woff2'),
+	url('font/charteritcitalic.woff') format('woff'),
+	url('font/charteritcitalic.ttf') format('truetype'),
+	url('font/charteritcitalic.svg#CharterITCItalic') format('svg');
+}

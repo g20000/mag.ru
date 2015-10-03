@@ -1,0 +1,674 @@
+html { height: 100%; }
+body {
+	font-family: 'Lato', 'Open Sans', Arial, Helvetica, sans-serif;
+/* 	-webkit-font-smoothing: subpixel-antialiased; */ /* subpixel-antialiased no longer works just antialiased */
+	-moz-osx-font-smoothing: auto;
+	min-height: 100%;
+}
+
+
+input::-webkit-input-placeholder { font-style: italic; }
+textarea::-webkit-input-placeholder { font-style: italic; }
+
+input::-moz-placeholder { font-style: italic; }
+textarea::-moz-placeholder { font-style: italic; }  
+
+::selection {
+	background: #F74C88; /* Safari */
+	color: #fff;
+	}
+::-moz-selection {
+	background: #F74C88; /* Firefox */
+	color: #fff;
+}
+
+/* Move down content because we have a fixed navbar that is 70px tall */
+body {
+/*   padding-top: 70px; */ /* if navbar-fixed-top it need to uncomment */
+  padding-bottom: 20px;
+}
+
+
+
+
+
+
+/* ! */
+/* ! ОБЩИЕ */
+/* ! */
+
+/* цвет ника */
+.el-username-color {
+	color: #6B6B6B !important;
+	font-weight: 400 !important;
+}
+
+/* отображение кармы пользователя */
+.el-user-karma {
+	font-size: 11px;
+	color: gray;
+	font-weight: 200;
+}
+
+
+
+
+
+
+
+
+
+/* ! */
+/* ! НАВИГАЦИЯ */
+/* ! */
+
+/* задаем высоту у шапки */
+.navbar {
+	background-color: #37393A;
+	min-height: 70px;
+	padding-top: 8px;
+	margin-bottom: 0;
+}
+
+/* белый цвет у лого */
+.navbar a.navbar-brand {
+	color: white;
+	font-size: 2em;
+}
+
+/* белый цвет у кнопки выдвигания меню на мобилах */
+.navbar-toggle .fa {
+	color: gray;
+	padding: 0;
+}
+
+.navbar input[type=search] {
+	width: 10em;
+	float:right;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	opacity: 0.2;
+}
+
+.navbar input[type=search]:focus {
+	width:100%;
+	float:right;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	opacity: 1;
+}
+
+/* кнопка поиска в хедере */
+.el-btn-seach {
+	background-color: rgba(27,189,157,1);
+	opacity: 0.8;
+	color: white;
+	padding: .5em 2em .5em 2em;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+
+.el-btn-seach:hover {
+	background-color: rgba(27,189,157,1);
+	color: white;
+	opacity: 1;
+	padding: .5em 2em .5em 2em;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+/* форма поиска в шапке form */
+.el-navbar-search {
+	border-right: 1px solid #eee;
+	padding-right: 1em;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	text-align: right;
+}
+
+/* отступ от аватарки в шапке */
+.el-navbar-profile {
+	padding-left: 1em;
+}
+
+/* размеры аватарки в шапке */
+.el-navbar-avatar img {
+	border-radius: 50%;
+	height: 50px;
+	margin-top: -25px;
+	margin-bottom: -25px;
+}
+
+/* кнопки отображения сайдбара */
+.el-sidebar-btn {
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* ! */
+/* ! ДОПОЛНИТЕЛЬНАЯ  СТРОКА ДЛЯ КРОШЕК И НАВИГАЦИИ */
+/* ! */
+
+/* высота у полоски табов */
+.jumbotron {
+	height: 45px;
+	padding: 0;
+	margin: 0;
+	background-color: #ECF0F1;
+}
+
+/* сами табы */
+.el-header-tab {
+	display: inline-block;
+	color: #3B3B3B;
+	margin-top: 0px;
+	padding: 10px 10px 0 10px;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	font-weight: bold;
+	height: 45px;
+	cursor: pointer;
+	border-top: 5px solid #ECF0F1;
+}
+
+/* активный таб */
+.el-header-tab.active {
+	display: inline-block;
+	color: #3B3B3B;
+	margin-top: 0px;
+	background-color: white;
+	padding: 10px 10px 0 10px;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	height: 45px;
+	border-top: 5px solid #1ABC9C;
+	cursor: pointer;
+}
+
+/* убираем свойства анкора */
+.el-header-tab:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* отступы */
+.el-header-tab .fa {
+	/*padding-right: 0.5em;*/
+}
+
+/* бейдж таба отодвигаем от слова */
+.el-header-tab .badge {
+	margin-left: .5em;
+}
+
+.el-header-tab.active .badge {
+	background-color: #f44;
+}
+
+/* заголовок блока в сайдбаре */
+.el-sidebar-header {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #6B6B6B;
+	font-size: 11px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ! */
+/* ! РЕДАКТОР */
+/* ! */
+
+/* отступ от шапки эдитора */
+#editor {
+	margin-top: 20px;
+	margin-bottom: 2em;
+}
+
+/* стиль инпута титла новго треда */
+#editor input {
+	box-shadow: none;
+	outline: none;
+}
+
+/* при фокусе на титле нового треда */
+#editor input:focus {
+	border: 1px solid #aaa;
+}
+
+/* по умолчанию не показываем дополнительные поля нового треда */
+#editor-additional {
+	display: none;
+}
+
+/* тулбокс для редактора */
+#editor .editor-toolbox {
+	border: 1px solid #aaa;
+	border-bottom: none;
+	border-radius: 4px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: #f5f5f5;
+}
+
+/* сами кнопки */
+#editor .editor-toolbox span.fa {
+	text-align: center;
+	width: 2.5em;
+	padding: 0.6em;
+	cursor: pointer;
+}
+
+#editor .editor-toolbox span.fa:hover {
+	background-color: #d5d5d5;
+}
+
+#editor .el-toolbox-devider {
+	border-left: 1px solid gray;
+	height: 100%;
+	line-height: 100%;
+	width: 0px;
+	padding: 0;
+	margin: 0 1em 0 1em;
+}
+
+/* сам редактор */
+#editor textarea#el-new-thread-editor {
+	border-radius: 4px;	
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border: 1px solid #aaa;
+	width: 100%;
+	max-width: 100%;
+	height: 200px;
+	box-shadow: none;
+	outline: none;
+	padding: 0.5em;
+}
+
+/* блок из кнопки создания треда и отмены (под редактором) */
+#editor .editor-action-btn {
+	margin-top: 0.5em;
+	padding-right: 0.5em;
+}
+
+/* кнопка отмены новго треда, скрывает дополнительные поля */
+#editor #editor-additional .cancel {
+	cursor: pointer;
+	padding-left: 2em;
+}
+
+/* чекбокс для простотра превью создаваемого треда */
+.el-editor-show-thread-preview-label {
+	padding-top: 1em;
+	padding-left: .5em;
+}
+
+
+
+
+
+
+
+
+
+/* ! */
+/* ! ВЫВОД СКИСКА ТРЕДОВ */
+/* ! */
+
+.el-thread-list-item {
+	margin-bottom: 2em;	
+}
+
+
+/* блок с авой автора в тредлисте */
+.el-thread-list-item .el-threadlist-autor-div {
+	text-align: center;
+}
+
+/* аватарки авторов в листе тредов */
+.el-thread-list-item .el-threadlist-autor {
+	width: 64px;
+	border-radius: 50%;
+	max-width: 100%;
+}
+
+/* мета треда в тредлисте */
+.el-thread-list-item .el-threadlist-meta {
+	color: #999999;
+	font-weight: 300;
+}
+
+/* чтобы ластреплай в мета в тредлисте перескакивал на новую строку */
+.el-thread-list-item .el-threadlist-lastreply {
+	display:inline-block;
+}
+
+/* заголовок в тредлисте */
+.el-thread-list-item .el-threadlist-header {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #3B3B3B;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ! */
+/* ! ВЫВОД ТРЕДА */
+/* ! */
+
+.el-thread {
+	margin-top: 3em;
+}
+
+
+/* заголовок у треда с подтредами */
+.el-thread-header {
+	padding-bottom: 2em;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+/* аватарки авторов в листе тредов */
+.el-thread .el-threadlist-autor {
+	width: 64px;
+	border-radius: 50%;
+	max-width: 100%;
+}
+
+/* заголовок треда */
+.el-thread h1 {
+	font-size: 1.2em;
+	font-weight: 700;
+	line-height: 1.5em;
+	margin:0;
+}
+
+.el-thread .el-thread-meta {
+	color: #B3B3B3;
+	margin-bottom: 2em;
+	font-weight: 300;
+}
+
+.el-thread .el-thread-meta a {
+	color: inherit;
+}
+
+.el-thread p {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	margin-bottom: 0.9em;
+}
+
+.el-thread .el-thread-text {
+	/*font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;*/
+	/*font-size: 0.85em;*/
+	white-space: pre-wrap;
+	/*word-break: break-all;*/
+	/*word-wrap: break-word;*/
+	overflow: hidden;
+}
+
+.el-thread .el-thread-autor-div {
+	text-align: center;
+}
+
+.el-thread .el-thread-autor-div .el-username  {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 1em;
+}
+
+
+.el-thread .el-karma-thread-buttons .btn {
+	width: 2em;
+}
+
+.el-thread .el-karma-thread-buttons .el-btn-plus {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+
+
+
+/* ! */
+/* ! СТРАНИЦЫ */
+/* ! */
+
+.el-page {
+	padding-top:3em;
+}
+
+
+
+/* ! */
+/* ! КОММЕНТАРИИ */
+/* ! */
+
+.el-comments h4 {
+	margin: 2em 0 2em 0;
+}
+
+.el-comments .el-comment-author-meta {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 1em;
+}
+
+
+.el-comments .el-comment-author-ava {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.el-comments .el-comment-text {
+	/*font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;*/
+	/*font-size: 0.85em;*/
+	white-space: pre-wrap;
+	/*word-break: break-all;*/
+	/*word-wrap: break-word;*/
+	/*width: 100%;*/
+	overflow: hidden;
+	
+}
+
+.el-comments .el-reply-btn {
+	display: block;
+	margin: 2em 0 1em 1em;
+}
+
+
+/* тулбокс для редактора */
+.el-comments .el-comment-editor .editor-toolbox {
+	border: 1px solid #aaa;
+	border-bottom: none;
+	border-radius: 4px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: #f5f5f5;
+}
+
+/* сами кнопки */
+.el-comments .el-comment-editor .editor-toolbox span.fa {
+	text-align: center;
+	width: 2.5em;
+	padding: 0.6em;
+	cursor: pointer;
+}
+
+.el-comments .el-comment-editor .editor-toolbox span.fa:hover {
+	background-color: #d5d5d5;
+}
+
+.el-comments .el-comment-editor .el-toolbox-devider {
+	border-left: 1px solid gray;
+	height: 100%;
+	line-height: 100%;
+	width: 0px;
+	padding: 0;
+	margin: 0 1em 0 1em;
+}
+
+/* сам редактор */
+.el-comments .el-comment-editor textarea {
+	border-radius: 4px;	
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border: 1px solid #aaa;
+	width: 100%;
+	max-width: 100%;
+	height: 8em;
+	box-shadow: none;
+	outline: none;
+	padding: 0.5em;
+}
+
+.el-comments .el-comment-editor span.cancel {
+	margin-right: 1em;
+}
+
+.el-comments .el-editor-thread-preview-div {
+	padding:1em;
+}
+
+
+
+
+
+
+
+/* ! */
+/* ! САЙДБАР */
+/* ! */
+
+/* отступ у заголовков блоков сайдбара */
+.el-sidebar-header {
+	margin-top: 4em;
+}
+
+/* отступ у первого заголовка блока сайдбара */
+.el-sidebar-header:first-child {
+	margin-top: 20px;
+}
+
+/* делаем основную стату в сайдбаре */
+.el-sidebar-mainstat li {
+	background-color: #F0F0F0;
+	color: #7B7B7B;
+	border: none;
+	border-bottom: 1px solid #E6E6E6;
+	margin: 0;
+
+}
+
+/* убираем бордер у последнего */
+.el-sidebar-mainstat li:last-child {
+	border: none;
+}
+
+/* большие цифры в стате */
+.el-sidebar-mainstat li .digit {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+/* шрифт типа в стате */
+.el-sidebar-mainstat li .type {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+
+/* основные треды в сайдбаре */
+.el-sidebar-list-group {
+	padding: 0 0 0 0;
+	margin: 0;
+	font-weight: 400;
+	list-style:  inside square;
+}
+
+/* основные треды в сайдбаре 1-й подуровень */
+.el-sidebar-list-group .el-sub-ul ul {
+	padding: 0 0 0 1em;
+	list-style: inside disc;
+	margin: 0;
+	font-weight: 300;
+	color: #666;
+}
+
+.el-sidebar-list-group li.el-sub-ul {
+	list-style: none;
+}
+
+/* основные треды в сайдбаре ссылки */
+.el-sidebar-list-group a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.el-sidebar-list-group a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+.el-pagination {
+	text-align: center;
+	margin-top: 4em;
+}
+
+
+
+
+
+
+
+.el-user-profile .el-ava{
+	max-width: 100%;
+	border-radius: 50%;
+	
+}
+
+
+

@@ -1,0 +1,32 @@
+dPanel
+======
+Для установки требуется:
+ - debian7
+ - php
+ - mysql
+ - apache
+ 
+Установка на чистую машину:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install apache2 apache2-doc php5 libapache2-mod-php5 php-pear 
+sudo apt-get install pecl
+sudo apt-get install mysql-server mysql-client php5-mysql
+sudo apt-get install php5-curl php5-gd php5-idn php5-imagick php5-ldap php5-imap php5-memcache php5-mhash php5-mysql php5-ps php5-pspell php5-sqlite php5-tidy imagemagick php5-xcache php5-xdebug php5-xmlrpc php5-xsl
+sudo apt-get install php5-dev make php5-mcrypt
+service apache2 restart
+
+- Распаковать архив в корень сервера
+- Импортировать dpanel_cutted.sql в соответствующую базу в mysql.
+- исправить файл ./gears/config.php в соответствии с параметрами БД
+- Права 755 на все папки и файлы, проверить upload и logs/logs.txt на запись
+
+
+
+
+Для установки на Denwer
+- установить последнюю версию пакета
+- перейти в папку с html файлами денвера (htdocs?)
+- распаковать туда dpanel
+- зайти в phpmyadmin, создать базу и импортировать dpanel_cutted.sql туда
+- исправить файл ./gears/config.php в соответствии с параметрами БД

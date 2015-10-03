@@ -1,0 +1,101 @@
+/* Стили для бесконечной карусели */
+.ca-container{
+	position:relative;
+	margin:0 auto;
+	padding: 0;
+	width:780px;
+	height:470px;
+}
+.ca-wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+	top: -25px;
+}
+.ca-wrapper .ca-item{
+	position:relative;
+	float:left;
+	width:260px;
+	height:100%;
+}
+.ca-wrapper .ca-item-main{
+	position:absolute;
+	left:0 ;
+	right:30px;
+	overflow:hidden;
+	width: 260px;
+	padding: 0px;
+	margin: 0;
+	color: #000;
+}
+.ca-content{
+	width:730px;
+	overflow:hidden;
+}
+.ca-nav span{
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:40%;
+	margin-top:-12px;
+	left:-50px;
+	text-indent:-9000px;
+	cursor:pointer;
+	z-index:300;
+}
+.ca-nav span.ca-nav-prev{
+	background:transparent url(../images/gallery/arrow_left.png) no-repeat 0 0;
+}
+.ca-nav span.ca-nav-next{
+	background:transparent url(../images/gallery/arrow_right.png) no-repeat 0 0;
+	left:auto;
+	right: -50px;
+}
+.ca-item-main .tile a{
+	text-transform: uppercase;
+	color: #ce1517;
+	font-size: 12px;
+}
+.ca-item-main .mod{
+	color: #020000;
+	font-size: 10px;
+}
+.ca-item-main .img-box{
+	height: 390px;
+	width: 260px;
+}
+.ca-item-main .img-box img{
+	width: 100%;
+}
+.ca-item-main .info-box{
+	text-align: center;
+	padding-top: 20px;
+	font-family: 'CharterITC';
+	font-size: 14px;
+}
+.ca-item-main .info-box .link{
+	float: left;
+	padding-top: 20px;
+}
+.ca-item-main .info-box .link a{
+	color: #ce1517;
+	font-size: 12px;
+}
+.ca-item-main .info-box .price{
+	text-align: center;
+	font-family: 'CharterITC';
+	color: #860000;
+}
+.ca-item-main .info-box .price span{
+	color: #010000;
+	font-size: 18px;
+	font-weight: bold;
+	display: block;
+}
+.ca-item-main .info-box .price strong{
+	color: #010000;
+	font-size: 10px;
+	font-weight: bold;
+}
+.ca-item-main:hover .info-box .price .detail{
+}

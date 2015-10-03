@@ -1,0 +1,70 @@
+.tabs-wrapp {
+	width: 970px;
+	min-height: 505px;
+	padding-bottom: 20px;
+	float: left;
+}
+.tabs-wrapp ul.tabs {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 28px 0;
+	text-align: center;
+}
+.tabs-wrapp ul.tabs li {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #391109;
+	color: #391109;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 0 6px;
+	margin: 0 5px;
+	line-height: 22px;
+}
+.tabs-wrapp .tabs li:hover,
+.tabs-wrapp .tabs li.current {
+	color: #391109;
+	background: #e8dbbe;
+	border: 1px solid #e8dbbe;
+}
+.tabs-wrapp .tabs li:hover:before,
+.tabs-wrapp .tabs li.current:before{
+	content: " ";
+	background: url("../images/tabs-arr.png") no-repeat 0 0 transparent;
+	width: 12px;
+	height: 6px;
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	margin-left: -6px;
+}
+.tabs-wrapp .tabs li.tabon:hover,
+.tabs-wrapp .tabs li.tabon.current{
+	color: #391109;
+	background: #e8dbbe;
+	border: 1px solid #e8dbbe;
+}
+.tabs-wrapp .tabs li.tabon:hover:before,
+.tabs-wrapp .tabs li.tabon.current:before{
+	background: none;
+}
+.tabs-wrapp .box {
+	display: none;
+	margin: 0 0 0 40px;
+	width: 930px;
+}
+.tabs-wrapp .box.visible {
+	display: block;
+}
+.tabs-wrapp .tabs li a {
+	text-decoration: none;
+	padding: 5px 0;
+}
+.tabon{
+	float: right;
+	position: absolute !important;
+	right: 15px;
+}

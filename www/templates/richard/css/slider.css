@@ -1,0 +1,95 @@
+#slides {
+	display: none;
+	position: relative;
+	padding-bottom: 15px;
+	padding-top: 27px;
+}
+#slides .slidesjs-navigation {
+	display: none;
+}
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+	display: none;
+}
+.slid-nav{
+	text-align: center;
+	margin-top: -32px;
+	margin-left: 6px;
+}
+.slidesjs-pagination {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 10;
+	list-style: none;
+}
+.slidesjs-pagination li {
+	margin: 0 1px;
+	display: inline-block;
+}
+.slidesjs-pagination li a {
+	background: url("../images/icon-slider-off.png") no-repeat 0 0 transparent;
+	display: block;
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+	background: url("../images/icon-slider-on.png") no-repeat 0 0 transparent;
+}
+.slidesjs-pagination li a:hover {
+}
+#slides a:link,
+#slides a:visited {
+	color: #333
+}
+#slides a:hover,
+#slides a:active {
+	color: #9e2020
+}
+.navbar {
+	overflow: hidden
+}
+#slides .button{
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+#slides .button a{
+	font-family: Arial, sans-serif;
+	padding: 10px 15px;
+	background: #460f05;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#slides .button.btn1{
+	left: 235px;
+	top: 290px;
+}
+#slides .button.btn2{
+	left: 590px;
+	top: 340px;
+}
+#slides .button.btn3{
+	left: 590px;
+	top: 310px;
+}
+#slides .button.btn4-1{
+	left: 85px;
+	top: 305px;
+}
+#slides .button.btn4-2{
+	left: 710px;
+	top: 305px;
+}
+#slides .button.btn5{
+	left: 617px;
+	top: 335px;
+}
