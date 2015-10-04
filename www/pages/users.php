@@ -50,7 +50,7 @@ function deleteUser(id) {
 			<th>Имя</th>
 			<th>Email</th>
 			<th>Группа</th>
-			<th>Дата рагистрации</th>
+			<th>Дата регистрации</th>
 			<th class='text-center'>Actions</th>
 		</tr>
 	</thead>
