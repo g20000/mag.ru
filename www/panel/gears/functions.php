@@ -485,12 +485,40 @@ function sideMenu_support() {
 	';
 }
 
-
+function buildDropdownList(){
+	global $user, $db;
+	$count = 0;
+	$q = "
+		SELECT * 
+		FROM `pkg_cat_aside_menu`
+	";
+	$pkg = $db->query($q);
+	
+	//var_dump($pkg);
+	foreach($pkg as $unit){
+		//var_dump($unit);
+		echo $unit->name;
+		echo '-------------';
+	}
+	/*if (isset($pkg[0])) {
+		$count = count($pkg);
+	} else {
+		$count=0;
+	}
+	if ($count>0) {
+		return '<span class="pull-right badge text-warning">'.$count.'</span>';
+	} else {
+		return '';
+	}*/
+}
 
 function sideMenu_admin() {
 	global $cfg;
-	echo '
-	<ul class="nav nav-sidebar">
+	echo 
+	'<ul class="nav nav-sidebar">'
+	.
+	buildDropdownList()
+	/*'
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/1.png" alt=""></div>Ноутбуки, планшеты, смартфоны</a>
 			<ul class="sub-menu">
@@ -839,11 +867,11 @@ function sideMenu_admin() {
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кожаные сумки,чемоданы, рюкзаки (брендовые) </span></a>
 			  </li>
 			</ul>
-		</li>
-
-	</ul>
-	
-	<ul class="nav nav-sidebar">
+		</li>'
+		.
+	'</ul>'*/
+	.
+	'<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('statsAdmin').'"><a href="'.$cfg['options']['siteurl'].'/statsAdmin"><i class="fa fa-signal text-primary"></i> Статистика</a></li>
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
