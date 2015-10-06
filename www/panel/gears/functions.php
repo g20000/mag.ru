@@ -492,7 +492,7 @@ function sideMenu_admin() {
 	echo '
 	<ul class="nav nav-sidebar">
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/1.png" alt=""></div>Ноутбуки, планшеты, смартфоны</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/1.png" alt=""></div>Ноутбуки, планшеты, смартфоны</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки</span></a>
@@ -541,7 +541,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/2.png" alt=""></div>Компьютеры, комплектующие, переферия</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/2.png" alt=""></div>Компьютеры, комплектующие, переферия</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Моноблоки</span></a>
@@ -560,7 +560,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/3.png" alt=""></div>Телевизоры, аудио-видео, hi-fi</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/3.png" alt=""></div>Телевизоры, аудио-видео, hi-fi</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры</span></a>
@@ -601,7 +601,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/4.png" alt=""></div>Бытовая техника для дома и кухни</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/4.png" alt=""></div>Бытовая техника для дома и кухни</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кофемашины, кофеварки</span></a>
@@ -681,7 +681,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/5.png" alt=""></div>Фото, видео</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/5.png" alt=""></div>Фото, видео</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фотоаппараты</span></a>
@@ -785,7 +785,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/6.png" alt=""></div>Товары для автомобиля</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/6.png" alt=""></div>Товары для автомобиля</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Навигаторы</span></a>
@@ -811,7 +811,7 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/7.png" alt=""></div>Красота, здоровье, активный отдых</a>
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/7.png" alt=""></div>Красота, здоровье, активный отдых</a>
 			<ul class="sub-menu">
 			  <li role="presentation">
 				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фен-щётки</span></a>
