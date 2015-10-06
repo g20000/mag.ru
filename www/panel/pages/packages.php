@@ -90,20 +90,19 @@ $_page_scripts = "
 	<!--<a href="<?php echo $cfg['options']['siteurl']; ?>/addPackage" class="btn btn-info">Добавить</a>-->
 	<span class="btn btn-warning groupPkgBtn" disabled="disabled" onclick="groupPkgs();">Группировать</span>
 </div>
-<div style="clear: both"></div>
 
 <div class="table-responsive">
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th>Номер товара</th>
 			<th>Id</th>
 			<th>Треки</th>
 			<th>Сотрудник</th>
 			<th class="text-center">Статус</th>
 			<th>Дата создания</th>
 			<?php if($user['rankname']!='shipper') { ?>
-			    <th>Номер товара</th> 
-				<th>Товар</th>
+			    <th>Товар</th> 
 				<th>Отправитель</th>
 				<?php if($user['rankname']!='admin') { ?>
 					<th>Описание</th>
@@ -137,7 +136,9 @@ $_page_scripts = "
 					$pkg_status = getPackageStatus($v->id);
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
+						<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
 						<td <?php if($user['rankname']=='admin'){ echo 'style="background-color:'.getPkgColor($v->id).' !important;"'; };?>><?php echo $v->id;?></td>
+		
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<td><?php echo getLinkToUserProfile($v->drop_id);?></td>
 						<td class="text-center">
@@ -155,8 +156,7 @@ $_page_scripts = "
 						
 						<?php if($user['rankname']=='admin') { ?>
 							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>
-							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
-
+							
 							<td><?php echo getLinkToUserProfile($v->shipper_id);?></td>
 
 							<!--<td><?php echo $v->action;?></td>-->

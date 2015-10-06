@@ -98,6 +98,8 @@ $route->addPath(array('name'=>'buyerPkgInfo','file'=>'buyerPkgInfo','params'=>'/
 
 $route->addPath(array('name'=>'trackSearch','file'=>'trackSearch','params'=>false));
 
+$route->addPath(array('name'=>'buildPackagesMenu','file'=>'buildPackagesMenu','params'=>false));
+
 // берем путь
 $routes = $route->getRoute();
 

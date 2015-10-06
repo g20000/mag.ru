@@ -491,11 +491,6 @@ function sideMenu_admin() {
 	global $cfg;
 	echo '
 	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('statsAdmin').'"><a href="'.$cfg['options']['siteurl'].'/statsAdmin"><i class="fa fa-signal text-primary"></i> Статистика</a></li>
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	
-	<ul class="nav nav-sidebar">
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="design/img/1.png" alt=""></div>Ноутбуки, планшеты, смартфоны</a>
 			<ul class="sub-menu">
@@ -846,6 +841,11 @@ function sideMenu_admin() {
 			</ul>
 		</li>
 
+	</ul>
+	
+	<ul class="nav nav-sidebar">
+		<li class="'.isOnPage('statsAdmin').'"><a href="'.$cfg['options']['siteurl'].'/statsAdmin"><i class="fa fa-signal text-primary"></i> Статистика</a></li>
+		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
 	
 	<ul class="nav nav-sidebar">
