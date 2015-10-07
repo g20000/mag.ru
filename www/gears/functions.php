@@ -486,30 +486,26 @@ function sideMenu_support() {
 }
 
 function buildDropdownList(){
-	global $user, $db;
+	global $user, $db, $cfg;
 	$count = 0;
 	$q = "
 		SELECT * 
 		FROM `pkg_cat_aside_menu`
 	";
-	$pkg = $db->query($q);
-	
-	//var_dump($pkg);
+	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
+	$generatedDDList = "";
 	foreach($pkg as $unit){
-		//var_dump($unit);
-		echo $unit->name;
-		echo '-------------';
+		$generatedDDList .=
+		'
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/'.$unit->img_source.'" alt=""></div>'.$unit->name.'</a>
+			<ul class="sub-menu">
+				
+			</ul>
+		</li>
+		';
 	}
-	/*if (isset($pkg[0])) {
-		$count = count($pkg);
-	} else {
-		$count=0;
-	}
-	if ($count>0) {
-		return '<span class="pull-right badge text-warning">'.$count.'</span>';
-	} else {
-		return '';
-	}*/
+	return $generatedDDList;
 }
 
 function sideMenu_admin() {
@@ -868,8 +864,9 @@ function sideMenu_admin() {
 			  </li>
 			</ul>
 		</li>'
+		*/
 		.
-	'</ul>'*/
+	'</ul>'
 	.
 	'<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('statsAdmin').'"><a href="'.$cfg['options']['siteurl'].'/statsAdmin"><i class="fa fa-signal text-primary"></i> Статистика</a></li>
