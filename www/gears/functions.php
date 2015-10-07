@@ -485,9 +485,31 @@ function sideMenu_support() {
 	';
 }
 
+function buildPackCatInDDList($parentLink){
+	global $user, $db, $cfg;
+	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$parentLink."";
+	$generatedPackCatInDDList = "";
+	$pkg = null;
+	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
+	//var_dump($pkg);
+	foreach($pkg as $u){
+		//var_dump($u->name);
+		//echo "--------";
+		$generatedPackCatInDDList .=
+		'
+			<li role="presentation">
+				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">'.$u->name.'</span></a>
+				<ul class="submenu_subitems">
+					
+				</ul>
+			</li>
+		';
+	}
+	return $generatedPackCatInDDList;
+}
+
 function buildDropdownList(){
 	global $user, $db, $cfg;
-	$count = 0;
 	$q = "
 		SELECT * 
 		FROM `pkg_cat_aside_menu`
@@ -499,9 +521,11 @@ function buildDropdownList(){
 		'
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/'.$unit->img_source.'" alt=""></div>'.$unit->name.'</a>
-			<ul class="sub-menu">
-				
-			</ul>
+			<ul class="sub-menu">'
+				.
+					buildPackCatInDDList($unit->pkg_cat_ddlist_id)
+				.
+			'</ul>
 		</li>
 		';
 	}
