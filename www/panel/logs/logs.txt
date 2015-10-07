@@ -109140,3 +109140,966 @@ Line: 495
 URL: /packages"
 
 
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:22.56
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:23.23
+-------------------
+string(336) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(338) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(144) "Замечение: [8]
+Message: Trying to get property of non-object
+File: Z:/home/mag.ru/www/panel/pages/package.php
+Line: 311
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(144) "Замечение: [8]
+Message: Trying to get property of non-object
+File: Z:/home/mag.ru/www/panel/pages/package.php
+Line: 319
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(144) "Замечение: [8]
+Message: Trying to get property of non-object
+File: Z:/home/mag.ru/www/panel/pages/package.php
+Line: 319
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(144) "Замечение: [8]
+Message: Trying to get property of non-object
+File: Z:/home/mag.ru/www/panel/pages/package.php
+Line: 321
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(143) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/pages/package.php
+Line: 504
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/1"
+
+
+2015/10/07 18:23.23
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/1"
+
+
+2015/10/07 18:35.06
+-------------------
+string(141) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /users"
+
+
+2015/10/07 18:35.06
+-------------------
+string(141) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /users"
+
+
+2015/10/07 18:35.06
+-------------------
+string(141) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /users"
+
+
+2015/10/07 18:35.06
+-------------------
+string(141) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /users"
+
+
+2015/10/07 18:35.06
+-------------------
+string(141) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /users"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(335) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(337) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:35.23
+-------------------
+string(144) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /packages"
+
+
+2015/10/07 18:35.29
+-------------------
+string(336) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(338) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(336) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT rank FROM `users` WHERE `id` = 
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(338) "Совет: [0]
+Message: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+SELECT name FROM `users` WHERE `id` = 
+	
+File: Z:/home/mag.ru/www/panel/gears/db.php
+Line: 107
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/6"
+
+
+2015/10/07 18:35.29
+-------------------
+string(145) "Функция: [2]
+Message: Invalid argument supplied for foreach()
+File: Z:/home/mag.ru/www/panel/gears/functions.php
+Line: 498
+URL: /package/6"
+
+

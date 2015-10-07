@@ -485,16 +485,17 @@ function sideMenu_support() {
 	';
 }
 
+function putPackInDDList($parentLink){
+	
+}
+
 function buildPackCatInDDList($parentLink){
 	global $user, $db, $cfg;
 	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$parentLink."";
 	$generatedPackCatInDDList = "";
 	$pkg = null;
 	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
-	//var_dump($pkg);
 	foreach($pkg as $u){
-		//var_dump($u->name);
-		//echo "--------";
 		$generatedPackCatInDDList .=
 		'
 			<li role="presentation">

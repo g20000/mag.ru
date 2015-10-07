@@ -109,6 +109,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 			success: function(data) {
 				console.log(data);
 				if (data.type=='ok') {
+					console.log(data);
 					//notify('info','Note!',data.text);
 					document.location.reload();
 				} else {
@@ -133,17 +134,14 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 				statusKind: $('#status_changer').val()
 			},
 			success: function(data) {
-				console.log(data);
-				console.log($('#status_changer').val());
 				if (data.type=='ok') {
-					console.log(data);
 					//notify('info','Note!',data.text);
 					document.location.reload();
 				} else {
 					notify('error','Замечание!',data.text);
 				}
 			},
-			error: function(v1,v2,v3) {
+			error: function(v1,v2,v3,data) {
 				console.log(data);
 				console.log(v1,v2,v3);
 			}
@@ -194,10 +192,12 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 	} elseif ($pkg_info!=false) {
 		$pkg_statuses = getPackageStatuses($route->param);
 		echo '<div class="clearfix" style="margin: 0 0 2em 0;">';
-		echo '<h1 class="page-header">Информация</h1>'; 
-		if ($pkg_statuses[0]->status_text=='new' || $pkg_statuses[0]->status_text=='approve') {
-			echo '<div class="pull-right"><span class="btn btn-danger btn-xs" onclick="deletePkg('.$route->param.')"><span class="fa fa-times text-white"></span></span></div>'; 
-		}	
+		echo '<h1 class="page-header">Информация</h1>';
+		if(isset($pkg_statuses[0]->status_text)){
+			if ($pkg_statuses[0]->status_text=='new' || $pkg_statuses[0]->status_text=='approve') {
+				echo '<div class="pull-right"><span class="btn btn-danger btn-xs" onclick="deletePkg('.$route->param.')"><span class="fa fa-times text-white"></span></span></div>'; 
+			}
+		}		
 	} else {
 		echo '<div class="clearfix" style="margin: 0 0 2em 0;">';
 		echo '<h1 class="page-header">Нет страницы</h1>'; 		
@@ -510,6 +510,25 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 							</div>
 						</div>
 						<?php } ?>
+						<?php
+							//var_dump($v);
+							if ($user['rankname']=='admin') {
+						?>		
+							<div class="row" style="margin-bottom: 1em;">
+								<div class="col-xs-6">
+									<select id="status_changer">
+										<option value="noselected">...</option>
+										<option value="new">Обработка(Добавлен, но не отправлен)</option>
+										<option value="todrop">На доставке(Отправлено сотруднику)</option>
+										<option value="onbuyer">Доставлено(Покупатель получил товар)</option>
+										<option value="resent">Переотправлен</option>
+									</select>
+								</div>
+								<button onClick="changePackageStatus(<?php echo $v->id; ?>, '<?php echo $user['rankname'];?>');" class="btn btn-sm btn-info pull-right" style="margin: 10px 0 0 0;">Сменить статус</button>
+							</div>
+						<?php
+							}				
+						?>
 					</div>
 				</div>
 				
