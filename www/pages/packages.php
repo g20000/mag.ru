@@ -145,6 +145,7 @@ $_page_scripts = "
 							<?php 
 								if(isset($v->status_text)){ 
 									echo iconPkgStatuses($v->status_text);
+									//echo $v->status_text;
 								}
 							?>
 						</td>

@@ -368,7 +368,7 @@ function getNavMenu() {
 
 function sideMenu_labler() {
 	global $cfg;
-	echo '
+	echo /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -383,13 +383,59 @@ function sideMenu_labler() {
 		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
+	';*/
+	'
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/lablerinbox">Товары</a></div></div>
+		</div>
+	</div>
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/chat">Чат</a></div></div>
+		</div>
+	</div>	
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
+		</div>
+	</div>	
 	';
 }
 
 
 function sideMenu_buyer() {
 	global $cfg;
-	echo '
+	echo /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -405,12 +451,67 @@ function sideMenu_buyer() {
 		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
+	';*/
+	'
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/buyerinbox">Входящие</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/buyercompleated">Завершенные</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/chat">Чат</a></div></div>
+		</div>
+	</div>	
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
+		</div>
+	</div>	
 	';
 }
 
 function sideMenu_shipper() {
 	global $cfg;
-	echo '
+	echo /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -432,12 +533,85 @@ function sideMenu_shipper() {
 		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
+	';*/
+	'	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/packages">Товары</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Сотрудники</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/chat"> Чат</a></div></div>
+		</div>
+	</div>	
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/blackshoplist"> Черный лист магазинов</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Лист приемки</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
+		</div>
+	</div>	
 	';
 }
 
 function sideMenu_drop() {
 	global $cfg,$user;
-	echo '
+	echo /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -453,12 +627,67 @@ function sideMenu_drop() {
 		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
+	';*/
+	'
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropinbox">Входящие '.getDropNewPackagesCount($user['id']).'</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropoutbox">Исходящие</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/chat">Чат</a></div></div>
+		</div>
+	</div>	
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
+		</div>
+	</div>	
 	';
 }
 
 function sideMenu_support() {
 	global $cfg;
-	echo '
+	echo /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -482,6 +711,97 @@ function sideMenu_support() {
 		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
+	';*/
+	'	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/packages">Новости</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/packages">Товары '.getNewPkgs().'</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Сотрудники</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/drops"> Сотрудники</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/shippers"> Отправители</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/buyers">Покупатели</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/shops"> Магазины</a></div></div>
+		</div>
+	</div>
+
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/chat">Чат</a></div></div>
+		</div>
+	</div>		
+		
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
+		</div>
+	</div>	
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon black">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
+		</div>
+	</div>	
 	';
 }
 
@@ -2118,15 +2438,16 @@ function readablePkgStatuses($status) {
 
 function iconPkgStatuses($status) {
 	$statuses = array(
-		'approve'	=> '<i style="color:#FF9966;" class="fa fa-play" data-placement="top" data-toggle="tooltip" title="Добавлен но не одобрен администратором" alt="Добавлен но не одобрен администратором"></i>',
-		'new'		=> '<i style="color:#FF9966;" class="fa fa-bookmark" data-placement="top" data-toggle="tooltip" title="Добавлен но не отправлен" alt="Добавлен но не отправлен"></i>',
-		'accepted'	=> '<i style="color:#EF9966;" class="fa fa-check" data-placement="top" data-toggle="tooltip" title="Сотрудник принял задание" alt="Сотрудник принял задание"></i>',
-		'todrop'	=> '<i style="color:#E09966;" class="fa fa-truck" data-placement="top" data-toggle="tooltip" title="Отправлено сотруднику" alt="Отправлено сотруднику"></i>',
-		'ondrop'	=> '<i style="color:#C29966;" class="fa fa-user" data-placement="top" data-toggle="tooltip" title="Сотрудник получил товар" alt="Сотрудник получил товар"></i>',
-		'labled'	=> '<i style="color:#B29966;" class="fa fa-barcode" data-placement="top" data-toggle="tooltip" title="Сортировка завершена" alt="Сортировка завершена"></i>',
-		'tobuyer'	=> '<i style="color:#A39966;" class="fa fa-plane" data-placement="top" data-toggle="tooltip" title="Товар отправлен получателю" alt="Товар отправлен получателю"></i>',
-		'onbuyer'	=> '<i style="color:#859966;" class="fa fa-usd" data-placement="top" data-toggle="tooltip" title="Покупатель получил товар" alt="Покупатель получил товар"></i>',
-		'compleate'	=> '<i style="color:#669966;" class="fa fa-thumbs-up" data-placement="top" data-toggle="tooltip" title="Покупатель подтвердил получение" alt="Покупатель подтвердил получение"></i>'
+		'approve'	=> '<i style="color:#FF9966;" class="fa fa-play" data-placement="top" data-toggle="tooltip" title="Добавлен но не одобрен администратором" alt="Добавлен но не одобрен администратором"> Добавлен, но не одобрен администратором</i>',
+		'new'		=> '<i style="color:#FF9966;" class="fa fa-bookmark" data-placement="top" data-toggle="tooltip" title="Добавлен но не отправлен" alt="Добавлен но не отправлен"> Добавлен, но не отправлен</i>',
+		'accepted'	=> '<i style="color:#EF9966;" class="fa fa-check" data-placement="top" data-toggle="tooltip" title="Сотрудник принял задание" alt="Сотрудник принял задание"> Сотрудник принял задание</i>',
+		'todrop'	=> '<i style="color:#E09966;" class="fa fa-truck" data-placement="top" data-toggle="tooltip" title="Отправлено сотруднику" alt="Отправлено сотруднику"> Отправлено сотруднику</i>',
+		'ondrop'	=> '<i style="color:#C29966;" class="fa fa-user" data-placement="top" data-toggle="tooltip" title="Сотрудник получил товар" alt="Сотрудник получил товар"> Сотрудник получил товар</i>',
+		'labled'	=> '<i style="color:#B29966;" class="fa fa-barcode" data-placement="top" data-toggle="tooltip" title="Сортировка завершена" alt="Сортировка завершена"> Сортировка завершена</i>',
+		'tobuyer'	=> '<i style="color:#A39966;" class="fa fa-plane" data-placement="top" data-toggle="tooltip" title="Товар отправлен получателю" alt="Товар отправлен получателю"> Товар отправлен получателю</i>',
+		'onbuyer'	=> '<i style="color:#859966;" class="fa fa-usd" data-placement="top" data-toggle="tooltip" title="Покупатель получил товар" alt="Покупатель получил товар"> Покупатель получил товар</i>',
+		'compleate'	=> '<i style="color:#669966;" class="fa fa-thumbs-up" data-placement="top" data-toggle="tooltip" title="Покупатель подтвердил получение" alt="Покупатель подтвердил получение"> Покупатель подтвердил получение</i>',
+		'resent'	=> '<i style="color:#669966;" class="fa fa-thumbs-up" data-placement="top" data-toggle="tooltip" title="Переотправлен" alt="Переотправлен"> Переотправлен</i>'
 	);
 	if (isset($statuses[$status])) {
 		$out = $statuses[$status];
