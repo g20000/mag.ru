@@ -37,7 +37,10 @@ $chats = getAllChats();
 		<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
 			<div class="row" style="padding:1em;">
 				<div class="col-md-3 col-xs-12">
-					<?php echo $v->name ?>
+					<?php echo getUserIconById($v->id);
+						echo " "; 
+						echo $v->name; 
+					?>
 					<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
 				</div>
 			</div>
