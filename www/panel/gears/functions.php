@@ -927,25 +927,6 @@ function sideMenu_admin() {
 	</ul>
 	';*/
 	'
-
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon common">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/statsAdmin">Статистика</a></div></div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon common">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
-		</div>
-	</div>
-	
 	<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon one">
@@ -1336,6 +1317,24 @@ function sideMenu_admin() {
 					  </li>
 					</ul>
 				</div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/statsAdmin">Статистика</a></div></div>
+		</div>
+	</div>
+	
+	<div class="show_menu">
+		<div class="menu_element">
+			<div class="menu_icon common">
+			
+			</div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
 		</div>
 	</div>
 	

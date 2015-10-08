@@ -34,7 +34,7 @@ $chats = getAllChats();
 	<?php
 		foreach($users as $v){
 	?>
-		<a href="#">
+		<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
 			<div class="row" style="padding:1em;">
 				<div class="col-md-3 col-xs-12">
 					<?php echo $v->name ?>
@@ -42,6 +42,7 @@ $chats = getAllChats();
 				</div>
 			</div>
 		</a>
+		<hr style="margin: 0;">
 	<?php
 		}
 	?>
