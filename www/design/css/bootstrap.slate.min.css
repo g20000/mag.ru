@@ -1402,6 +1402,10 @@ figure
 img
 {
 	vertical-align:middle
+;
+	background-color:  #fff;
+	border-radius: 3px;
+	padding: 3px;
 }
 
 .img-responsive,.thumbnail>img,.thumbnail a>img,.carousel-inner>.item>img,.carousel-inner>.item>a>img
@@ -2259,7 +2263,7 @@ pre code
 	
 	.col-sm-9
 	{
-		width:75%
+	width: 89%;
 	}
 	
 	.col-sm-8
@@ -2479,7 +2483,7 @@ pre code
 	
 	.col-sm-offset-3
 	{
-		margin-left:25%
+		margin-left: 9%;
 	}
 	
 	.col-sm-offset-2
@@ -2501,7 +2505,8 @@ pre code
 @media (min-width:992px) {
 	.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12
 	{
-		float:left
+	 float:left
+	
 	}
 	
 	.col-md-12
@@ -2516,7 +2521,7 @@ pre code
 	
 	.col-md-10
 	{
-		width:80.333333%
+	 width: 91.333333%;
 	}
 	
 	.col-md-9
@@ -2746,7 +2751,7 @@ pre code
 	
 	.col-md-offset-2
 	{
-		margin-left:19.666667%
+	margin-left: 6.666667%;
 	}
 	
 	.col-md-offset-1
@@ -4655,6 +4660,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 {
 	position:relative;
 	display:block
+
 }
 
 .nav>li>a
@@ -8443,4 +8449,8 @@ a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active
 .panel-primary .panel-heading,.panel-success .panel-heading,.panel-danger .panel-heading,.panel-warning .panel-heading,.panel-info .panel-heading
 {
 	border-color:#000
+}
+.dropdown .cat_ico {
+	display:block;
+	float: none;
 }
