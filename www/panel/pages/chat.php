@@ -28,6 +28,7 @@ $chats = getAllChats();
 		} else {
 			echo "<h3>Нет новых сообщений</h3>";
 		}
+		getUsersNotInChat();
 	?>
 	
 </div>

@@ -1384,6 +1384,17 @@ function getAllChats() {
 	return $out;
 }
 
+//получить список новых пользователей, не состоящих в чате
+function getUsersNotInChat(){
+	global $user, $db;
+	$q = "SELECT u.* 
+			FROM `users` u
+			LEFT JOIN chat c on u.id = c.from_id or u.id = c.to_id
+			WHERE c.id is null";
+	$pkg = $db->query($q);
+	var_dump($pkg);
+}
+
 // при открытии делаем диалог прочитанным после вывода на страницу у данного пользователя
 function setDialogReaded($hash) {
 	global $user, $db;

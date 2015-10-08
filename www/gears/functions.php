@@ -485,16 +485,17 @@ function sideMenu_support() {
 	';
 }
 
+function putPackInDDList($parentLink){
+	
+}
+
 function buildPackCatInDDList($parentLink){
 	global $user, $db, $cfg;
 	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$parentLink."";
 	$generatedPackCatInDDList = "";
 	$pkg = null;
 	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
-	//var_dump($pkg);
 	foreach($pkg as $u){
-		//var_dump($u->name);
-		//echo "--------";
 		$generatedPackCatInDDList .=
 		'
 			<li role="presentation">
@@ -1381,6 +1382,17 @@ function getAllChats() {
 		$out = false;
 	}
 	return $out;
+}
+
+//получить список новых пользователей, не состоящих в чате
+function getUsersNotInChat(){
+	global $user, $db;
+	$q = "SELECT u.* 
+			FROM `users` u
+			LEFT JOIN chat c on u.id = c.from_id or u.id = c.to_id
+			WHERE c.id is null";
+	$pkg = $db->query($q);
+	var_dump($pkg);
 }
 
 // при открытии делаем диалог прочитанным после вывода на страницу у данного пользователя
