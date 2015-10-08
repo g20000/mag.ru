@@ -1876,8 +1876,9 @@ function getUsersNotInChat(){
 			FROM `users` u
 			LEFT JOIN chat c on u.id = c.from_id or u.id = c.to_id
 			WHERE c.id is null";
-	$pkg = $db->query($q);
-	var_dump($pkg);
+	$users = $db->query($q);
+	//var_dump($pkg);
+	return $users;
 }
 
 // при открытии делаем диалог прочитанным после вывода на страницу у данного пользователя

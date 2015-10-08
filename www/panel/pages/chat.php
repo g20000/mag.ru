@@ -28,7 +28,21 @@ $chats = getAllChats();
 		} else {
 			echo "<h3>Нет новых сообщений</h3>";
 		}
-		getUsersNotInChat();
 	?>
-	
+	<h3>Вы можете создать чат с новым собеседником:</h3>
+	<?php $users = getUsersNotInChat(); ?>
+	<?php
+		foreach($users as $v){
+	?>
+		<a href="#">
+			<div class="row" style="padding:1em;">
+				<div class="col-md-3 col-xs-12">
+					<?php echo $v->name ?>
+					<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
+				</div>
+			</div>
+		</a>
+	<?php
+		}
+	?>
 </div>
