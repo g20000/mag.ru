@@ -27,6 +27,11 @@ $_page_scripts = "
 
 ?>
 <script>
+	$( document ).ready(function() {
+		console.log( "ready!" );
+		//changeStatus();
+	});
+
 	function groupPkgs() {
 
 		var checkedCount = 0;
@@ -82,7 +87,50 @@ $_page_scripts = "
 		}
 
 
-	}	
+	}
+	
+	function changeStatus(itemId){
+		console.log( "chStatus!" );
+		console.log(itemId);
+		if(itemId != "NO_INSTANCE"){
+			$('#status_change option:selected').each(function(){
+				console.log(this);
+				this.selected=false;
+			});
+			changePackageStatus(itemId);
+		}else{
+			return;
+		}
+		//$('#status_change option:last').attr('selected', 'selected');
+		//$('#status_change').val($('#status_change option:last').val());
+		//$("#my_select :contains().attr("selected", "selected"));
+	}
+	
+	function changePackageStatus(itemId) {
+		console.log(itemId);
+		console.log($('#status_change').val());
+		$.ajax({
+			url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
+			type: 'POST',
+			dataType: 'JSON',
+			data: {
+				id: itemId,
+				statusKind: $('#status_change').val()
+			},
+			success: function(data) {
+				if (data.type=='ok') {
+					//notify('info','Note!',data.text);
+					document.location.reload();
+				} else {
+					notify('error','Замечание!',data.text);
+				}
+			},
+			error: function(v1,v2,v3,data) {
+				console.log(data);
+				console.log(v1,v2,v3);
+			}
+		});
+	}
 </script>
 <h1 class="page-header">Packages</h1>
 
@@ -96,10 +144,10 @@ $_page_scripts = "
 	<thead>
 		<tr>
 			<th>Номер товара</th>
-			<th>Id</th>
 			<th>Треки</th>
-			<th>Сотрудник</th>
+			<th>Курьер</th>
 			<th class="text-center">Статус</th>
+			<th class="text-center">Статус(тестовый выбор)</th>
 			<th>Дата создания</th>
 			<?php if($user['rankname']!='shipper') { ?>
 			    <th>Товар</th> 
@@ -112,6 +160,8 @@ $_page_scripts = "
 					<th class='text-center'>Действия</th>
 				<?php } ?>
 			<?php } ?>
+			<th></th>
+			<th>Id</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -137,17 +187,33 @@ $_page_scripts = "
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
 						<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
-						<td <?php if($user['rankname']=='admin'){ echo 'style="background-color:'.getPkgColor($v->id).' !important;"'; };?>><?php echo $v->id;?></td>
-		
+								
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<td><?php echo getLinkToUserProfile($v->drop_id);?></td>
 						<td class="text-center">
 							<?php 
 								if(isset($v->status_text)){ 
 									echo iconPkgStatuses($v->status_text);
-									//echo $v->status_text;
+									//var_dump($v["status_text"]);
 								}
 							?>
+						</td>
+						<td>
+							<select id="status_change" onchange="changeStatus(
+								<?php if(isset($v->id)){
+									var_dump($v->id);
+								}else{
+									echo "NO_INSTANCE";
+								}							
+								?>, '<?php echo $user['rankname'];?>'
+							)
+							">
+								<option value="noselected" <?php if((isset($v->status_text))&&($v->status_text == "noselected")) echo "selected = selected";?>>...</option>
+								<option value="new" <?php if((isset($v->status_text))&&($v->status_text == "new")) echo "selected = selected";?>>Обработка(Добавлен, но не отправлен)</option>
+								<option value="todrop" <?php if((isset($v->status_text))&&($v->status_text == "todrop")) echo "selected = selected";?>>На доставке(Отправлено сотруднику)</option>
+								<option value="onbuyer" <?php if((isset($v->status_text))&&($v->status_text == "onbuyer")) echo "selected = selected";?>>Доставлено(Покупатель получил товар)</option>
+								<option value="resent" <?php if((isset($v->status_text))&&($v->status_text == "resent")) echo "selected = selected";?>>Переотправлен</option>
+							</select>
 						</td>
 						<td><?php if(isset($pkg_status->time)){ 
 									echo $pkg_status->time;
@@ -173,13 +239,12 @@ $_page_scripts = "
 								if (isset($n_text['public'])) { echo '<div class="tbl-notes"><p>'.$n_text['public'].'</p></div>'; }
 							};?></td>-->
 						<?php } ?>
-						
+												
 						<td class="text-center">
 							<a href="<?php echo $cfg['options']['siteurl'];?>/package/<?php echo $v->id;?>"><i class="fa fa-cogs"></i></a> | 
 							<input type="checkbox" class="group-chkbox" data-placement="left" data-toggle="tooltip" data-pkg-id="<?php echo $v->id; ?>" title="Отметить для группировки">
-						</td>
-						
-						
+						</td>			
+						<td <?php if($user['rankname']=='admin'){ echo 'style="background-color:'.getPkgColor($v->id).' !important;"'; };?>><?php echo $v->id;?></td>
 					</tr>
 
 				<?php

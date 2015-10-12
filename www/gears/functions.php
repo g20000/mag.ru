@@ -839,7 +839,7 @@ function buildDropdownList(){
 	$generatedDDList = "";
 	foreach($pkg as $unit){
 		$generatedDDList .=
-		'
+		/*'
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/'.$unit->img_source.'" alt=""></div>'.$unit->name.'</a>
 			<ul class="sub-menu">'
@@ -848,6 +848,16 @@ function buildDropdownList(){
 				.
 			'</ul>
 		</li>
+		';*/
+		'
+		<div class="show_menu">
+			<div class="menu_element">
+				<div class="menu_icon '.$unit->img_source.'">
+				
+				</div>
+				<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">'.$unit->name.'</a></div></div>
+			</div>
+		</div>
 		';
 	}
 	return $generatedDDList;
@@ -855,7 +865,7 @@ function buildDropdownList(){
 
 function sideMenu_admin() {
 	global $cfg;
-	echo 
+	echo buildDropdownList().
 	/*'<ul class="nav nav-sidebar">'
 	.
 	buildDropdownList()*/
@@ -1246,7 +1256,7 @@ function sideMenu_admin() {
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
 	';*/
-	'
+	/*'
 	<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon one">
@@ -1638,8 +1648,8 @@ function sideMenu_admin() {
 					</ul>
 				</div>
 		</div>
-	</div>
-	
+	</div>*/
+	'
 	<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon common">
