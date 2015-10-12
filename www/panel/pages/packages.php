@@ -88,48 +88,34 @@ $_page_scripts = "
 
 
 	}
-	
-	function changeStatus(itemId){
-		console.log( "chStatus!" );
-		console.log(itemId);
-		if(itemId != "NO_INSTANCE"){
-			$('#status_change option:selected').each(function(){
-				console.log(this);
-				this.selected=false;
+		
+	function changePackageStatus(itemName, itemId) {
+		var targetOption = '#' + itemId;
+		if(itemName != "NO_INSTANCE"){
+			$.ajax({
+				url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
+				type: 'POST',
+				dataType: 'JSON',
+				data: {
+					id: itemId,
+					statusKind: $(targetOption).val()
+				},
+				success: function(data) {
+					if (data.type=='ok') {
+						//notify('info','Note!',data.text);
+						document.location.reload();
+					} else {
+						notify('error','Замечание!',data.text);
+					}
+				},
+				error: function(v1,v2,v3,data) {
+					console.log(data);
+					console.log(v1,v2,v3);
+				}
 			});
-			changePackageStatus(itemId);
 		}else{
 			return;
 		}
-		//$('#status_change option:last').attr('selected', 'selected');
-		//$('#status_change').val($('#status_change option:last').val());
-		//$("#my_select :contains().attr("selected", "selected"));
-	}
-	
-	function changePackageStatus(itemId) {
-		console.log(itemId);
-		console.log($('#status_change').val());
-		$.ajax({
-			url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
-			type: 'POST',
-			dataType: 'JSON',
-			data: {
-				id: itemId,
-				statusKind: $('#status_change').val()
-			},
-			success: function(data) {
-				if (data.type=='ok') {
-					//notify('info','Note!',data.text);
-					document.location.reload();
-				} else {
-					notify('error','Замечание!',data.text);
-				}
-			},
-			error: function(v1,v2,v3,data) {
-				console.log(data);
-				console.log(v1,v2,v3);
-			}
-		});
 	}
 </script>
 <h1 class="page-header">Packages</h1>
@@ -194,18 +180,20 @@ $_page_scripts = "
 							<?php 
 								if(isset($v->status_text)){ 
 									echo iconPkgStatuses($v->status_text);
-									//var_dump($v["status_text"]);
 								}
 							?>
 						</td>
 						<td>
-							<select id="status_change" onchange="changeStatus(
-								<?php if(isset($v->id)){
-									var_dump($v->id);
+							<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(
+								'<?php if(isset($v->item)){
+									echo $v->item;
 								}else{
 									echo "NO_INSTANCE";
 								}							
-								?>, '<?php echo $user['rankname'];?>'
+								?>',
+								'<?php echo $v->id;
+								?>',
+								'<?php echo $user['rankname'];?>'
 							)
 							">
 								<option value="noselected" <?php if((isset($v->status_text))&&($v->status_text == "noselected")) echo "selected = selected";?>>...</option>
