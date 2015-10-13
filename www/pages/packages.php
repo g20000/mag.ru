@@ -91,7 +91,7 @@ $_page_scripts = "
 		
 	function changePackageStatus(itemName, itemId) {
 		var targetOption = '#' + itemId;
-		if(itemName != "NO_INSTANCE"){
+		if(itemName != "NO_INSTANCE_OR_NOT_ADMIN"){
 			$.ajax({
 				url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
 				type: 'POST',
@@ -133,7 +133,6 @@ $_page_scripts = "
 			<th>Треки</th>
 			<th>Курьер</th>
 			<th class="text-center">Статус</th>
-			<th class="text-center">Статус(тестовый выбор)</th>
 			<th>Дата создания</th>
 			<?php if($user['rankname']!='shipper') { ?>
 			    <th>Товар</th> 
@@ -176,19 +175,12 @@ $_page_scripts = "
 								
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<td><?php echo getLinkToUserProfile($v->drop_id);?></td>
-						<td class="text-center">
-							<?php 
-								if(isset($v->status_text)){ 
-									echo iconPkgStatuses($v->status_text);
-								}
-							?>
-						</td>
 						<td>
 							<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(
-								'<?php if(isset($v->item)){
+								'<?php if((isset($v->item))&&($user['rankname']=='admin')){
 									echo $v->item;
 								}else{
-									echo "NO_INSTANCE";
+									echo "NO_INSTANCE_OR_NOT_ADMIN";
 								}							
 								?>',
 								'<?php echo $v->id;
