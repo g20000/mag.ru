@@ -9,6 +9,7 @@ include_once($cfg['realpath'].'/gears/l18n.php');
 include_once($cfg['realpath'].'/gears/db.php');
 
 //header('Content-type: application/json');
+
 $_ts = microtime_float();
 
 
@@ -39,6 +40,8 @@ if ($user['rankname']!='support' && $user['rankname']!='admin' && $user['ranknam
 // фильтруем входящие данные
 
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+//$type = addslashes(strip_tags(filter_input(INPUT_POST, 'type', FILTER_UNSAFE_RAW)));
+//$num = addslashes(strip_tags(filter_input(INPUT_POST, 'num', FILTER_UNSAFE_RAW)));
 $statusKind = addslashes(strip_tags(filter_input(INPUT_POST, 'statusKind', FILTER_UNSAFE_RAW)));
 
 // есть ли вообще такой ID
@@ -59,13 +62,15 @@ if (!isset($isIdExist[0])) {
 	$db->query($q);
 }*/
 
-if (($user['rankname']=='admin') && ($statusKind != '...')){
+/*if (($user['rankname']=='admin') && ($statusKind != '...')){
 	$status = $statusKind;
 }elseif ($user['rankname']=='shipper' || $user['rankname']=='admin' || $user['rankname']=='support') {
 	$status = 'todrop';
 } elseif($user['rankname']=='drop') {
 	$status = 'tobuyer';
-}
+}*/
+
+$status = $statusKind;
 
 // к этой странице только шиперы и администрация имеют доступ, так что ...
 $q = "INSERT INTO `pkg_statuses` VALUES (NULL, ".$id.", '".date("Y-m-d H:i:s", time())."', '".$status."');";

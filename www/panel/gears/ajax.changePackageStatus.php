@@ -62,13 +62,15 @@ if (!isset($isIdExist[0])) {
 	$db->query($q);
 }*/
 
-if (($user['rankname']=='admin') && ($statusKind != '...')){
+/*if (($user['rankname']=='admin') && ($statusKind != '...')){
 	$status = $statusKind;
 }elseif ($user['rankname']=='shipper' || $user['rankname']=='admin' || $user['rankname']=='support') {
 	$status = 'todrop';
 } elseif($user['rankname']=='drop') {
 	$status = 'tobuyer';
-}
+}*/
+
+$status = $statusKind;
 
 // к этой странице только шиперы и администрация имеют доступ, так что ...
 $q = "INSERT INTO `pkg_statuses` VALUES (NULL, ".$id.", '".date("Y-m-d H:i:s", time())."', '".$status."');";

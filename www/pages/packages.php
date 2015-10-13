@@ -188,11 +188,14 @@ $_page_scripts = "
 								'<?php echo $user['rankname'];?>'
 							)
 							">
-								<option value="noselected" <?php if((isset($v->status_text))&&($v->status_text == "noselected")) echo "selected = selected";?>>...</option>
-								<option value="new" <?php if((isset($v->status_text))&&($v->status_text == "new")) echo "selected = selected";?>>Обработка(Добавлен, но не отправлен)</option>
-								<option value="todrop" <?php if((isset($v->status_text))&&($v->status_text == "todrop")) echo "selected = selected";?>>На доставке(Отправлено сотруднику)</option>
-								<option value="onbuyer" <?php if((isset($v->status_text))&&($v->status_text == "onbuyer")) echo "selected = selected";?>>Доставлено(Покупатель получил товар)</option>
+								<option value="norecipient" <?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "selected = selected";?>>Получатель не найден</option>
+								<option value="processing" <?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "selected = selected";?>>Обработка</option>
+								<option value="ondelivery" <?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "selected = selected";?>>На доставке</option>
+								<option value="delivered" <?php if((isset($v->status_text))&&($v->status_text == "delivered")) echo "selected = selected";?>>Доставлено</option>
 								<option value="resent" <?php if((isset($v->status_text))&&($v->status_text == "resent")) echo "selected = selected";?>>Переотправлен</option>
+								<option value="refund" <?php if((isset($v->status_text))&&($v->status_text == "refund")) echo "selected = selected";?>>Возврат</option>
+								<option value="filial" <?php if((isset($v->status_text))&&($v->status_text == "filial")) echo "selected = selected";?>>Филиал</option>
+								<option value="shoprefund" <?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "selected = selected";?>>Возврат магазином</option>
 							</select>
 						</td>
 						<td><?php if(isset($pkg_status->time)){ 

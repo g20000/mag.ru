@@ -316,7 +316,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 							</div>
 							<div class="row" style="margin-bottom: 1em;">
 								<div class="col-xs-4">Статус:</div>
-								<div class="col-xs-8"><?php echo iconPkgStatuses($pkg_statuses[0]->status_text).' '.readablePkgStatuses($pkg_statuses[0]->status_text);?></div>
+								<div class="col-xs-8"><?php echo readablePkgStatuses($pkg_statuses[0]->status_text);?></div>
 							</div>
 							<?php if (($user['rankname']=='admin' || $user['rankname']=='support') && $pkg_statuses[0]->status_text=='approve') { ?>
 								<script>
@@ -506,29 +506,10 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 						<div class="container-fluid">
 							<div class="row" style="margin-bottom: 1em;">
 								<div class="col-xs-6"><?php echo $sv->time;?></div>
-								<div class="col-xs-6"><?php echo iconPkgStatuses($sv->status_text).' '.readablePkgStatuses($sv->status_text);?></div>
+								<div class="col-xs-6"><?php echo readablePkgStatuses($sv->status_text);?></div>
 							</div>
 						</div>
 						<?php } ?>
-						<?php
-							//var_dump($v);
-							if ($user['rankname']=='admin') {
-						?>		
-							<div class="row" style="margin-bottom: 1em;">
-								<div class="col-xs-6">
-									<select id="status_changer">
-										<option value="noselected">...</option>
-										<option value="new">Обработка(Добавлен, но не отправлен)</option>
-										<option value="todrop">На доставке(Отправлено сотруднику)</option>
-										<option value="onbuyer">Доставлено(Покупатель получил товар)</option>
-										<option value="resent">Переотправлен</option>
-									</select>
-								</div>
-								<button onClick="changePackageStatus(<?php echo $v->id; ?>, '<?php echo $user['rankname'];?>');" class="btn btn-sm btn-info pull-right" style="margin: 10px 0 0 0;">Сменить статус</button>
-							</div>
-						<?php
-							}				
-						?>
 					</div>
 				</div>
 				
