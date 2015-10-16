@@ -328,7 +328,7 @@ function getNavMenu() {
 		echo '
 		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары &nbsp;&nbsp;'.getNewPkgs().'</a></li>
 		<li class="'.isOnPage('lablers').'"><a href="'.$cfg['options']['siteurl'].'/lablers">Сортировщики</a></li>
-		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Сотрудники</a></li>
+		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Курьеры</a></li>
 		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers">Отправители</a></li>
 		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers">Покупатели</a></li>
 		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
@@ -354,7 +354,7 @@ function getNavMenu() {
 	} elseif($user['rankname']=='support') {
 		echo '
 		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары &nbsp;&nbsp;'.getNewPkgs().'</a></li>
-		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Сотрудники</a></li>
+		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Курьеры</a></li>
 		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers">Отправители</a></li>
 		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers">Покупатели</a></li>
 		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
@@ -951,7 +951,7 @@ function sideMenu_shipper() {
 			<div class="menu_icon common">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Сотрудники</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Курьеры</a></div></div>
 		</div>
 	</div>	
 	
@@ -1129,7 +1129,7 @@ function sideMenu_support() {
 			<div class="menu_icon common">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Сотрудники</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Курьеры</a></div></div>
 		</div>
 	</div>	
 	
@@ -1138,7 +1138,7 @@ function sideMenu_support() {
 			<div class="menu_icon common">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/drops"> Сотрудники</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/drops"> Курьеры</a></div></div>
 		</div>
 	</div>
 	
@@ -1199,7 +1199,23 @@ function sideMenu_support() {
 }
 
 function putPackInDDList($parentLink){
-	
+	global $user, $db, $cfg;
+	$q = "SELECT * FROM `pkg_ddlist` WHERE `pkg_cat_ddlist_fk` = ".$parentLink."";
+	$generatedPackList = "";
+	$pkg = null;
+	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
+	if(isset($pkg)){
+		//var_dump($pkg);
+		foreach($pkg as $u){
+			$generatedPackList .=
+			'
+				<li><a href="#">'.$u->name.'</a> <span class="procent_items">'.$u->percent.'%</span></li>
+			';
+		}
+		return $generatedPackList;
+	}else{
+		return;
+	}
 }
 
 function buildPackCatInDDList($parentLink){
@@ -1208,18 +1224,24 @@ function buildPackCatInDDList($parentLink){
 	$generatedPackCatInDDList = "";
 	$pkg = null;
 	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
-	foreach($pkg as $u){
-		$generatedPackCatInDDList .=
-		'
-			<li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">'.$u->name.'</span></a>
-				<ul class="submenu_subitems">
-					
-				</ul>
-			</li>
-		';
+	if(isset($pkg)){
+		foreach($pkg as $u){
+			$generatedPackCatInDDList .=
+			'
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">'.$u->name.'</span></a>
+					<ul class="submenu_subitems">
+						'
+							.putPackInDDList($u->id).
+						'
+					</ul>
+				</li>
+			';
+		}
+		return $generatedPackCatInDDList;
+	}else{
+		return;
 	}
-	return $generatedPackCatInDDList;
 }
 
 function buildDropdownList(){
@@ -1246,9 +1268,17 @@ function buildDropdownList(){
 		<div class="show_menu">
 			<div class="menu_element">
 				<div class="menu_icon '.$unit->img_source.'">
-				
 				</div>
 				<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">'.$unit->name.'</a></div></div>
+				<div class="submenu_wrapper">
+					<ul class="submenu_subitems">
+					'
+						.
+							buildPackCatInDDList($unit->pkg_cat_ddlist_id)
+						.
+					'
+					</ul>
+				</div>
 			</div>
 		</div>
 		';
@@ -1649,8 +1679,7 @@ function sideMenu_admin() {
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
 	';*/
-	/*'
-	<div class="show_menu">
+	/*'<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon one">
 			
@@ -2042,8 +2071,8 @@ function sideMenu_admin() {
 				</div>
 		</div>
 	</div>*/
-	'
-	<div class="show_menu">
+
+	'<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon common">
 			
@@ -2066,7 +2095,7 @@ function sideMenu_admin() {
 			<div class="menu_icon common">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Сотрудники</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Курьеры</a></div></div>
 		</div>
 	</div>	
 	

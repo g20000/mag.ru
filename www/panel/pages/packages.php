@@ -176,27 +176,31 @@ $_page_scripts = "
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<td><?php echo getLinkToUserProfile($v->drop_id);?></td>
 						<td>
-							<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(
-								'<?php if((isset($v->item))&&($user['rankname']=='admin')){
-									echo $v->item;
-								}else{
-									echo "NO_INSTANCE_OR_NOT_ADMIN";
-								}							
-								?>',
-								'<?php echo $v->id;
-								?>',
-								'<?php echo $user['rankname'];?>'
-							)
-							">
-								<option value="norecipient" <?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "selected = selected";?>>Получатель не найден</option>
-								<option value="processing" <?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "selected = selected";?>>Обработка</option>
-								<option value="ondelivery" <?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "selected = selected";?>>На доставке</option>
-								<option value="delivered" <?php if((isset($v->status_text))&&($v->status_text == "delivered")) echo "selected = selected";?>>Доставлено</option>
-								<option value="resent" <?php if((isset($v->status_text))&&($v->status_text == "resent")) echo "selected = selected";?>>Переотправлен</option>
-								<option value="refund" <?php if((isset($v->status_text))&&($v->status_text == "refund")) echo "selected = selected";?>>Возврат</option>
-								<option value="filial" <?php if((isset($v->status_text))&&($v->status_text == "filial")) echo "selected = selected";?>>Филиал</option>
-								<option value="shoprefund" <?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "selected = selected";?>>Возврат магазином</option>
-							</select>
+							<?php if($user['rankname']=='admin'): ?>
+								<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(
+									'<?php if((isset($v->item))&&($user['rankname']=='admin')){
+										echo $v->item;
+									}else{
+										echo "NO_INSTANCE_OR_NOT_ADMIN";
+									}							
+									?>',
+									'<?php echo $v->id;
+									?>',
+									'<?php echo $user['rankname'];?>'
+								)
+								">
+									<option value="norecipient" <?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "selected = selected";?>>Получатель не найден</option>
+									<option value="processing" <?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "selected = selected";?>>Обработка</option>
+									<option value="ondelivery" <?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "selected = selected";?>>На доставке</option>
+									<option value="delivered" <?php if((isset($v->status_text))&&($v->status_text == "delivered")) echo "selected = selected";?>>Доставлено</option>
+									<option value="resent" <?php if((isset($v->status_text))&&($v->status_text == "resent")) echo "selected = selected";?>>Переотправлен</option>
+									<option value="refund" <?php if((isset($v->status_text))&&($v->status_text == "refund")) echo "selected = selected";?>>Возврат</option>
+									<option value="filial" <?php if((isset($v->status_text))&&($v->status_text == "filial")) echo "selected = selected";?>>Филиал</option>
+									<option value="shoprefund" <?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "selected = selected";?>>Возврат магазином</option>
+								</select>
+							<?php else: ?>
+								<?php echo $v->status_text ?>
+							<?php endif; ?>
 						</td>
 						<td><?php if(isset($pkg_status->time)){ 
 									echo $pkg_status->time;
