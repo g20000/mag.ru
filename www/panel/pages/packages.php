@@ -28,8 +28,6 @@ $_page_scripts = "
 ?>
 <script>
 	$( document ).ready(function() {
-		console.log( "ready!" );
-		//changeStatus();
 	});
 
 	function groupPkgs() {

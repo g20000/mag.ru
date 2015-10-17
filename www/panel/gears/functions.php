@@ -3140,5 +3140,15 @@ function getLinkToUserProfile($id) {
 	return $out;
 }
 
-
+function getPackCategoriesForAsideMenu(){
+	global $user, $cfg, $db;
+	$q = "SELECT * FROM `pkg_cat_aside_menu`";
+	$out = null;
+	$packCatList = $db->query($q);
+	if(isset($packCatList)){
+		return $packCatList;
+	}else{
+		return null;
+	}
+}
 ?>
