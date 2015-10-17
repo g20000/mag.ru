@@ -34,15 +34,16 @@
 	if ($user['rankname']!='support' && $user['rankname']!='admin' && $user['rankname']!='shipper') {
 		exit('Запрещено!');
 	}
-
+	
 	// фильтруем входящие данные
-	$itemName = trim(filter_input(INPUT_POST, 'itemName', FILTER_UNSAFE_RAW));
-	if($itemName == ""){
-		exit(json_encode(array('type'=>'error','text'=>'Заполните поля!')));
+	$idItem = filter_input(INPUT_POST, 'idItem', FILTER_VALIDATE_INT);
+	//var_dump($idItem);
+	if(($idItem == false) || ($idItem == null)){
+		exit(json_encode(array('type'=>'error','text'=>'Ошибка удаления записи!')));
 	}
-
-	$q = "INSERT INTO `pkg_cat_aside_menu` (name, img_source) VALUES('".$itemName."', 'common')";
+	
+	$q = 'DELETE FROM `pkg_cat_aside_menu` WHERE pkg_cat_ddlist_id='.$idItem;
 	$db->query($q);
 
-	exit(json_encode(array('type'=>'ok','text'=>'Сохранено!')));
+	exit(json_encode(array('type'=>'ok','text'=>'Удаление произведено!')));
 ?>

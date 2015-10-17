@@ -1,10 +1,9 @@
-﻿<!--
+<!--
 	TODO: Сделать уведомление пользователю об успешном добавлении категории
 -->
 
 <script>
 	function addCategory() {
-		console.log($('#newMenuItem').val());
 		var menuItem = $('#newMenuItem').val();
 		$.ajax({
 					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.addPckCatAsideMenu.php',
@@ -24,24 +23,20 @@
 						console.log(v1,v2,v3);
 					}
 				});
-		/*var checkedCount = 0;
-		var preGrouping = [];
-		$('.group-chkbox').each(function(){
-			if ($(this).is(':checked')) { checkedCount++; preGrouping.push($(this).data('pkg-id')); }
-		});
-		if (checkedCount>=2) {
-			if (confirm('Точно удалить группу?')) {
-				console.log(preGrouping);
-				$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.groupPkgs.php',
+	}
+	
+	function deleteCategory(id){
+		console.log(id);
+		$.ajax({
+					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.deletePkgCatAsideMenu.php',
 					type: 'POST',
 					dataType: 'JSON',
-					data: {ids:preGrouping},
+					data: {idItem:id},
 					success: function(data) {
 						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
-						} else {
+						} else{
 							document.location.reload();
 						}
 					},
@@ -49,11 +44,7 @@
 						alert('Ошибка!\nПопробуйте позже.');
 						console.log(v1,v2,v3);
 					}
-				}); 
-			}
-		} else {
-			alert('Как минимум две должны быть выбраны!');
-		}*/
+				});
 	}
 </script>
 
@@ -84,8 +75,7 @@
 	$menuItemList = getPackCategoriesForAsideMenu();
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
-			echo '<p>'.$u->name.'</p><button type="button" class="btn btn-danger btn-xs"></button>';
-			//echo '<button type="button" class="btn btn-danger btn-xs"></button>';
+			echo '<p><span contenteditable="true">'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory('.$u->pkg_cat_ddlist_id.')">Удалить</button></p>';
 		}
 	}
 ?>
