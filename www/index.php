@@ -100,6 +100,7 @@ $route->addPath(array('name'=>'trackSearch','file'=>'trackSearch','params'=>fals
 
 $route->addPath(array('name'=>'buildPackagesMenu','file'=>'buildPackagesMenu','params'=>false));
 $route->addPath(array('name'=>'asideDropdownMenuPackage','file'=>'asideDropdownMenuPackage','params'=>false));
+$route->addPath(array('name'=>'subCatPackageEdit','file'=>'subCatPackageEdit','params'=>false));
 
 // берем путь
 $routes = $route->getRoute();

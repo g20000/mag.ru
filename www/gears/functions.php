@@ -3151,4 +3151,15 @@ function getPackCategoriesForAsideMenu(){
 		return null;
 	}
 }
+
+function getSubPkgCategForDDList($catId){
+	global $user, $cfg, $db;
+	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$catId;
+	$subCategories = $db->query($q);
+	if(isset($subCategories)){
+		return $subCategories;
+	}else{
+		return null;
+	}
+}
 ?>
