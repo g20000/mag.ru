@@ -3154,7 +3154,7 @@ function getPackCategoriesForAsideMenu(){
 
 function getSubPkgCategForDDList($catId){
 	global $user, $cfg, $db;
-	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$catId;
+	$q = 'SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id`='.$catId.'';
 	$subCategories = $db->query($q);
 	if(isset($subCategories)){
 		return $subCategories;
@@ -3168,8 +3168,8 @@ function generateSubCategoriesList($id){
 	$list = "";
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
-			$list .= '<p><span contenteditable="true">'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editCategory('.$u->pkg_cat_ddlist_id.', '.$u->name.')">Сохранить</button></p>';
+			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs" onclick="editSubCategory('.$u->id.')">Сохранить</button></p>';
 		}
 	}
 	return $list;

@@ -84,26 +84,30 @@
 				});
 	}
 	
-	function editCategory(idCat, nameCat){
+	function editSubCategory(idCat){
 		var id = idCat;
-		var name = nameCat;
-		console.log(idCat);
-		console.log(nameCat);
+		var nameSelect = "span#" + idCat;
+		var name = $(nameSelect).text();
+		var menuId = $('#menuItem').val();
+		console.log(id);
+		console.log(nameSelect);
+		console.log(name);
+		console.log(menuId);
 		$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updatePkgCatAsideMenu.php',
+					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updateSubCategory.php',
 					type: 'POST',
 					dataType: 'JSON',
 					data: {
-							idItem: idCat,
-							nameItem: nameCat
-							
+							idItem: id,
+							parentMenuId:menuId,
+							nameItem: name							
 					},
 					success: function(data) {
 						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
-							document.location.reload();
+							$('#subCategories').html(data.text);
 						}
 					},
 					error: function(v1,v2,v3) {

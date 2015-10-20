@@ -46,18 +46,17 @@
 				});
 	}
 	
-	function editCategory(idCat, nameCat){
+	function editCategory(idCat){
 		var id = idCat;
-		var name = nameCat;
-		console.log(idCat);
-		console.log(nameCat);
+		var nameSelect = "span#" + idCat;
+		var name = $(nameSelect).text();
 		$.ajax({
 					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updatePkgCatAsideMenu.php',
 					type: 'POST',
 					dataType: 'JSON',
 					data: {
 							idItem: idCat,
-							nameItem: nameCat
+							nameItem: name
 							
 					},
 					success: function(data) {
@@ -104,8 +103,8 @@
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
 			?>
-			<p><span contenteditable="true"><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>,<?php echo "'".$u->name."'" ?>)">Сохранить</button></p>
+			<p><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button></p>
 			<?php
 		}
 	}
