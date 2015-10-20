@@ -37,19 +37,12 @@
 	
 	// фильтруем входящие данные
 	$idItem = filter_input(INPUT_POST, 'itemId', FILTER_VALIDATE_INT);
-	
-	$menuItemList = getSubPkgCategForDDList($idItem);
-	$list = "";
-	if(isset($menuItemList)){
-		foreach($menuItemList as $u){
-			$list .= '<p><span contenteditable="true">'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory('.$u->pkg_cat_ddlist_id.')">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editCategory('.$u->pkg_cat_ddlist_id.', '.$u->name.')">Сохранить</button></p>';
-		}
-	}
+		
+	$outputList = generateSubCategoriesList($idItem);
 	
 	if(($idItem == NULL) || ($idItem == false)){
 		exit(json_encode(array('type'=>'error','text'=>$idItem)));
 	}else{
-		exit(json_encode(array('type'=>'ok','text'=>$list)));
+		exit(json_encode(array('type'=>'ok','text'=>$outputList)));
 	}
 ?>

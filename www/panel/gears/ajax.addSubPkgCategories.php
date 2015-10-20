@@ -34,15 +34,22 @@
 	if ($user['rankname']!='support' && $user['rankname']!='admin' && $user['rankname']!='shipper') {
 		exit('Запрещено!');
 	}
-	
+
 	// фильтруем входящие данные
-	$idItem = filter_input(INPUT_POST, 'itemId', FILTER_VALIDATE_INT);
-		
-	$outputList = generateSubCategoriesList($idItem);
-	
-	if(($idItem == NULL) || ($idItem == false)){
-		exit(json_encode(array('type'=>'error','text'=>$idItem)));
-	}else{
-		exit(json_encode(array('type'=>'ok','text'=>$outputList)));
+	$itemName = trim(filter_input(INPUT_POST, 'itemName', FILTER_UNSAFE_RAW));
+	$parentId = trim(filter_input(INPUT_POST, 'parentMenuId', FILTER_VALIDATE_INT));
+	if($itemName == ""){
+		exit(json_encode(array('type'=>'error','text'=>'Заполните поля!')));
 	}
+	
+	if(($parentId == NULL) || ($parentId == false)){
+		exit(json_encode(array('type'=>'error','text'=>$parentId)));
+	}
+
+	$q = "INSERT INTO `pkg_cat_ddlist` (name, pkg_cat_ddlist_id) VALUES('".$itemName."', '".$parentId."')";
+	$dbRequest = $db->query($q);
+	
+	$outputList = generateSubCategoriesList($parentId);
+	
+	exit(json_encode(array('type'=>'ok','text'=>$outputList)));
 ?>

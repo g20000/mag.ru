@@ -3162,4 +3162,16 @@ function getSubPkgCategForDDList($catId){
 		return null;
 	}
 }
+
+function generateSubCategoriesList($id){
+	$menuItemList = getSubPkgCategForDDList($id);
+	$list = "";
+	if(isset($menuItemList)){
+		foreach($menuItemList as $u){
+			$list .= '<p><span contenteditable="true">'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs" onclick="editCategory('.$u->pkg_cat_ddlist_id.', '.$u->name.')">Сохранить</button></p>';
+		}
+	}
+	return $list;
+}
 ?>

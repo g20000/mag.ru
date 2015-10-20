@@ -36,13 +36,17 @@
 	}
 	
 	// фильтруем входящие данные
-	$idItem = filter_input(INPUT_POST, 'itemId', FILTER_VALIDATE_INT);
-		
-	$outputList = generateSubCategoriesList($idItem);
-	
-	if(($idItem == NULL) || ($idItem == false)){
-		exit(json_encode(array('type'=>'error','text'=>$idItem)));
-	}else{
-		exit(json_encode(array('type'=>'ok','text'=>$outputList)));
+	$idItem = filter_input(INPUT_POST, 'idItem', FILTER_VALIDATE_INT);
+	$parentId = filter_input(INPUT_POST, 'parentMenuId', FILTER_VALIDATE_INT);
+	//var_dump($idItem);
+	if(($idItem == false) || ($idItem == null)){
+		exit(json_encode(array('type'=>'error','text'=>'Ошибка удаления записи!')));
 	}
+	
+	$q = 'DELETE FROM `pkg_cat_ddlist` WHERE id='.$idItem;
+	$db->query($q);
+	
+	$outputList = generateSubCategoriesList($parentId);
+
+	exit(json_encode(array('type'=>'ok','text'=>$outputList)));
 ?>
