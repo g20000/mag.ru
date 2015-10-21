@@ -87,29 +87,29 @@
 				});
 	}
 	
-	function deleteSubCategory(id){
-		var menuId = $('#menuItem').val();
-		/*$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.deleteSubCategory.php',
+	function deletePackage(id){
+		var subMenuId = $('#subMenuItem').val();
+		$.ajax({
+					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.deletePackageFromDDList.php',
 					type: 'POST',
 					dataType: 'JSON',
 					data: {
 						idItem:id,
-						parentMenuId:menuId
+						parentMenuId:subMenuId
 					},
 					success: function(data) {
 						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
-							$('#subCategories').html(data.text);
+							$('#packages').html(data.text);
 						}
 					},
 					error: function(v1,v2,v3) {
 						alert('Ошибка!\nПопробуйте позже.');
 						console.log(v1,v2,v3);
 					}
-				});*/
+				});
 	}
 	
 	function editSubCategory(idCat){
