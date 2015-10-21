@@ -3219,7 +3219,7 @@ function showPackagesInDDList($id){
 	$list = "";
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
-			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><span contenteditable="true" id=percentRow'.$u->id.'> '.$u->percent.'</span><span> %</span>
+			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.' </span><span contenteditable="true" id=percentCell'.$u->id.'>'.$u->percent.'</span><span> %</span>
 			<button type="button" class="btn btn-danger btn-xs" onclick="deletePackage('.$u->id.')">Удалить</button>
 			<button type="button" class="btn btn-success btn-xs" onclick="editPackage('.$u->id.')">Сохранить</button></p>';
 		}

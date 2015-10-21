@@ -112,26 +112,31 @@
 				});
 	}
 	
-	function editSubCategory(idCat){
-		var id = idCat;
-		var nameSelect = "span#" + idCat;
-		var name = $(nameSelect).text();
-		var menuId = $('#menuItem').val();
+	function editPackage(idPackage){
+		var id = idPackage;
+		var selectedName = "span#" + idPackage;
+		var selectedPercent = "span#percentCell" + idPackage;
+		var name = $(selectedName).text();
+		var percent = $(selectedPercent).text();
+		var menuId = $('#subMenuItem').val();
+		console.log(percent);
+		console.log(selectedPercent);
 		$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updateSubCategory.php',
+					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updatePackageInDDList.php',
 					type: 'POST',
 					dataType: 'JSON',
 					data: {
 							idItem: id,
 							parentMenuId:menuId,
-							nameItem: name							
+							nameItem: name,
+							percentVal: percent
 					},
 					success: function(data) {
 						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
-							$('#subCategories').html(data.text);
+							$('#packages').html(data.text);
 						}
 					},
 					error: function(v1,v2,v3) {
