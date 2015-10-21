@@ -3196,14 +3196,14 @@ function generateSubcategoriesSelector($id){
 		}
 		$list .= '</select></p> 
 					  <div class="form-group">
-						<label for="newMenuItem">Введите название нового товара</label>
-						<input type="text" class="form-control" id="newMenuItem" placeholder="Название">
+						<label for="newItem">Введите название нового товара</label>
+						<input type="text" class="form-control" id="newItem" placeholder="Название">
 					  </div>
 					  <div class="form-group">
-						<label for="newMenuItem">Введите проценты</label>
+						<label for="newPercent">Введите проценты</label>
 						<input type="text" class="form-control" id="newPercent" placeholder="Проценты">
 					  </div>
-					  <button type="button" class="btn btn-default" onclick="addSubCategory()">Добавить</button>
+					  <button type="button" class="btn btn-default" onclick="addPackage()">Добавить</button>
 				';
 	}else{
 		$list = '<p>Подкатегорий не обнаружено!</p>

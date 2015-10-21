@@ -6,7 +6,6 @@
 
 	$(window).load(function () {
 		showSubCatForMenuItem();
-		//$('#subMenuItem').load(showPackages());
 	});
 	
 	function showPackages(){
@@ -22,7 +21,6 @@
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
-							console.log(data.type, data.text);
 							$('#packages').html(data.text);
 						}
 					},
@@ -59,23 +57,27 @@
 				});		
 	}
 
-	function addSubCategory() {
-		var menuId = $('#menuItem').val();
-		var newMenuItemName = $('#newMenuItem').val();
+	function addPackage() {
+		var newItemName = $('#newItem').val();
+		var percent = $('#newPercent').val();
+		var subMenuId = $('#subMenuItem').val();
+		console.log(newItemName);
+		console.log(percent);
 		$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.addSubPkgCategories.php',
+					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.addPackageForDDList.php',
 					type: 'POST',
 					dataType: 'JSON',
 					data: {
-						itemName:newMenuItemName,
-						parentMenuId:menuId	
+						itemName:newItemName,
+						newPercent:percent,
+						parentMenuId:subMenuId	
 					},
 					success: function(data) {
 						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
-							$('#subCategories').html(data.text);
+							$('#packages').html(data.text);
 						}
 					},
 					error: function(v1,v2,v3) {
