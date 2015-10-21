@@ -3154,10 +3154,21 @@ function getPackCategoriesForAsideMenu(){
 
 function getSubPkgCategForDDList($catId){
 	global $user, $cfg, $db;
-	$q = 'SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id`='.$catId.'';
+	$q = 'SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id`='.$catId;
 	$subCategories = $db->query($q);
 	if(isset($subCategories)){
 		return $subCategories;
+	}else{
+		return null;
+	}
+}
+
+function getPackagesForDDList($subCatId){
+	global $user, $cfg, $db;
+	$q = 'SELECT * FROM `pkg_ddlist` WHERE `pkg_cat_ddlist_fk`='.$subCatId;
+	$packages = $db->query($q);
+	if(isset($packages)){
+		return $packages;
 	}else{
 		return null;
 	}
@@ -3170,6 +3181,47 @@ function generateSubCategoriesList($id){
 		foreach($menuItemList as $u){
 			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
 			<button type="button" class="btn btn-success btn-xs" onclick="editSubCategory('.$u->id.')">Сохранить</button></p>';
+		}
+	}
+	return $list;
+}
+
+function generateSubcategoriesSelector($id){
+	$menuItemList = getSubPkgCategForDDList($id);
+	$list = '<p>Выберите подкатегорию товаров</p>
+			<p><select id="subMenuItem" onchange="showPackages()">';
+	if(isset($menuItemList)){
+		foreach($menuItemList as $u){
+			$list .= '<option value='.$u->id.'>'.$u->name.'</option>';
+		}
+		$list .= '</select></p> 
+					  <div class="form-group">
+						<label for="newMenuItem">Введите название нового товара</label>
+						<input type="text" class="form-control" id="newMenuItem" placeholder="Название">
+					  </div>
+					  <div class="form-group">
+						<label for="newMenuItem">Введите проценты</label>
+						<input type="text" class="form-control" id="newPercent" placeholder="Проценты">
+					  </div>
+					  <button type="button" class="btn btn-default" onclick="addSubCategory()">Добавить</button>
+				';
+	}else{
+		$list = '<p>Подкатегорий не обнаружено!</p>
+				 <p>Нельзя добавить товар!</p>
+				 <p>Нужна хотя бы одна подкатегория!</p>
+				 <p>Добавьте её!</p>';
+	}
+	return $list;
+}
+
+function showPackagesInDDList($id){
+	$menuItemList = getPackagesForDDList($id);
+	$list = "";
+	if(isset($menuItemList)){
+		foreach($menuItemList as $u){
+			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><span contenteditable="true" id=percentRow'.$u->id.'> '.$u->percent.'</span><span> %</span>
+			<button type="button" class="btn btn-danger btn-xs" onclick="deletePackage('.$u->id.')">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs" onclick="editPackage('.$u->id.')">Сохранить</button></p>';
 		}
 	}
 	return $list;

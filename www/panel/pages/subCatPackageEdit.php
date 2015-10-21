@@ -21,7 +21,6 @@
 							notify(data.type, data.type, data.text);
 						} else{
 							$('#subCategories').html(data.text);
-							//document.location.reload();
 						}
 					},
 					error: function(v1,v2,v3) {
@@ -48,7 +47,6 @@
 							notify(data.type, data.type, data.text);
 						} else{
 							$('#subCategories').html(data.text);
-							//document.location.reload();
 						}
 					},
 					error: function(v1,v2,v3) {
@@ -74,7 +72,6 @@
 							notify(data.type, data.type, data.text);
 						} else{
 							$('#subCategories').html(data.text);
-							//document.location.reload();
 						}
 					},
 					error: function(v1,v2,v3) {
@@ -89,10 +86,6 @@
 		var nameSelect = "span#" + idCat;
 		var name = $(nameSelect).text();
 		var menuId = $('#menuItem').val();
-		console.log(id);
-		console.log(nameSelect);
-		console.log(name);
-		console.log(menuId);
 		$.ajax({
 					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updateSubCategory.php',
 					type: 'POST',
