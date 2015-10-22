@@ -45,8 +45,12 @@
 	
 	if($nameItem == ""){
 		exit(json_encode(array('type'=>'error','text'=>'Заполните поля!')));
-	}elseif(($idItem == false) || ($idItem == null) || ($parentId == false) || ($parentId == null)){
+	}
+	if(($idItem == false) || ($idItem == null) || ($parentId == false) || ($parentId == null)){
 		exit(json_encode(array('type'=>'error','text'=>'Ошибка! Невозможно обновить запись!')));
+	}
+	if(($percent == false) || ($percent == null)){
+		exit(json_encode(array('type'=>'error','text'=>'Ошибка! Поле проценты должно содержать числа!')));
 	}
 
 	$q = 'UPDATE `pkg_ddlist` SET `name`= "'.$nameItem.'", `percent`="'.$percent.'" WHERE id='.$idItem;
