@@ -51,5 +51,5 @@
 	
 	$outputList = generateSubCategoriesList($parentId);
 	
-	exit(json_encode(array('type'=>'ok','text'=>$outputList)));
+	exit(json_encode(array('type'=>'info','text'=>$outputList)));
 ?>

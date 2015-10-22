@@ -43,10 +43,14 @@
 		exit(json_encode(array('type'=>'error','text'=>'Ошибка удаления записи!')));
 	}
 	
+	if(hasChildSubCategoryItem($idItem)){
+		exit(json_encode(array('type'=>'error','text'=>'Имеются товары в подкатегории! Сначала удалите их!')));
+	}
+	
 	$q = 'DELETE FROM `pkg_cat_ddlist` WHERE id='.$idItem;
 	$db->query($q);
 	
 	$outputList = generateSubCategoriesList($parentId);
 
-	exit(json_encode(array('type'=>'ok','text'=>$outputList)));
+	exit(json_encode(array('type'=>'info','text'=>$outputList)));
 ?>

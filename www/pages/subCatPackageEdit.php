@@ -42,6 +42,7 @@
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
+							notify('info', 'Операция выполнена!', 'Сохранено!');
 							$('#subCategories').html(data.text);
 						}
 					},
@@ -52,7 +53,7 @@
 				});
 	}
 	
-	function deleteSubCategory(id){
+	function executeDeletingSubCategory(id){
 		var menuId = $('#menuItem').val();
 		$.ajax({
 					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.deleteSubCategory.php',
@@ -67,6 +68,7 @@
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
+							notify('info', 'Операция выполнена!', 'Сохранено!');
 							$('#subCategories').html(data.text);
 						}
 					},
@@ -77,33 +79,72 @@
 				});
 	}
 	
-	function editSubCategory(idCat){
+	function deleteSubCategory(id){		
+		$.confirm({
+			'title'		: 'Подтверждение удаления',
+			'message'	: 'Вы решили удалить пункт. <br />После удаления его нельзя будет восстановить! Продолжаем?',
+			'buttons'	: {
+				'Да'	: {
+					'class'	: 'blue',
+					'action': function(){
+						executeDeletingSubCategory(id);
+					}
+				},
+				'Нет'	: {
+					'class'	: 'gray',
+					'action': function(){}	// В данном случае ничего не делаем. Данную опцию можно просто опустить.
+				}
+			}
+		});
+	}
+	
+	function executeSavingSubCategory(idCat){
 		var id = idCat;
 		var nameSelect = "span#" + idCat;
 		var name = $(nameSelect).text();
 		var menuId = $('#menuItem').val();
 		$.ajax({
-					url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updateSubCategory.php',
-					type: 'POST',
-					dataType: 'JSON',
-					data: {
-							idItem: id,
-							parentMenuId:menuId,
-							nameItem: name							
-					},
-					success: function(data) {
-						console.log(data);
-						if (data.type=='error') {
-							notify(data.type, data.type, data.text);
-						} else{
-							$('#subCategories').html(data.text);
-						}
-					},
-					error: function(v1,v2,v3) {
-						alert('Ошибка!\nПопробуйте позже.');
-						console.log(v1,v2,v3);
-					}
-				});
+			url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updateSubCategory.php',
+			type: 'POST',
+			dataType: 'JSON',
+			data: {
+					idItem: id,
+					parentMenuId:menuId,
+					nameItem: name							
+			},
+			success: function(data) {
+				console.log(data);
+				if (data.type=='error') {
+					notify(data.type, data.type, data.text);
+				} else{
+					notify('info', 'Операция выполнена!', 'Сохранено!');
+					$('#subCategories').html(data.text);
+				}
+			},
+			error: function(v1,v2,v3) {
+				alert('Ошибка!\nПопробуйте позже.');
+				console.log(v1,v2,v3);
+			}
+		});
+	}
+	
+	function editSubCategory(idCat){
+		$.confirm({
+			'title'		: 'Подтверждение изменений',
+			'message'	: 'Сохранить изменения?',
+			'buttons'	: {
+				'Да'	: {
+							'class'	: 'blue',
+							'action': function(){
+								executeSavingSubCategory(idCat);
+							}
+				},
+				'Нет'	: {
+					'class'	: 'gray',
+					'action': function(){}	// В данном случае ничего не делаем. Данную опцию можно просто опустить.
+				}
+			}
+		});
 	}
 </script>
 
