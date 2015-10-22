@@ -12,10 +12,14 @@
 
 		<script type='text/javascript' src="<?php echo $cfg['options']['siteurl'];?>/design/js/jquery-2.1.4.min.js"></script>
 		
+		<script type='text/javascript' src="<?php echo $cfg['options']['siteurl'];?>/design/js/jquery_confirm.js"></script>
+		
 		<!-- Bootstrap core CSS -->
 		<link href="<?php echo $cfg['options']['siteurl'];?>/design/css/bootstrap.slate.min.css" rel="stylesheet">
 
 		<link href="<?php echo $cfg['options']['siteurl'];?>/design/css/font-awesome.min.css" rel="stylesheet">
+		
+		<link href="<?php echo $cfg['options']['siteurl'];?>/design/css/jquery_confirm.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
 		<link href="<?php echo $cfg['options']['siteurl'];?>/design/css/dashboard.css" rel="stylesheet">

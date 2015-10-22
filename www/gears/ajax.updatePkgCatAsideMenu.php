@@ -41,7 +41,7 @@
 	if($itemName == ""){
 		exit(json_encode(array('type'=>'error','text'=>'Заполните поля!')));
 	}elseif(($itemId == false) || ($itemId == null)){
-		exit(json_encode(array('type'=>'error','text'=>'Ошибка! Невозможно удалить запись!')));
+		exit(json_encode(array('type'=>'error','text'=>'Ошибка! Невозможно обновить запись!')));
 	}
 
 	$q = 'UPDATE `pkg_cat_aside_menu` SET `name`= "'.$itemName.'" WHERE pkg_cat_ddlist_id='.$itemId;

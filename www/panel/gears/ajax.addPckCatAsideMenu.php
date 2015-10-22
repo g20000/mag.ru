@@ -44,5 +44,5 @@
 	$q = "INSERT INTO `pkg_cat_aside_menu` (name, img_source) VALUES('".$itemName."', 'common')";
 	$db->query($q);
 
-	exit(json_encode(array('type'=>'ok','text'=>'Сохранено!')));
+	exit(json_encode(array('type'=>'info', 'status'=>'Операция выполнена!', 'text'=>'Сохранено!')));
 ?>

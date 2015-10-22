@@ -3226,4 +3226,15 @@ function showPackagesInDDList($id){
 	}
 	return $list;
 }
+
+function hasChildAsideMenuItem($parentId){
+	global $user, $cfg, $db;
+	$q = 'SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id`='.$parentId;
+	$result = $db->query($q);
+	if(isset($result)){
+		return true;
+	}else{
+		return false;
+	}
+}
 ?>

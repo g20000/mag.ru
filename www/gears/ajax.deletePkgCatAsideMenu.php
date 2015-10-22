@@ -37,13 +37,16 @@
 	
 	// фильтруем входящие данные
 	$idItem = filter_input(INPUT_POST, 'idItem', FILTER_VALIDATE_INT);
-	//var_dump($idItem);
 	if(($idItem == false) || ($idItem == null)){
 		exit(json_encode(array('type'=>'error','text'=>'Ошибка удаления записи!')));
+	}
+	
+	if(hasChildAsideMenuItem($idItem)){
+		exit(json_encode(array('type'=>'error','text'=>'Имеются подкатегории товаров! Сначала удалите их!')));
 	}
 	
 	$q = 'DELETE FROM `pkg_cat_aside_menu` WHERE pkg_cat_ddlist_id='.$idItem;
 	$db->query($q);
 
-	exit(json_encode(array('type'=>'ok','text'=>'Удаление произведено!')));
+	exit(json_encode(array('type'=>'info','text'=>'Удаление произведено!')));
 ?>
