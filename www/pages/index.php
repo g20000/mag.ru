@@ -77,11 +77,11 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
+						<li class="phone_top_menu">+7 (999) 777-55-55</li>
 						<?php getNavMenu(); ?>
 					</ul>
 					<form class="navbar-form navbar-right" action="<?php echo $cfg['options']['siteurl']; ?>/trackSearch" method="POST">
-						<input type="text" name="s" class="form-control input-sm" placeholder="Поиск...">&nbsp;&nbsp;
-						<label><i class="fa fa-search cursor-pointer"></i><input type="submit" class="btn btn-default hidden"></label>
+						<input type="text" name="s" class="form-control input-sm search_input" placeholder="Поиск...">&nbsp;&nbsp;
 					</form>
 				</div>
 			</div>

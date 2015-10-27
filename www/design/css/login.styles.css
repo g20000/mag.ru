@@ -1,8 +1,6 @@
 body {
-	/* background-image: radial-gradient(circle at 50% 0%, #aaaa99, #5a5a55, #262622); */
-	background-position: initial initial;
-	background-repeat: initial initial;
-	/*background-color: #c5c5c5;*/
+	  background: url('/design/img/background_login.jpg') no-repeat center;
+	  background-size: cover;
 }
 
 
@@ -25,18 +23,9 @@ body {
   font-weight: 300;
   color: #95a5a6;
   z-index: 1000;
-  position: relative;
-
-  /* iCheck plugin Polaris skin
------------------------------------ */
-
-  /* Retina support */
-
-  /* iCheck plugin Square skin, blue
------------------------------------ */
-
-  /* Retina support */
-
+  position: relative;/* iCheck plugin Polaris skin
+----------------------------------- *//* Retina support *//* iCheck plugin Square skin, blue
+----------------------------------- *//* Retina support */
 }
 .eternity-form h1,
 .eternity-form h2,
@@ -53,7 +42,7 @@ body {
   width: 100%;
   max-width: 360px;
   /* border-radius: 55px; */
-  margin: 0px auto;
+  margin: 25% auto 0px auto;
 }
 .eternity-form .login-content,
 .eternity-form .forgot-password-section,
@@ -62,8 +51,8 @@ body {
   -o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  /* -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
+  /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
   border-radius: 10px;
 }
 .eternity-form .section-title {
@@ -74,7 +63,7 @@ body {
   color: #3498db;
 }
 .eternity-form .textbox-wrap {
-  padding: 20px 20px 20px 15px;
+  padding: 14px 20px 9px 15px;
   border-left: 5px solid transparent;
   -moz-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
   -o-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
@@ -82,8 +71,8 @@ body {
   transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
 .eternity-form .textbox-wrap .input-group {
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  /* border: 1px solid #e0e0e0; */
+  /* background-color: #ffffff; */
 }
 .fullsize { width: 100%; }
 .eternity-form .textbox-wrap .input-group textarea.form-control {
@@ -129,6 +118,9 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 .eternity-form .textbox-wrap .input-group .form-control:focus {
   box-shadow: none;
   outline: none;
+  border-radius: 5px;
+  border: 1px solid #C7C7C7;
+  width: 250px;
 }
 .eternity-form .textbox-wrap .input-group [class^="fa-"],
 .eternity-form .textbox-wrap .input-group [class*=" fa-"],
@@ -267,7 +259,7 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 }
 .eternity-form.dark,
 .eternity-form .dark {
-  color: #ffffff;
+  color: #000000;
 }
 .eternity-form.dark .checkbox,
 .eternity-form .dark .checkbox {
@@ -275,11 +267,13 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 }
 .eternity-form.dark .checkbox .checkbox-text,
 .eternity-form .dark .checkbox .checkbox-text {
-  line-height: 28px;
+  line-height: 23px;
+  font-weight: 600;
 }
 .eternity-form.dark .form-control,
 .eternity-form .dark .form-control {
-  color: white;
+  color: #404040;
+  font-weight: 600;
 }
 .eternity-form.dark .form-control:-moz-placeholder,
 .eternity-form .dark .form-control:-moz-placeholder {
@@ -303,7 +297,7 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 .eternity-form .dark .forgot-password-section,
 .eternity-form.dark .reg-content,
 .eternity-form .dark .reg-content {
-  background-color: rgba(56, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .eternity-form.dark .section-title,
 .eternity-form .dark .section-title {
@@ -315,8 +309,9 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 }
 .eternity-form.dark .textbox-wrap .input-group,
 .eternity-form .dark .textbox-wrap .input-group {
-  border: 1px solid #464646;
-  background-color: #383838;
+  /* border: 1px solid #ABABAB; */
+  /* background-color: #383838; */
+  border-radius: 5px;
 }
 .eternity-form.dark .textbox-wrap .input-group [class^="fa-"],
 .eternity-form .dark .textbox-wrap .input-group [class^="fa-"],
@@ -356,8 +351,10 @@ textarea::-webkit-scrollbar-thumb:horizontal {
 .eternity-form .dark .green-btn:hover,
 .eternity-form.dark .blue-btn,
 .eternity-form .dark .blue-btn {
-  background-color: #ffffff;
-  color: #464646;
+  background-color: #FF6933;
+  color: #FFFFFF;
+  padding: 6px 42px;
+  font-size: 17px;
 }
 .eternity-form.dark .blue-btn,
 .eternity-form .dark .blue-btn,
@@ -667,4 +664,17 @@ body {
 /*     opacity: 0; */
   }
 }
-
+.login-label {
+	
+display: block;
+	
+float: left;
+	
+width: 70px;
+	
+font-weight: 100;
+	
+font-size: 17px;
+	
+padding-top: 5px;
+}

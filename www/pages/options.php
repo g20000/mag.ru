@@ -9,4 +9,4 @@
 </script>
 -->
 <h1 class="page-header">Options</h1>
-<a href="<?php echo $cfg['options']['siteurl']; ?>/buildPackagesMenu">Настройка списка товаров</a>
+<a href="<?php echo $cfg['options']['siteurl']; ?>/buildPackagesMenu" class="btn btn-info">Настройка списка товаров</a>

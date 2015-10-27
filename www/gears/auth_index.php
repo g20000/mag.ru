@@ -70,9 +70,6 @@
 	
 	<!-- 	to remember sound status -->
 	<script src="<?php echo $cfg['options']['siteurl'];?>/design/js/jquery.cookie.js"></script>
-	
-	<link rel="stylesheet" href="templates/richard/css/normalize.css"/>
-	<link rel="stylesheet" href="templates/richard/css/style.css"/>
 
 				<script type="text/javascript" charset="utf-8" src="js/guest08dd.js?49344"></script>
 				<script type="text/javascript" charset="utf-8" src="js/jquery/fancybox/jquery.fancybox08dd.js?49344"></script>
@@ -80,33 +77,6 @@
 				<link type="text/css" rel="stylesheet" href="js/jquery/fancybox/jquery.fancybox08dd.css?49344" />
 </head>
 <body>
-   	<div class="wrapper">
-		<div class="header container">
-		<div class="reg-log auth-div">
-						<a class="log auth" href="#"></a>
-			<div class="forms">
-                <div class="reg-form">
-        
-
-                </div>
-                <div class="auth-form">
-                <form action="http://www.richardhampton.com/users/login_do/" method="post" class="auth-form">
-						<label>Логин</label>
-                        <input type="text" class="text" value="" name="login" />
-                        <label>Пароль</label>
-                        <input type="password" class="text" value="" name="password" />
-                        <input type="submit" class="submit" value="Войти" />
-						<input style="display:none;" type="hidden" name="from_page" value="/" />
-				</form>
-
-                </div>
-            </div>
-		</div>
-		<div class="head-logo ">
-			<a class="logo" href="index.php" title="">Salim Project</a>
-		</div>
-	</div>
-  	</div>
 	<div id="authtip" style="display:none;"><h1><?php ln('wrong_login_or_password'); ?></h1></div>
 
 
@@ -116,16 +86,16 @@
 			<div class="login-form-section">
 				<div class="login-content " data-animation="fadeInDown" data-animation-delay="0.3s" data-animation-duration="1.5s">
 					<form onsubmit="return false;">
-						<div class="textbox-wrap focused">
+						<div class="textbox-wrap">
 							<div class="input-group">
-								<span class="input-group-addon "><i class="fa fa-user icon-color"></i></span>
-								<input type="text" required="required" class="form-control" name="login_name" placeholder="username" autofocus />
+								<label for="login_name" class="login-label">Логин</label>
+								<input type="text" required="required" class="form-control" name="login_name" id="login_name"/>
 							</div>
 						</div>
 						<div class="textbox-wrap">
 							<div class="input-group">
-								<span class="input-group-addon "><i class="fa fa-key icon-color"></i></span>
-								<input type="password" required="required" class="form-control" name="login_password" placeholder="пароль" />
+								<label for="login_password" class="login-label">Пароль</label>
+								<input type="password" required="required" class="form-control" name="login_password" id="login_password"/>
 							</div>
 						</div>
 						<div class="login-form-action clearfix">
@@ -135,20 +105,8 @@
 								</div>
 								<label for="login_remember"><span class="checkbox-text pull-left">&nbsp;Запомнить меня</span></label>
 							</div>
-							<button class="btn btn-success pull-right green-btn" onclick="checkAuth();">Войти &nbsp; <i class="fa fa-chevron-right"></i></button>
+							<button class="btn btn-success pull-right green-btn" onclick="checkAuth();">Войти</button>
 							
-						</div>
-						
-						<div id="iphone-scrollcontainer">
-							<div id="iphone-inside">
-
-								<div id="unlock-bottom">
-									<div id="slide-to-unlock">Slide to login</div>
-									<div id="unlock-slider-wrapper">
-										<div id="unlock-slider"></div>
-									</div>
-								</div>
-							</div>
 						</div>
 						
 					</form>
@@ -341,22 +299,6 @@
 				if ($(this).hasClass('dis')) { return };
 				panelLoad($(this).data('panel'));
 			});
-
-
-			// показываем красивую палочку слева при фокусе на поле
-			$(".form-control").focus(function () {
-				$(this).closest(".textbox-wrap").addClass("focused");
-			}).blur(function () {
-				$(this).closest(".textbox-wrap").removeClass("focused");
-			});
-
-
-			// Анимируем вылет форм если не на мобильнике
-			if ($(window).width() >= 968 && !Modernizr.touch && Modernizr.cssanimations) {
-				$('[data-animation]').each(function() {
-					$(this).addClass("animated " + $(this).data("animation"));
-				});
-			}
 
 
 			// выключаем автокомплит на всех полях

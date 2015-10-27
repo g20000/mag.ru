@@ -308,7 +308,7 @@ function getNewPkgs() {
 		$count=0;
 	}
 	if ($count>0) {
-		return '<span class="pull-right badge text-warning">'.$count.'</span>';
+		return '<span class="badge text-warning">'.$count.'</span>';
 	} else {
 		return '';
 	}
@@ -319,46 +319,51 @@ function getNavMenu() {
 	global $user, $cfg;
 	if ($user['rankname']=='drop') {
 		echo '
+		<li><a href="'.$cfg['options']['siteurl'].'/">Новости</a></li>
 		<li class="'.isOnPage('dropinbox').'"><a href="'.$cfg['options']['siteurl'].'/dropinbox">Входящие '.getDropNewPackagesCount($user['id']).'</a></li>		
 		<li class="'.isOnPage('dropoutbox').'"><a href="'.$cfg['options']['siteurl'].'/dropoutbox">Исходящие</a></li>
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';
 	} elseif($user['rankname']=='admin') {
 		echo '
-		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары &nbsp;&nbsp;'.getNewPkgs().'</a></li>
+		<li><a href="'.$cfg['options']['siteurl'].'/">Новости</a></li>
+		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары'.getNewPkgs().'</a></li>
 		<li class="'.isOnPage('lablers').'"><a href="'.$cfg['options']['siteurl'].'/lablers">Сортировщики</a></li>
 		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Курьеры</a></li>
 		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers">Отправители</a></li>
 		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers">Покупатели</a></li>
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';
 	} elseif($user['rankname']=='shipper') {
 		echo '
+		<li><a href="'.$cfg['options']['siteurl'].'/">Новости</a></li>
 		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары</a></li>
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';
 	} elseif($user['rankname']=='buyer') {
 		echo '
 		<li class="'.isOnPage('buyerinbox').'"><a href="'.$cfg['options']['siteurl'].'/buyerinbox">Входящие</a></li>
 		<li class="'.isOnPage('buyercompleated').'"><a href="'.$cfg['options']['siteurl'].'/buyercompleated">Завершенные</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';		
 	} elseif($user['rankname']=='labler') {
 		echo '
+		<li><a href="'.$cfg['options']['siteurl'].'/">Новости</a></li>
 		<li class="'.isOnPage('lablerinbox').'"><a href="'.$cfg['options']['siteurl'].'/lablerinbox">Входящие</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';		
 	} elseif($user['rankname']=='support') {
 		echo '
-		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары &nbsp;&nbsp;'.getNewPkgs().'</a></li>
+		<li><a href="'.$cfg['options']['siteurl'].'/">Новости</a></li>
+		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages">Товары'.getNewPkgs().'</a></li>
 		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops">Курьеры</a></li>
 		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers">Отправители</a></li>
 		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers">Покупатели</a></li>
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат &nbsp;&nbsp;<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1">Выход <small>('.$user['name'].')</small></a></li>
+		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat">Чат<span class="badge text-warning">'.getNewChatMsg().'</span></a></li>
+		<li class="logout_li"><a href="'.$cfg['options']['siteurl'].'/?exit=1"><span class="menu_logout">Выход</span> <small>('.$user['name'].')</small></a></li>
 		';		
 	} else {
 		exit('oops!');
@@ -2074,7 +2079,7 @@ function sideMenu_admin() {
 
 	'<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon1">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/statsAdmin">Статистика</a></div></div>
@@ -2083,7 +2088,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon2">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
@@ -2092,7 +2097,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon3">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Курьеры</a></div></div>
@@ -2101,7 +2106,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon4">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/shops"> Магазины</a></div></div>
@@ -2110,7 +2115,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon5">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/users"> Аккаунты</a></div></div>
@@ -2119,7 +2124,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon6">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/options"> Опции</a></div></div>
@@ -2128,7 +2133,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon7">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/blackshoplist"> Черный лист магазинов</a></div></div>
@@ -2137,7 +2142,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon8">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Лист приемки</a></div></div>
@@ -2146,7 +2151,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon black">
+			<div class="menu_icon icon9">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
@@ -2155,7 +2160,7 @@ function sideMenu_admin() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon black">
+			<div class="menu_icon icon10">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>

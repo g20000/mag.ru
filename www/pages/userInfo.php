@@ -175,14 +175,14 @@ $userProfile = getUserInfoById($route->param);
 									
 										<input style="position:absolute;left:-1000px;" type="color" name="color" id="profile-color" value="<?php echo !empty($userProfile->color) ? $userProfile->color : '#ffffff';?>" onchange="$('#selected-color').css({'background-color':$(this).val()});">
 										
-										<label for="profile-color" class="auto-tip" data-title="Selected color" data-position="bottom" data-placement="bottom"><div style="display:inline-block;background-color: <?php echo !empty($userProfile->color) ? $userProfile->color : '#ffffff';?>;width:20px;height:18px;border:1px solid black;" id="selected-color"></div></label>
-										<div style="display:inline-block;background-color: red;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: blue;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: green;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: purple;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: yellow;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: magenta;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
-										<div style="display:inline-block;background-color: white;width:20px;height:18px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<label for="profile-color" class="auto-tip" data-title="Selected color" data-position="bottom" data-placement="bottom"><div style="display:inline-block;background-color: <?php echo !empty($userProfile->color) ? $userProfile->color : '#ffffff';?>;width:20px;height:20px;border:1px solid black;border-radius:20px;" id="selected-color"></div></label>
+										<div style="display:inline-block;background-color: red;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: blue;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: green;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: purple;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: #FFB900;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: magenta;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
+										<div style="display:inline-block;background-color: #D0D0D0;width:20px;height:20px;border-radius:20px;" onclick="selectColor($(this).css('background-color'));"></div>
 										<span class="fa fa-lg fa-times" style="vertical-align:top;padding-top:2px;" onclick="selectColor('');"></span>
 										<br><span class="btn btn-success btn-sm pull-right" onclick="saveColor($('#profile-color').val());">Сохранить</span>
 									
