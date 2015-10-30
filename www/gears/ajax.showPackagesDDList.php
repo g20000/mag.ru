@@ -43,6 +43,7 @@
 	if(($idItem == NULL) || ($idItem == false)){
 		exit(json_encode(array('type'=>'error','text'=>$idItem)));
 	}else{
-		exit(json_encode(array('type'=>'ok','text'=>$outputList)));
+		$result = mb_convert_encoding($outputList,'UTF-8','UTF-8');
+		exit(json_encode(array('type'=>'ok','text'=>$result)));
 	}
 ?>

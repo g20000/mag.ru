@@ -520,3 +520,16 @@ body a {
 .color-select-edit {
 	margin:20px;
 }
+.option-button-group {
+width: 450px;
+}
+.option-delete {
+float: right;
+}
+.option-save {
+float: right;
+margin-right: 5px;
+}
+.options-input {
+	width: 300px;
+}

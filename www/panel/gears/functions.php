@@ -3184,8 +3184,8 @@ function generateSubCategoriesList($id){
 	$list = "";
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
-			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editSubCategory('.$u->id.')">Сохранить</button></p>';
+			$list .= '<p class="option-button-group"><span contenteditable="true" id='.$u->id.'>'.$u->name.'</span><button type="button" class="btn btn-danger btn-xs option-delete" onclick="deleteSubCategory('.$u->id.')">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs option-save" onclick="editSubCategory('.$u->id.')">Сохранить</button></p>';
 		}
 	}
 	return $list;
@@ -3202,11 +3202,11 @@ function generateSubcategoriesSelector($id){
 		$list .= '</select></p> 
 					  <div class="form-group">
 						<label for="newItem">Введите название нового товара</label>
-						<input type="text" class="form-control" id="newItem" placeholder="Название">
+						<input type="text" class="form-control options-input" id="newItem" placeholder="Название">
 					  </div>
 					  <div class="form-group">
 						<label for="newPercent">Введите проценты</label>
-						<input type="text" class="form-control" id="newPercent" placeholder="Проценты">
+						<input type="text" class="form-control options-input" id="newPercent" placeholder="Проценты">
 					  </div>
 					  <button type="button" class="btn btn-default" onclick="addPackage()">Добавить</button>
 				';
@@ -3224,9 +3224,9 @@ function showPackagesInDDList($id){
 	$list = "";
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
-			$list .= '<p><span contenteditable="true" id='.$u->id.'>'.$u->name.' </span><span contenteditable="true" id=percentCell'.$u->id.'>'.$u->percent.'</span><span> %</span>
-			<button type="button" class="btn btn-danger btn-xs" onclick="deletePackage('.$u->id.')">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editPackage('.$u->id.')">Сохранить</button></p>';
+			$list .= '<p class="option-button-group"><span contenteditable="true" id='.$u->id.'>'.$u->name.' </span><span contenteditable="true" id=percentCell'.$u->id.'>'.$u->percent.'</span><span> %</span>
+			<button type="button" class="btn btn-danger btn-xs option-delete" onclick="deletePackage('.$u->id.')">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs option-save" onclick="editPackage('.$u->id.')">Сохранить</button></p>';
 		}
 	}
 	return $list;

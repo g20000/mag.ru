@@ -172,7 +172,12 @@ $_page_scripts = "
 						<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
 								
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
-						<td><?php echo getLinkToUserProfile($v->drop_id);?></td>
+						<td><?php 
+								$res = getLinkToUserProfile($v->drop_id);
+								$input_endoding = mb_detect_encoding($res);
+								echo iconv($input_endoding, "UTF-8", $res);
+							?>
+						</td>
 						<td>
 							<?php if($user['rankname']=='admin'): ?>
 								<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(

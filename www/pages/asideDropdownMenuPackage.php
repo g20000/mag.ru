@@ -1,3 +1,19 @@
+<?php
+if(isset($_POST['replaceIcon'], $_POST['catId']))
+{
+	$id = intval($_POST['catId']);
+	
+	$filePath = __DIR__.'/../../design/img/ico/'.$id.'.png';
+	if(isset($_FILES['newIcon'], $_FILES['newIcon']['tmp_name']) AND is_file($_FILES['newIcon']['tmp_name']))
+	{
+		if (move_uploaded_file($_FILES['newIcon']['tmp_name'], $filePath))
+		{
+			echo "Иконка успешно изменена\n";
+		}
+	}
+}
+?>
+
 <script>
 	function addCategory() {
 		var menuItem = $('#newMenuItem').val();
@@ -163,7 +179,9 @@
 		foreach($menuItemList as $u){
 			?>
 			<p><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button></p>
+			<button type="button" class="btn btn-success btn-xs" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button>
+			<form action="" method="POST" enctype="multipart/form-data"><input type=file name="newIcon"><input type="hidden" name="catId" value="<?php echo $u->pkg_cat_ddlist_id ?>"><input type="submit" name="replaceIcon" value="Изменить иконку"></form>
+			</p>
 			<?php
 		}
 	}

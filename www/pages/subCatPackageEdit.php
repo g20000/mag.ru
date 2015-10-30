@@ -166,7 +166,7 @@
   </select>
   <div class="form-group">
     <label for="newMenuItem">Введите название новой подкатегории товаров</label>
-    <input type="text" class="form-control" id="newMenuItem" placeholder="Пункт меню">
+    <input type="text" class="form-control options-input" id="newMenuItem" placeholder="Пункт меню">
   </div>
   <button type="button" class="btn btn-default" onclick="addSubCategory()">Добавить</button>
 </form>
