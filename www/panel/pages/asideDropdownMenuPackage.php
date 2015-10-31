@@ -8,6 +8,13 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 	{
 		if (move_uploaded_file($_FILES['newIcon']['tmp_name'], $filePath))
 		{
+			$iconSourcePath = $_FILES['newIcon']['name'];
+			$path_parts = pathinfo($iconSourcePath);
+			echo $path_parts['basename'];
+			
+			//$q = "UPDATE `pkg_cat_aside_menu` SET `img_source`= '".$path_parts['filename']."' WHERE pkg_cat_ddlist_id=".$id;
+			//$q = "INSERT INTO `pkg_cat_aside_menu` (img_source) VALUES('".$path_parts['basename']."') WHERE";
+			//$db->query($q);
 			echo "Иконка успешно изменена\n";
 		}
 	}
@@ -155,16 +162,7 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 <form>
   <div class="form-group">
     <label for="newMenuItem">Введите название нового пункта меню</label>
-    <input type="text" class="form-control" id="newMenuItem" placeholder="Пункт меню">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">Файл изображения</label>
-    <input type="file" id="exampleInputFile">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" value="true"> Иконка меню по умолчанию
-    </label>
+    <input type="text" class="form-control options-input" id="newMenuItem" placeholder="Пункт меню">
   </div>
   <button type="button" class="btn btn-default" onclick="addCategory()">Добавить</button>
 </form>
@@ -178,9 +176,13 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
 			?>
-			<p><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
-			<button type="button" class="btn btn-success btn-xs" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button>
-			<form action="" method="POST" enctype="multipart/form-data"><input type=file name="newIcon"><input type="hidden" name="catId" value="<?php echo $u->pkg_cat_ddlist_id ?>"><input type="submit" name="replaceIcon" value="Изменить иконку"></form>
+			<p class="option-button-group"><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs option-delete" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
+			<button type="button" class="btn btn-success btn-xs option-save" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button></p>
+			<form action="" method="POST" enctype="multipart/form-data">
+				<input type=file name="newIcon">
+				<input type="hidden" name="catId" value="<?php echo $u->pkg_cat_ddlist_id ?>">
+				<input type="submit" name="replaceIcon" value="Изменить иконку">
+			</form>
 			</p>
 			<?php
 		}

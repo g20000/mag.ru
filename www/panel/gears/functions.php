@@ -516,7 +516,7 @@ function sideMenu_buyer() {
 
 function sideMenu_shipper() {
 	global $cfg;
-	echo /*'
+	echo buildDropdownList(). /*'
 	<ul class="nav nav-sidebar">
 		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
 	</ul>
@@ -539,7 +539,7 @@ function sideMenu_shipper() {
 		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
 	</ul>
 	';*/
-	'
+	/*'
 	<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon one">
@@ -931,9 +931,9 @@ function sideMenu_shipper() {
 					</ul>
 				</div>
 		</div>
-	</div>
+	</div>*/
 	
-	<div class="show_menu">
+	'<div class="show_menu">
 		<div class="menu_element">
 			<div class="menu_icon common">
 			
