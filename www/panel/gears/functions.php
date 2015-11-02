@@ -2628,12 +2628,10 @@ function getAllChats() {
 //получить список новых пользователей, не состоящих в чате
 function getUsersNotInChat(){
 	global $user, $db;
-	$q = "SELECT u.* 
+	$q = "SELECT DISTINCT u.* 
 			FROM `users` u
-			LEFT JOIN chat c on u.id = c.from_id or u.id = c.to_id
-			WHERE c.id is null";
+			LEFT JOIN `chat` c on u.id = c.from_id or u.id = c.to_id";
 	$users = $db->query($q);
-	//var_dump($pkg);
 	return $users;
 }
 

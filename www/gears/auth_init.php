@@ -18,7 +18,7 @@ $user_ip = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
 // если есть пост то проверяем и отдаем в json, значит это ajax из логина
 if ($post_act && $post_act =='login' && $post_login && $post_password ) {
 	// смотрим есть ли метка о запоминании пользователя
-	$remember = $post_remember ? time()+60*60*24*30 : NULL;
+	$remember = $post_remember ? time()+60*60*24*30 : NULL;	
 	if (empty($post_login) || empty($post_password)) {
 		exit(json_encode(Array('error'=>'1','title'=>'Deny','text'=>'Неправильный логин или пароль')));
 	}

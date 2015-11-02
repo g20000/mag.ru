@@ -48,6 +48,7 @@ $chats = getAllChats();
 				</div>
 			</a>
 		<?php endif; ?>
+				
 		<?php if(($user['rankname']=='shipper') && (getRankNameByUserId($v->id) == "admin")): ?>
 			<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
 				<div class="row" style="padding:1em;">

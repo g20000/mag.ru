@@ -41,7 +41,8 @@
 		<link href="<?php echo $cfg['options']['siteurl'];?>/design/css/jquery-ui.css" rel="stylesheet">
 		
 		<script>
-			<?php 
+			<?php
+				//echo $_COOKIE[$cfg["cookiename"]];
 				echo isset($_page_head_scripts) ? $_page_head_scripts : '';
 			?>
 		</script>		
