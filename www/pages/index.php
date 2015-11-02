@@ -42,7 +42,6 @@
 		
 		<script>
 			<?php
-				//echo $_COOKIE[$cfg["cookiename"]];
 				echo isset($_page_head_scripts) ? $_page_head_scripts : '';
 			?>
 		</script>		

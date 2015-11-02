@@ -30,41 +30,47 @@ $chats = getAllChats();
 		}
 	?>
 	<h3>Вы можете создать чат с новым собеседником:</h3>
-	<?php $users = getUsersNotInChat(); ?>
+	
+	<?php 
+	//var_dump($user);
+	//exit();
+	$users = getUsersNotInChat($user['id']); ?>
 	<?php
-		foreach($users as $v){
+		if(isset($users)){
+			foreach($users as $v){
 	?>
-		<?php if($user['rankname']=='admin'): ?>
-			<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
-				<div class="row" style="padding:1em;">
-					<div class="col-md-3 col-xs-12">
-						<?php echo getUserIconById($v->id);
-							echo " "; 
-							echo $v->name;
-							//var_dump($v);
-						?>
-						<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
+			<?php if($user['rankname']=='admin'): ?>
+				<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
+					<div class="row" style="padding:1em;">
+						<div class="col-md-3 col-xs-12">
+							<?php echo getUserIconById($v->id);
+								echo " "; 
+								echo $v->name;
+								//var_dump($v);
+							?>
+							<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
+						</div>
 					</div>
-				</div>
-			</a>
-		<?php endif; ?>
-				
-		<?php if(($user['rankname']=='shipper') && (getRankNameByUserId($v->id) == "admin")): ?>
-			<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
-				<div class="row" style="padding:1em;">
-					<div class="col-md-3 col-xs-12">
-						<?php echo getUserIconById($v->id);
-							echo " "; 
-							echo $v->name;
-							//var_dump($v);
-						?>
-						<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
+				</a>
+			<?php endif; ?>
+					
+			<?php if(($user['rankname']=='shipper') && (getRankNameByUserId($v->id) == "admin")): ?>
+				<a href="<?php echo $cfg['options']['siteurl'].'/newchat'.'/'.$v->id.'/new'?>">
+					<div class="row" style="padding:1em;">
+						<div class="col-md-3 col-xs-12">
+							<?php echo getUserIconById($v->id);
+								echo " "; 
+								echo $v->name;
+								//var_dump($v);
+							?>
+							<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
+						</div>
 					</div>
-				</div>
-			</a>
-		<?php endif; ?>
-		<hr style="margin: 0;">
+				</a>
+			<?php endif; ?>
+			<hr style="margin: 0;">
 	<?php
+			}
 		}
 	?>
 </div>

@@ -50,8 +50,8 @@ if (empty($chat)) $chat = array();
 
 	<div class="row">
 		<form class="form-group clearfix" onsubmit="return false;">
-			<textarea id="textMsg" class="form-control" style="margin: 0 0 10px 0;"></textarea>
-			<button class="btn btn-sm btn-success pull-right" onclick="sendMsg();">Отправить</button>
+			<textarea id="textMsg" class="form-control options-input" style="margin: 0 0 10px 0;"></textarea>
+			<button class="btn btn-sm btn-success pull-left" onclick="sendMsg();">Отправить</button>
 		</form>
 	</div>
 	

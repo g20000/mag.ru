@@ -22,10 +22,10 @@
 
 <form class="form-group clearfix" method="post">
 		<label for="n_title">Заголовок</label>
-		<input id="n_title" class="form-control" name="title"> <br>
+		<input id="n_title" class="form-control options-input" name="title"> <br>
 		<label for="n_text">Текст</label>
-		<textarea id="n_text" class="form-control" name="text"></textarea><br>
-		<input class="pull-right btn btn-success btn-sm" value="Опубликовать" type="submit"><br>
+		<textarea id="n_text" class="form-control options-input" name="text"></textarea><br>
+		<input class="pull-left btn btn-success btn-sm" value="Опубликовать" type="submit"><br>
 	</form>
 
 <?php
@@ -37,13 +37,15 @@
 		echo '<hr>';
 		foreach($news as $k=>$v) {
 ?>
-			<div class="panel panel-default">
-				<div class="panel-heading"><strong class="panel-title"><?php echo $v->title; ?></strong><?php if($user['rankname']=='admin'){ echo '<form method="post" class="pull-right" id="delete_form_'.$v->id.'"><input type="hidden" name="delete" value="'.$v->id.'"><i onclick="$(\'#delete_form_'.$v->id.'\').submit();" class="cursor-pointer fa fa-times"></i></form>'; } ?></div>
-				<div class="panel-body">
-					<p><?php echo $v->text; ?></p>
+			<div class="col-sm-9 col-sm-offset-3 col-md-3 main" style="margin-left: 0px !important; padding-left: 0px !important">
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong class="panel-title"><?php echo $v->title; ?></strong><?php if($user['rankname']=='admin'){ echo '<form method="post" class="pull-right" id="delete_form_'.$v->id.'"><input type="hidden" name="delete" value="'.$v->id.'"><i onclick="$(\'#delete_form_'.$v->id.'\').submit();" class="cursor-pointer fa fa-times"></i></form>'; } ?></div>
+					<div class="panel-body">
+						<p><?php echo $v->text; ?></p>
+					</div>
+					<div class="panel-footer clearfix"><small class="pull-right"><?php echo $v->time; ?></small></div>
 				</div>
-				<div class="panel-footer clearfix"><small class="pull-right"><?php echo $v->time; ?></small></div>
-			</div>	
+			</div>
 <?php
 		}
 	}

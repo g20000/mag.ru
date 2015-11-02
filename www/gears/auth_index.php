@@ -81,8 +81,6 @@
 
 
 	<section class="eternity-form dark colorBg" data-panel="fourth" id="loginPanel" style="display:none;">
-		<div class=" container">
-
 			<div class="login-form-section">
 				<div class="login-content " data-animation="fadeInDown" data-animation-delay="0.3s" data-animation-duration="1.5s">
 					<form onsubmit="return false;">
@@ -106,17 +104,10 @@
 								<label for="login_remember"><span class="checkbox-text pull-left">&nbsp;Запомнить меня</span></label>
 							</div>
 							<button class="btn btn-success pull-right green-btn" onclick="checkAuth();">Войти</button>
-							
 						</div>
-						
 					</form>
 				</div>
-
 			</div>
-
-
-
-		</div>
 	</section>
 
 

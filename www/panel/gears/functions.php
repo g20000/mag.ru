@@ -516,426 +516,11 @@ function sideMenu_buyer() {
 
 function sideMenu_shipper() {
 	global $cfg;
-	echo buildDropdownList(). /*'
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages"><i class="fa fa-paste text-success"></i> Товары</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('dropslist').'"><a href="'.$cfg['options']['siteurl'].'/dropslist"><i class="fa fa-user-secret  text-info"></i> Сотрудники</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('blackshoplist').'"><a href="'.$cfg['options']['siteurl'].'/blackshoplist"><i class="fa fa-list text-danger"></i> Черный лист магазинов</a></li>
-		<li class="'.isOnPage('receptlist').'"><a href="'.$cfg['options']['siteurl'].'/receptlist"><i class="fa fa-list text-danger"></i> Лист приемки</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
-	/*'
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon one">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Ноутбуки, планшеты, смартфоны</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-						<li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ультрабуки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Acer</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Asus</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки-трансформеры</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Планшеты</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Смартфоны</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">HTC One</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One M8</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One M9</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One E8</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Sony Xperia Z1 Compact</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Sony Xperia Z3 Compact</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S5 16 GB</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S5 mini</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S6</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG GALAXY Note Edge </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung N9005 32gb Galaxy Note 3 </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung G900 Galaxy S5  </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung i9505 Galaxy S4 </a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon two">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Компьютеры, комплектующие, переферия</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Моноблоки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">30%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Комплектующие</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Процессоры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Материнские платы</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Видеокарты</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon three">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Телевизоры, аудио-видео, hi-fi</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника HI-FI</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Ресивеы HI-FI</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Уселители HI-FI</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Виниловые проигрыватели</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Акустические системы HI-FI</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеотехника</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">DVD плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Blu-Ray плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Портативные плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Медиаплееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Домашние кинотеатры</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Аудиотехника</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Музыкальные центры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Магнитолы</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Игровые консоли и аксессуары</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Игровые приставки:</a></li>
-							<li><a href="#">Sony Playstation 4 </a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon four">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Бытовая техника для дома и кухни</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-						<li><a href="#">Мультиварки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Микроволновые печи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Кухонные комбайны</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Чайники</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Термопоты</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Пароварки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Аэрогрили</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Электрогрили</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Блендеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Миксеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Мясорубки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Соковыжималки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Хлебопечи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Тостеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сендвичницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Орешницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Вафельницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Мини-печи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Фритюрница</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Йогуртницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Блинницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сушки для фруктов и овощей</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Посуда</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Вся посуда</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Наборы посуды</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Кастрюли</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сковороды</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Столовые приборы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Ножи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Ножницы</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника для дома</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Пылесосы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Утюги</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Паровые станции</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Парогенераторы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Паровые швабры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Отпариватили</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обогреватели</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Газовые обогреватели</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Электрокамины</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Управление климатом</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Воздухоочистители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Увлажнители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Осушители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Вентиляторы</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon five">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Фото, видео</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фотоаппараты</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Canon </a><span class="procent_items">35%</span></li>
-							<li><br></li>
-							<li><a href="#">Canon 100D Body</a></li>
-							<li><a href="#">Canon 1200D Body</a></li>
-							<li><a href="#">Canon 600D Body</a></li>
-							<li><a href="#">Canon 700D  Body</a></li>
-							<li><a href="#">Canon 750d Body</a></li>
-							<li><a href="#">Canon 760d Body</a></li>
-							<li><a href="#">Canon 60d (60da не покупаем) Body</a></li>
-							<li><a href="#">Canon 70d Body</a></li>
-							<li><a href="#">Canon 7d Body</a></li>
-							<li><a href="#">Canon 6d Body</a></li>
-							<li><a href="#">Canon 5d Mark III Body</a></li>
-							<li><a href="#">Canon 5ds Body</a></li>
-							<li><a href="#">Canon 5DS R Body</a></li>
-							<li><a href="#">Canon 1D MARK IV Body</a></li>
-							<li><a href="#">Canon 1D X Body</a></li>
-						</ul>
-						<ul class="submenu_subitems">
-							<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-							<li><br></li>
-							<li><a href="#">Nikon D3100 Body</a></li>
-							<li><a href="#">Nikon D3200 Body</a></li>
-							<li><a href="#">Nikon D3300 Body</a></li>
-							<li><a href="#">Nikon D5000 Body</a></li>
-							<li><a href="#">Nikon D5100 Body </a></li>
-							<li><a href="#">Nikon D5200 Body </a></li>
-							<li><a href="#">Nikon D5300 Body</a></li>
-							<li><a href="#">Nikon D5500 Body </a></li>
-							<li><a href="#">Nikon D7000 Body </a></li>
-							<li><a href="#">Nikon D7100 Body </a></li>
-							<li><a href="#">Nikon D7200 Body </a></li>
-							<li><a href="#">Nikon D600 Body</a></li>
-							<li><a href="#">Nikon D610 Body</a></li>
-							<li><a href="#">Nikon D300s Body</a></li>
-							<li><a href="#">Nikon D750 Body</a></li>
-							<li><a href="#">Nikon D800 Body</a></li>
-							<li><a href="#">Nikon D810 Body</a></li>
-							<li><a href="#">Nikon D3s Body</a></li>
-							<li><a href="#">Nikon D4 Body</a></li>
-							<li><a href="#">Nikon D3X Body</a></li>
-							<li><a href="#">Nikon DF Body</a></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системные камеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обьективы для фотоаппаратов</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Canon</a><span class="procent_items">35%</span></li>
-							<li><br></li>					
-							<li><a href="#">50mm</a></li>
-							<li><a href="#">85mm</a></li>
-							<li><a href="#">100mm</a></li>
-							<li><a href="#">70-200mm</a></li>
-							<li><a href="#">70-300mm</a></li>
-							<li><a href="#">28-300mm</a></li>
-							<li><a href="#">15-85mm</a></li>
-							<li><a href="#">18-200mm</a></li>
-							<li><a href="#">18-105mm</a></li>
-							<li><a href="#">18-135mm</a></li>
-							<li><a href="#">24-105mm</a></li>
-							<li><a href="#">28-135mm</a></li>
-							<li><a href="#">17-55mm</a></li>
-							<li><a href="#">17-40mm</a></li>
-							<li><a href="#">24-70mm</a></li>
-						</ul>
-						<ul class="submenu_subitems">
-							<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-							<li><br></li>					
-							<li><a href="#">50mm</a></li>
-							<li><a href="#">55-200mm</a></li>
-							<li><a href="#">18-200mm</a></li>
-							<li><a href="#">18-300mm</a></li>
-							<li><a href="#">28-300mm</a></li>
-							<li><a href="#">24-120mm</a></li>
-							<li><a href="#">24-70mm</a></li>
-							<li><a href="#">24-85mm</a></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеокамеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Экшн камеры</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">GoPro 4  </a> <span class="procent_items">30%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системы безопасности</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бинокли</span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon six">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Товары для автомобиля</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Навигаторы</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Магнитолы автомобильные </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры автомобильные </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автомобильные мониторы </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеорегистраторы</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Парктроники</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автосигнализации</span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon seven">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Красота, здоровье, активный отдых</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фен-щётки</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бритвы и эпиляторы</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Бритвы</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Эпиляторы</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Зубные щётки и аксессуары</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Зубные щетки</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Триммеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Массажеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кожаные сумки,чемоданы, рюкзаки (брендовые) </span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>*/
+	echo buildDropdownList().
 	
 	'<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon2">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
@@ -953,7 +538,7 @@ function sideMenu_shipper() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon3">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/dropslist"> Курьеры</a></div></div>
@@ -971,7 +556,7 @@ function sideMenu_shipper() {
 		
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon7">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/blackshoplist"> Черный лист магазинов</a></div></div>
@@ -980,7 +565,7 @@ function sideMenu_shipper() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon common">
+			<div class="menu_icon icon8">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Лист приемки</a></div></div>
@@ -989,7 +574,7 @@ function sideMenu_shipper() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon black">
+			<div class="menu_icon icon9">
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
@@ -998,7 +583,7 @@ function sideMenu_shipper() {
 	
 	<div class="show_menu">
 		<div class="menu_element">
-			<div class="menu_icon black">
+			<div class="menu_icon icon10>
 			
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
@@ -1009,23 +594,7 @@ function sideMenu_shipper() {
 
 function sideMenu_drop() {
 	global $cfg,$user;
-	echo /*'
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('dropinbox').'"><a href="'.$cfg['options']['siteurl'].'/dropinbox"><i class="fa fa-level-down fa-lg text-info"></i> Входящие '.getDropNewPackagesCount($user['id']).'</a></li>
-		<li class="'.isOnPage('dropoutbox').'"><a href="'.$cfg['options']['siteurl'].'/dropoutbox"><i class="fa fa-level-up fa-lg text-info"></i> Исходящие</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
+	echo 
 	'
 	<div class="show_menu">
 		<div class="menu_element">
@@ -1085,31 +654,7 @@ function sideMenu_drop() {
 
 function sideMenu_support() {
 	global $cfg;
-	echo /*'
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages"><i class="fa fa-paste text-success"></i> Товары '.getNewPkgs().'</a></li>
-		<li class="'.isOnPage('dropslist').'"><a href="'.$cfg['options']['siteurl'].'/dropslist"><i class="fa fa-user-secret  text-info"></i> Сотрудники</a></li>			
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops"><i class="fa fa-male fa-lg text-info"></i> Сотрудники</a></li>
-		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers"><i class="fa fa-truck text-info"></i> Отправители</a></li>
-		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers"><i class="fa fa-usd fa-lg text-info"></i> Покупатели</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('shops').'"><a href="'.$cfg['options']['siteurl'].'/shops"><i class="fa fa-shopping-cart fa-lg text-success"></i> Магазины</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
+	echo
 	'	
 	<div class="show_menu">
 		<div class="menu_element">
@@ -1208,9 +753,8 @@ function putPackInDDList($parentLink){
 	$q = "SELECT * FROM `pkg_ddlist` WHERE `pkg_cat_ddlist_fk` = ".$parentLink."";
 	$generatedPackList = "";
 	$pkg = null;
-	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
+	$pkg = $db->query($q);
 	if(isset($pkg)){
-		//var_dump($pkg);
 		foreach($pkg as $u){
 			$generatedPackList .=
 			'
@@ -1228,7 +772,7 @@ function buildPackCatInDDList($parentLink){
 	$q = "SELECT * FROM `pkg_cat_ddlist` WHERE `pkg_cat_ddlist_id` = ".$parentLink."";
 	$generatedPackCatInDDList = "";
 	$pkg = null;
-	$pkg = $db->query($q); // TODO : сделать проверку на пустой возврат
+	$pkg = $db->query($q);
 	if(isset($pkg)){
 		foreach($pkg as $u){
 			$generatedPackCatInDDList .=
@@ -1259,16 +803,6 @@ function buildDropdownList(){
 	$generatedDDList = "";
 	foreach($pkg as $unit){
 		$generatedDDList .=
-		/*'
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/'.$unit->img_source.'" alt=""></div>'.$unit->name.'</a>
-			<ul class="sub-menu">'
-				.
-					buildPackCatInDDList($unit->pkg_cat_ddlist_id)
-				.
-			'</ul>
-		</li>
-		';*/
 		'
 		<div class="show_menu">
 			<div class="menu_element">
@@ -1294,788 +828,6 @@ function buildDropdownList(){
 function sideMenu_admin() {
 	global $cfg;
 	echo buildDropdownList().
-	/*'<ul class="nav nav-sidebar">'
-	.
-	buildDropdownList()*/
-	/*'
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/1.png" alt=""></div>Ноутбуки, планшеты, смартфоны</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ультрабуки</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Acer</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Asus</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки-трансформеры</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Планшеты</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Смартфоны</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">HTC One</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">HTC One M8</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">HTC One M9</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">HTC One E8</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Sony Xperia Z1 Compact</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Sony Xperia Z3 Compact</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">SAMSUNG Galaxy S5 16 GB</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">SAMSUNG Galaxy S5 mini</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">SAMSUNG Galaxy S6</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">SAMSUNG GALAXY Note Edge </a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Samsung N9005 32gb Galaxy Note 3 </a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Samsung G900 Galaxy S5  </a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Samsung i9505 Galaxy S4 </a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/2.png" alt=""></div>Компьютеры, комплектующие, переферия</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Моноблоки</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Apple</a> <span class="procent_items">30%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Комплектующие</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Процессоры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Материнские платы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Видеокарты</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/3.png" alt=""></div>Телевизоры, аудио-видео, hi-fi</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника HI-FI</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Ресивеы HI-FI</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Уселители HI-FI</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Виниловые проигрыватели</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Акустические системы HI-FI</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеотехника</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">DVD плееры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Blu-Ray плееры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Портативные плееры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Медиаплееры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Домашние кинотеатры</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Аудиотехника</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Музыкальные центры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Магнитолы</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Игровые консоли и аксессуары</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Игровые приставки:</a></li>
-					<li><a href="#">Sony Playstation 4 </a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/4.png" alt=""></div>Бытовая техника для дома и кухни</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кофемашины, кофеварки</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Кофемашины</a> <span class="procent_items">30%</span></li>
-					<li><a href="#">Кофеварки</a> <span class="procent_items">30%</span></li>
-					<li><a href="#">Капульные кофеварки</a> <span class="procent_items">30%</span></li>
-					<li><a href="#">Кофемолки</a> <span class="procent_items">30%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Мелкая бытовая техника</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Мультиварки</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Микроволновые печи</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Кухонные комбайны</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Чайники</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Термопоты</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Пароварки</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Аэрогрили</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Электрогрили</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Блендеры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Миксеры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Мясорубки</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Соковыжималки</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Хлебопечи</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Тостеры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Сендвичницы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Орешницы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Вафельницы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Мини-печи</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Фритюрница</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Йогуртницы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Блинницы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Сушки для фруктов и овощей</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Посуда</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Вся посуда</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Наборы посуды</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Кастрюли</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Сковороды</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Столовые приборы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Ножи</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Ножницы</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника для дома</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Пылесосы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Утюги</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Паровые станции</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Парогенераторы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Паровые швабры</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Отпариватили</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обогреватели</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Газовые обогреватели</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Электрокамины</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Управление климатом</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Воздухоочистители</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Увлажнители</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Осушители</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Вентиляторы</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/5.png" alt=""></div>Фото, видео</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фотоаппараты</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Canon </a><span class="procent_items">35%</span></li>
-					<li><br></li>
-					<li><a href="#">Canon 100D Body</a></li>
-					<li><a href="#">Canon 1200D Body</a></li>
-					<li><a href="#">Canon 600D Body</a></li>
-					<li><a href="#">Canon 700D  Body</a></li>
-					<li><a href="#">Canon 750d Body</a></li>
-					<li><a href="#">Canon 760d Body</a></li>
-					<li><a href="#">Canon 60d (60da не покупаем) Body</a></li>
-					<li><a href="#">Canon 70d Body</a></li>
-					<li><a href="#">Canon 7d Body</a></li>
-					<li><a href="#">Canon 6d Body</a></li>
-					<li><a href="#">Canon 5d Mark III Body</a></li>
-					<li><a href="#">Canon 5ds Body</a></li>
-					<li><a href="#">Canon 5DS R Body</a></li>
-					<li><a href="#">Canon 1D MARK IV Body</a></li>
-					<li><a href="#">Canon 1D X Body</a></li>
-				</ul>
-				<ul class="submenu_subitems">
-					<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-					<li><br></li>
-					<li><a href="#">Nikon D3100 Body</a></li>
-					<li><a href="#">Nikon D3200 Body</a></li>
-					<li><a href="#">Nikon D3300 Body</a></li>
-					<li><a href="#">Nikon D5000 Body</a></li>
-					<li><a href="#">Nikon D5100 Body </a></li>
-					<li><a href="#">Nikon D5200 Body </a></li>
-					<li><a href="#">Nikon D5300 Body</a></li>
-					<li><a href="#">Nikon D5500 Body </a></li>
-					<li><a href="#">Nikon D7000 Body </a></li>
-					<li><a href="#">Nikon D7100 Body </a></li>
-					<li><a href="#">Nikon D7200 Body </a></li>
-					<li><a href="#">Nikon D600 Body</a></li>
-					<li><a href="#">Nikon D610 Body</a></li>
-					<li><a href="#">Nikon D300s Body</a></li>
-					<li><a href="#">Nikon D750 Body</a></li>
-					<li><a href="#">Nikon D800 Body</a></li>
-					<li><a href="#">Nikon D810 Body</a></li>
-					<li><a href="#">Nikon D3s Body</a></li>
-					<li><a href="#">Nikon D4 Body</a></li>
-					<li><a href="#">Nikon D3X Body</a></li>
-					<li><a href="#">Nikon DF Body</a></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системные камеры</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обьективы для фотоаппаратов</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Canon</a><span class="procent_items">35%</span></li>
-					<li><br></li>					
-					<li><a href="#">50mm</a></li>
-					<li><a href="#">85mm</a></li>
-					<li><a href="#">100mm</a></li>
-					<li><a href="#">70-200mm</a></li>
-					<li><a href="#">70-300mm</a></li>
-					<li><a href="#">28-300mm</a></li>
-					<li><a href="#">15-85mm</a></li>
-					<li><a href="#">18-200mm</a></li>
-					<li><a href="#">18-105mm</a></li>
-					<li><a href="#">18-135mm</a></li>
-					<li><a href="#">24-105mm</a></li>
-					<li><a href="#">28-135mm</a></li>
-					<li><a href="#">17-55mm</a></li>
-					<li><a href="#">17-40mm</a></li>
-					<li><a href="#">24-70mm</a></li>
-				</ul>
-				<ul class="submenu_subitems">
-					<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-					<li><br></li>					
-					<li><a href="#">50mm</a></li>
-					<li><a href="#">55-200mm</a></li>
-					<li><a href="#">18-200mm</a></li>
-					<li><a href="#">18-300mm</a></li>
-					<li><a href="#">28-300mm</a></li>
-					<li><a href="#">24-120mm</a></li>
-					<li><a href="#">24-70mm</a></li>
-					<li><a href="#">24-85mm</a></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеокамеры</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Экшн камеры</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">GoPro 4  </a> <span class="procent_items">30%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системы безопасности</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бинокли</span></a>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/6.png" alt=""></div>Товары для автомобиля</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Навигаторы</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Магнитолы автомобильные </span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры автомобильные </span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автомобильные мониторы </span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеорегистраторы</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Парктроники</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автосигнализации</span></a>
-			  </li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"><div class="cat_ico"><img src="'.$cfg['options']['siteurl'].'/design/img/7.png" alt=""></div>Красота, здоровье, активный отдых</a>
-			<ul class="sub-menu">
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фен-щётки</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бритвы и эпиляторы</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Бритвы</a> <span class="procent_items">29%</span></li>
-					<li><a href="#">Эпиляторы</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Зубные щётки и аксессуары</span></a>
-				<ul class="submenu_subitems">
-					<li><a href="#">Зубные щетки</a> <span class="procent_items">29%</span></li>
-				</ul>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Триммеры</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Массажеры</span></a>
-			  </li>
-			  <li role="presentation">
-				<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кожаные сумки,чемоданы, рюкзаки (брендовые) </span></a>
-			  </li>
-			</ul>
-		</li>'
-		*/
-		/*.
-	'</ul>'
-	.
-	'<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('statsAdmin').'"><a href="'.$cfg['options']['siteurl'].'/statsAdmin"><i class="fa fa-signal text-primary"></i> Статистика</a></li>
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('packages').'"><a href="'.$cfg['options']['siteurl'].'/packages"><i class="fa fa-paste text-success"></i> Товары '.getNewPkgs().'</a></li>
-		<li class="'.isOnPage('dropslist').'"><a href="'.$cfg['options']['siteurl'].'/dropslist"><i class="fa fa-user-secret  text-info"></i> Сотрудники</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('lablers').'"><a href="'.$cfg['options']['siteurl'].'/lablers"><i class="fa fa-barcode fa-sm text-info"></i> Сортировщики</a></li>
-		<li class="'.isOnPage('drops').'"><a href="'.$cfg['options']['siteurl'].'/drops"><i class="fa fa-male fa-lg text-info"></i> Сотрудники</a></li>
-		<li class="'.isOnPage('shippers').'"><a href="'.$cfg['options']['siteurl'].'/shippers"><i class="fa fa-truck text-info"></i> Отправители</a></li>
-		<li class="'.isOnPage('buyers').'"><a href="'.$cfg['options']['siteurl'].'/buyers"><i class="fa fa-usd fa-lg text-info"></i> Покупатели</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('shops').'"><a href="'.$cfg['options']['siteurl'].'/shops"><i class="fa fa-shopping-cart fa-lg text-success"></i> Магазины</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('users').'"><a href="'.$cfg['options']['siteurl'].'/users"><i class="fa fa-group text-danger"></i> Аккаунты</a></li>
-		<li class="'.isOnPage('options').'"><a href="'.$cfg['options']['siteurl'].'/options"><i class="fa fa-cogs text-danger"></i> Опции</a></li>
-		<li class="'.isOnPage('blackshoplist').'"><a href="'.$cfg['options']['siteurl'].'/blackshoplist"><i class="fa fa-list text-danger"></i> Черный лист магазинов</a></li>
-		<li class="'.isOnPage('receptlist').'"><a href="'.$cfg['options']['siteurl'].'/receptlist"><i class="fa fa-list text-danger"></i> Лист приемки</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
-	/*'<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon one">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Ноутбуки, планшеты, смартфоны</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-						<li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ультрабуки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Acer</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Asus</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Ноутбуки-трансформеры</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Lenovo</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Планшеты</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Смартфоны</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">HTC One</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One M8</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One M9</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">HTC One E8</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Sony Xperia Z1 Compact</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Sony Xperia Z3 Compact</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S5 16 GB</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S5 mini</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG Galaxy S6</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">SAMSUNG GALAXY Note Edge </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung N9005 32gb Galaxy Note 3 </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung G900 Galaxy S5  </a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Samsung i9505 Galaxy S4 </a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon two">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Компьютеры, комплектующие, переферия</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Моноблоки</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Apple</a> <span class="procent_items">30%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Комплектующие</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Процессоры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Материнские платы</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Видеокарты</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon three">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Телевизоры, аудио-видео, hi-fi</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника HI-FI</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Ресивеы HI-FI</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Уселители HI-FI</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Виниловые проигрыватели</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Акустические системы HI-FI</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеотехника</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">DVD плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Blu-Ray плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Портативные плееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Медиаплееры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Домашние кинотеатры</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Аудиотехника</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Музыкальные центры</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Магнитолы</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Игровые консоли и аксессуары</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Игровые приставки:</a></li>
-							<li><a href="#">Sony Playstation 4 </a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon four">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Бытовая техника для дома и кухни</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-						<li><a href="#">Мультиварки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Микроволновые печи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Кухонные комбайны</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Чайники</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Термопоты</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Пароварки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Аэрогрили</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Электрогрили</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Блендеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Миксеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Мясорубки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Соковыжималки</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Хлебопечи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Тостеры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сендвичницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Орешницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Вафельницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Мини-печи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Фритюрница</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Йогуртницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Блинницы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сушки для фруктов и овощей</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Посуда</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Вся посуда</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Наборы посуды</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Кастрюли</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Сковороды</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Столовые приборы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Ножи</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Ножницы</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Техника для дома</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Пылесосы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Утюги</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Паровые станции</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Парогенераторы</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Паровые швабры</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Отпариватили</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обогреватели</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Газовые обогреватели</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Электрокамины</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-				  <li role="presentation">
-					<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Управление климатом</span></a>
-					<ul class="submenu_subitems">
-						<li><a href="#">Воздухоочистители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Увлажнители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Осушители</a> <span class="procent_items">29%</span></li>
-						<li><a href="#">Вентиляторы</a> <span class="procent_items">29%</span></li>
-					</ul>
-				  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon five">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Фото, видео</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фотоаппараты</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Canon </a><span class="procent_items">35%</span></li>
-							<li><br></li>
-							<li><a href="#">Canon 100D Body</a></li>
-							<li><a href="#">Canon 1200D Body</a></li>
-							<li><a href="#">Canon 600D Body</a></li>
-							<li><a href="#">Canon 700D  Body</a></li>
-							<li><a href="#">Canon 750d Body</a></li>
-							<li><a href="#">Canon 760d Body</a></li>
-							<li><a href="#">Canon 60d (60da не покупаем) Body</a></li>
-							<li><a href="#">Canon 70d Body</a></li>
-							<li><a href="#">Canon 7d Body</a></li>
-							<li><a href="#">Canon 6d Body</a></li>
-							<li><a href="#">Canon 5d Mark III Body</a></li>
-							<li><a href="#">Canon 5ds Body</a></li>
-							<li><a href="#">Canon 5DS R Body</a></li>
-							<li><a href="#">Canon 1D MARK IV Body</a></li>
-							<li><a href="#">Canon 1D X Body</a></li>
-						</ul>
-						<ul class="submenu_subitems">
-							<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-							<li><br></li>
-							<li><a href="#">Nikon D3100 Body</a></li>
-							<li><a href="#">Nikon D3200 Body</a></li>
-							<li><a href="#">Nikon D3300 Body</a></li>
-							<li><a href="#">Nikon D5000 Body</a></li>
-							<li><a href="#">Nikon D5100 Body </a></li>
-							<li><a href="#">Nikon D5200 Body </a></li>
-							<li><a href="#">Nikon D5300 Body</a></li>
-							<li><a href="#">Nikon D5500 Body </a></li>
-							<li><a href="#">Nikon D7000 Body </a></li>
-							<li><a href="#">Nikon D7100 Body </a></li>
-							<li><a href="#">Nikon D7200 Body </a></li>
-							<li><a href="#">Nikon D600 Body</a></li>
-							<li><a href="#">Nikon D610 Body</a></li>
-							<li><a href="#">Nikon D300s Body</a></li>
-							<li><a href="#">Nikon D750 Body</a></li>
-							<li><a href="#">Nikon D800 Body</a></li>
-							<li><a href="#">Nikon D810 Body</a></li>
-							<li><a href="#">Nikon D3s Body</a></li>
-							<li><a href="#">Nikon D4 Body</a></li>
-							<li><a href="#">Nikon D3X Body</a></li>
-							<li><a href="#">Nikon DF Body</a></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системные камеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Обьективы для фотоаппаратов</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Canon</a><span class="procent_items">35%</span></li>
-							<li><br></li>					
-							<li><a href="#">50mm</a></li>
-							<li><a href="#">85mm</a></li>
-							<li><a href="#">100mm</a></li>
-							<li><a href="#">70-200mm</a></li>
-							<li><a href="#">70-300mm</a></li>
-							<li><a href="#">28-300mm</a></li>
-							<li><a href="#">15-85mm</a></li>
-							<li><a href="#">18-200mm</a></li>
-							<li><a href="#">18-105mm</a></li>
-							<li><a href="#">18-135mm</a></li>
-							<li><a href="#">24-105mm</a></li>
-							<li><a href="#">28-135mm</a></li>
-							<li><a href="#">17-55mm</a></li>
-							<li><a href="#">17-40mm</a></li>
-							<li><a href="#">24-70mm</a></li>
-						</ul>
-						<ul class="submenu_subitems">
-							<li><a href="#">Nikon</a><span class="procent_items">35%</span></li>
-							<li><br></li>					
-							<li><a href="#">50mm</a></li>
-							<li><a href="#">55-200mm</a></li>
-							<li><a href="#">18-200mm</a></li>
-							<li><a href="#">18-300mm</a></li>
-							<li><a href="#">28-300mm</a></li>
-							<li><a href="#">24-120mm</a></li>
-							<li><a href="#">24-70mm</a></li>
-							<li><a href="#">24-85mm</a></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеокамеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Экшн камеры</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">GoPro 4  </a> <span class="procent_items">30%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Системы безопасности</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бинокли</span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon six">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Товары для автомобиля</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Навигаторы</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Магнитолы автомобильные </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Телевизоры автомобильные </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автомобильные мониторы </span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Видеорегистраторы</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Парктроники</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Автосигнализации</span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon seven">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="#">Красота, здоровье, активный отдых</a></div></div>
-				<div class="submenu_wrapper">
-					<ul class="submenu_subitems">
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Фен-щётки</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Бритвы и эпиляторы</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Бритвы</a> <span class="procent_items">29%</span></li>
-							<li><a href="#">Эпиляторы</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Зубные щётки и аксессуары</span></a>
-						<ul class="submenu_subitems">
-							<li><a href="#">Зубные щетки</a> <span class="procent_items">29%</span></li>
-						</ul>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Триммеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Массажеры</span></a>
-					  </li>
-					  <li role="presentation">
-						<a role="menuitem" tabindex="-1" href="#"><span class="submenu_title">Кожаные сумки,чемоданы, рюкзаки (брендовые) </span></a>
-					  </li>
-					</ul>
-				</div>
-		</div>
-	</div>*/
 
 	'<div class="show_menu">
 		<div class="menu_element">
@@ -2626,11 +1378,12 @@ function getAllChats() {
 }
 
 //получить список новых пользователей, не состоящих в чате
-function getUsersNotInChat(){
+function getUsersNotInChat($uId){
 	global $user, $db;
 	$q = "SELECT DISTINCT u.* 
 			FROM `users` u
-			LEFT JOIN `chat` c on u.id = c.from_id or u.id = c.to_id";
+			LEFT JOIN `chat` c on u.id = c.from_id or u.id = c.to_id
+			WHERE u.id <> '".$uId."' and c.from_id <> '".$uId."' and c.to_id <> '".$uId."'";
 	$users = $db->query($q);
 	return $users;
 }
@@ -3249,6 +2002,35 @@ function hasChildSubCategoryItem($parentId){
 		return true;
 	}else{
 		return false;
+	}
+}
+
+function getNewsForMainPage(){
+	global $user, $cfg, $db;
+	setlocale(LC_TIME,"russian.65001");
+	$q = "SELECT * FROM `news` ORDER BY `time` DESC LIMIT 5";
+	$news = $db->query($q);
+	$newsList = '';
+	if(isset($news)){
+		foreach($news as $u){
+			$newsDate = strtotime($u->time);
+			$newDateFormat = strftime("%e,%B", $newsDate);
+			$newsList .= 
+			'
+				<div class="col-xs-12 col-sm-3 news">
+					<div class="news_date">'.$newDateFormat.'</div>
+					<div class="news_link">
+						<a href="#">
+							'.$u->title.'
+						</a>
+					</div>
+					<div class="news_short_text">
+						'.$u->text.'
+					</div>
+				</div>
+			';
+		}
+		return $newsList;
 	}
 }
 

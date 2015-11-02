@@ -1,8 +1,9 @@
 html
 {
-	font-family:sans-serif;
+	font-family: 'PT Sans';
 	-ms-text-size-adjust:100%;
 	-webkit-text-size-adjust:100%
+
 }
 
 body
@@ -122,7 +123,7 @@ pre
 
 code,kbd,pre,samp
 {
-	font-family:monospace,monospace;
+	font-family:'PT Sans';
 	font-size:1em
 }
 
@@ -1363,8 +1364,8 @@ html
 
 body
 {
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:15px;
+	font-family:'PT Sans';
+	font-size: 16px;
 	line-height:1.42857143;
 	color:#000;/* background-color:#E8E8E8
 
@@ -1478,10 +1479,21 @@ hr
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6
 {
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight:500;
+	font-family: 'PT Sans';
 	line-height:1.1;
 	color:inherit
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 small,.h4 small,.h5 small,.h6 small,h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small,.h1 .small,.h2 .small,.h3 .small,.h4 .small,.h5 .small,.h6 .small
@@ -1498,7 +1510,9 @@ h1,.h1,h2,.h2,h3,.h3
 ;
 	color: #ff5722;
 	font-weight: 100;
-	text-decoration: underline;
+	/* border-bottom-color: rgba(22,131,198,.3); */
+	/* border-bottom: 1px; */
+	/* border-bottom-style: solid; */
 }
 
 h1 small,.h1 small,h2 small,.h2 small,h3 small,.h3 small,h1 .small,.h1 .small,h2 .small,.h2 .small,h3 .small,.h3 .small
@@ -1521,6 +1535,12 @@ h1,.h1
 {
 
 font-size: 27px;
+
+display: block;
+
+float: none;
+
+text-decoration: underline;
 }
 
 h2,.h2
@@ -1879,7 +1899,7 @@ address
 
 code,kbd,pre,samp
 {
-	font-family:Menlo,Monaco,Consolas,"Courier New",monospace
+	font-family:'PT Sans'
 }
 
 code
@@ -5202,6 +5222,8 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	{
 		padding-top:15px;
 		padding-bottom:15px
+	
+	
 	}
 	
 	.navbar-nav.navbar-right:last-child
@@ -5397,6 +5419,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 {
 	color: #040404;
 	/* text-shadow: 1px 1px 1px #000; */
+	font-size: 13px;=:1px;
 }
 
 .navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus
