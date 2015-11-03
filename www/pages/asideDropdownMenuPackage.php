@@ -12,9 +12,9 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 			$path_parts = pathinfo($iconSourcePath);
 			echo $path_parts['basename'];
 			
-			$q = "UPDATE `pkg_cat_aside_menu` SET `img_source`= '".$path_parts['filename']."' WHERE pkg_cat_ddlist_id=".$id;
+			//$q = "UPDATE `pkg_cat_aside_menu` SET `img_source`= '".$path_parts['filename']."' WHERE pkg_cat_ddlist_id=".$id;
 			//$q = "INSERT INTO `pkg_cat_aside_menu` (img_source) VALUES('".$path_parts['basename']."') WHERE";
-			$db->query($q);
+			//$db->query($q);
 			echo "Иконка успешно изменена\n";
 		}
 	}
@@ -159,6 +159,7 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
   </div>
 </div>
 
+<!--
 <form>
   <div class="form-group">
     <label for="newMenuItem">Введите название нового пункта меню</label>
@@ -170,19 +171,22 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 <hr>
 
 <h1 class="page-header">Список существующих пунктов меню</h1>
+-->
 
 <?php
 	$menuItemList = getPackCategoriesForAsideMenu();
 	if(isset($menuItemList)){
 		foreach($menuItemList as $u){
 			?>
-			<p class="option-button-group"><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><button type="button" class="btn btn-danger btn-xs option-delete" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>
+			<p class="option-button-group"><span contenteditable="true" id=<?php echo $u->pkg_cat_ddlist_id ?>><?php echo $u->name ?></span><!--<button type="button" class="btn btn-danger btn-xs option-delete" onclick="deleteCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Удалить</button>-->
 			<button type="button" class="btn btn-success btn-xs option-save" onclick="editCategory(<?php echo $u->pkg_cat_ddlist_id ?>)">Сохранить</button></p>
+			<!--
 			<form action="" method="POST" enctype="multipart/form-data">
 				<input type=file name="newIcon">
 				<input type="hidden" name="catId" value="<?php echo $u->pkg_cat_ddlist_id ?>">
 				<input type="submit" name="replaceIcon" value="Изменить иконку">
 			</form>
+			-->
 			</p>
 			<?php
 		}

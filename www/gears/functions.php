@@ -2007,14 +2007,18 @@ function hasChildSubCategoryItem($parentId){
 
 function getNewsForMainPage(){
 	global $user, $cfg, $db;
-	setlocale(LC_TIME,"russian.65001");
+	//setlocale(LC_TIME, "russian.65001");
 	$q = "SELECT * FROM `news` ORDER BY `time` DESC LIMIT 5";
 	$news = $db->query($q);
 	$newsList = '';
+	//$formatter = new IntlDateFormatter('ru_RU', IntlDateFormatter::FULL, IntlDateFormatter::FULL);
+	//$formatter->setPattern('d MMMM');
 	if(isset($news)){
 		foreach($news as $u){
-			$newsDate = strtotime($u->time);
-			$newDateFormat = strftime("%e,%B", $newsDate);
+			//$newsDate = strtotime($u->time);
+			//$newDateFormat = $formatter->format(new DateTime());
+			//$newDateFormat = strftime("%e,%B", $newsDate);
+			$newDateFormat = mysql_russian_date($u->time);
 			$newsList .= 
 			'
 				<div class="col-xs-12 col-sm-3 news">
@@ -2034,4 +2038,32 @@ function getNewsForMainPage(){
 	}
 }
 
+function mysql_russian_date($datestr = ''){
+    $result = '';	
+    if ($datestr != ''){ 
+		// получаем значение даты и времени 
+		list($day) = explode(' ', $datestr); 
+		// Разделяем отображение даты на составляющие 
+		list($y, $m, $d)  = explode('-', $day); 
+		$month_str = array( 
+				   'января', 'февраля', 'марта', 
+				   'апреля', 'мая', 'июня', 
+				   'июля', 'августа', 'сентября', 
+				   'октября', 'ноября', 'декабря' 
+				); 
+		$month_int = array( 
+				   '01', '02', '03', 
+				   '04', '05', '06', 
+				   '07', '08', '09', 
+				   '10', '11', '12' 
+				); 
+
+		// Замена числового обозначения месяца на словесное (склоненное в падеже) 
+		$m = str_replace($month_int, $month_str, $m); 
+	   // Формирование окончательного результата 
+		if ($d[0] == 0) $d = $d[1]; 
+		$result = $d.' '.$m;
+    } 
+    return $result; 
+}
 ?>
