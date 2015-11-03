@@ -523,7 +523,7 @@ function sideMenu_shipper() {
 			<div class="menu_icon icon2">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/news">Новости</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/">Новости</a></div></div>
 		</div>
 	</div>
 	

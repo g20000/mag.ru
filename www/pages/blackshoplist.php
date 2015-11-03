@@ -46,5 +46,14 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
     <textarea class="form-control" id="list"><?php echo isset($cfg['options']['bslist']) ? $cfg['options']['bslist'] : '';?></textarea>
     <span class="btn btn-success pull-right" id="saveBSList">Сохранить</span>
 <?php else: ?>
-	<span><?php echo isset($cfg['options']['bslist']) ? $cfg['options']['bslist'] : '';?></span>
+	<span>
+		<?php
+		$blackShopArray = preg_split('~[|!,\s]+~', $cfg['options']['bslist']);
+		$blackShopColumn = '';
+		foreach($blackShopArray as $shop){
+			$blackShopColumn .= $shop . '<br/>';
+		}
+		echo $blackShopColumn;
+		?>
+	</span>
 <?php endif ?>  

@@ -44,5 +44,14 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 	<textarea class="form-control" id="list"><?php echo isset($cfg['options']['rlist']) ? $cfg['options']['rlist'] : '';?></textarea>
 	<span class="btn btn-success pull-right" id="saveRList">Сохранить</span>
 <?php else: ?>
-	<span><?php echo isset($cfg['options']['rlist']) ? $cfg['options']['rlist'] : '';?></span>
+	<span>
+		<?php
+		$receiptArray = preg_split('~[|!,\s]+~', $cfg['options']['rlist']);
+		$receiptColumn = '';
+		foreach($receiptArray as $receipt){
+			$receiptColumn .= $receipt . '<br/>';
+		}
+		echo $receiptColumn;
+		?>
+	</span>
 <?php endif ?>

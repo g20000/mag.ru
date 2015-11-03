@@ -47,52 +47,19 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 						
 						<h5 class="hidden">Заметка</h5>
 						<textarea placeholder="" class="hidden form-control input-sm"></textarea>
-						<!--
-						<h5>Buyer<h5>
-						<select class="form-control input-sm" id="buyer_id">
-							<?php 
-								$q = "SELECT * FROM `users` WHERE `rank` = 5 ORDER BY name ASC";
-								$res = $db->query($q);
-								if (isset($res[0])) {
-									foreach($res as $v) {
-										echo '<option value="'.$v->id.'">'.$v->first_name.' '.$v->middle_name.' '.$v->last_name.'</option>';
-									}									
-								}
-							?>
-						</select>
-						-->
-<!--
-						<div class="content">
-							<div class="row">
-								<div class="col-xs-6">
-									<h5>Delivery</h5>
-									<select class="form-control input-sm disabled" data-toggle="tooltip" data-placement="top" title="After drop accept this task">
-										<option value="DHL">DHL</option>
-										<option value="DHLEXPRESS">DHL EXPRESS</option>
-										<option value="DPD">DPD</option>
-										<option value="HERMES">HERMES</option>
-										<option value="OMEST">OMEST</option>
-										<option value="USPS">USPS</option>
-										<option value="FedEX">FedEX</option>
-										
-									</select>								
-								</div>
-								<div class="col-xs-6">
-									<h5>Track</h5>
-									<input placeholder="" class="form-control input-sm disabled" disabled="" data-toggle="tooltip" data-placement="top" title="After drop accept this task">
-								</div>
-							</div>
-						</div>					
--->
+						<?php 
+							$q = "SELECT * FROM `users` WHERE `rank` = 5 ORDER BY name ASC";
+							$res = $db->query($q);
+							if (isset($res[0])) {
+								foreach($res as $v) {
+									echo '<option value="'.$v->id.'">'.$v->first_name.' '.$v->middle_name.' '.$v->last_name.'</option>';
+								}									
+							}
+						?>
+						
 						<div class="content">
 							
 							<div class="row">
-								<!--
-								<div class="col-xs-6">
-									<h5>Holder</h5>
-									<input placeholder="" class="form-control input-sm">
-								</div>
-								-->
 								<div class="col-xs-12">
 									<h5>ФИО Сотрудника</h5>
 									<div class="checkbox"><label><input type="checkbox" checked=""> Отослать сотруднику</label></div>
@@ -102,17 +69,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 
 						<div class="content">
 							<div class="row">
-								<!--
-								<div class="col-xs-6">
-									<h5>Price divide</h5>
-									<select class="form-control input-sm">
-										<option value="percent">%</option>
-										<option value="fiftyfifty">50/50</option>
-										<option value="forward">Forward</option>
-										<option value="tobuyer">2Buyer</option>
-									</select>								
-								</div>
-								-->
 								<div class="col-xs-12">
 									<h5>Дата прихода</h5>
 									<input placeholder="dd/mm/yyyy" id="datepicker" class="form-control input-sm">
@@ -150,7 +106,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 						$('#shop-url').val(data.shops[0].shop_url);
 						$('#shop-id').val(data.shops[0].id);
 					}
-					//console.log(data);
 				}
 			},
 			error: function(v1,v2,v3) {
@@ -194,13 +149,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 		
 		var pkgvar = {};
 		var er_flag = {iserror: false, title:'',text:''};
-		/*
-		if ($('#buyer_id').val()==undefined || $('#buyer_id').val()=='' || $('#buyer_id').val()==-1) {
-			er_flag.iserror=true;
-			er_flag.title='Error!';
-			er_flag.title='Buyer is not selected';
-		};
-		*/
 		if ($('#item').val()=='') {
 			er_flag.iserror=true;
 			er_flag.title='Ошибка!';
@@ -270,7 +218,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 		$('.allowedShops_'+drop_id).find('span').each(function(){
 			$('#shopDataList').append('<option value="'+$(this).html()+'">');
 		});
-		//$('.addPkgModal').modal('toggle');
 		$('.addPkgModal #drop_id').val(drop_id);
 	}
 
@@ -336,7 +283,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 						<td><?php echo $v->first_name.' '.$v->middle_name.' '.$v->last_name;?></td>
 						<?php } ?>
 						<td><?php echo $v->address.' '.$v->city.' '.$v->state.' '.$v->zip.' '.$v->country;?></td>
-						<td align=center><?php /*echo getDropCompleatePkgs($v->id).'/'.getDropInworkPkgs($v->id);*/$totalPackages = getDropCompleatePkgs($v->id) +  getDropInworkPkgs($v->id);
+						<td align=center><?php $totalPackages = getDropCompleatePkgs($v->id) +  getDropInworkPkgs($v->id);
 						echo $totalPackages;
 						?>
 						</td>
