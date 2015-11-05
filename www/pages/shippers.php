@@ -48,13 +48,7 @@ function deleteShipper(id) {
 		<tr>
 			<th>#</th>
 			<th>Имя</th>
-			<!--<th>Real Name</th>-->
-			<!--<th>Email</th>-->
-			<th>Jabber</th>
-			<!--<th>Country</th>-->
-			<!--<th>State</th>-->
-			<!--<th>Status</th>-->
-			
+			<th>Jabber</th>			
 			<th>Дата регистарции</th>
 			<th class='text-center'>Действия</th>
 		</tr>
@@ -68,13 +62,8 @@ function deleteShipper(id) {
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
 						<td><?php echo $v->id;?></td>
-						<!--<td><a href="<?php echo $cfg['options']['siteurl']; ?>/userInfo/<?php echo $v->id;?>"><?php echo colorText($v->name,getUserColor($v->id));?></a></td>-->
 						<td><?php echo $v->first_name.' '.$v->middle_name.' '.$v->last_name;?></td>
-						<!--<td><?php echo $v->email;?></td>-->
 						<td><?php echo $v->xmpp;?></td>
-						<!--<td><?php echo $v->country;?></td>-->
-						<!--<td><?php echo $v->state;?></td>-->
-						<!--<td class="person_<?php echo $v->status;?>"><?php echo $v->status;?></td>-->
 						<td><?php echo $v->registration_time;?></td>
 						<td class="text-center">
 								<a href="<?php echo $cfg['options']['siteurl'];?>/shopDropSelector/<?php echo $v->id;?>"><i class="fa fa-list-ol"></i></a>

@@ -80,12 +80,12 @@ if ($user['rankname']!='admin' && $user['rankname']!='support') {
 <div class="panel panel-default">
 	<div class="panel-heading">Выбор</div>
 	<div class="panel-body">
-		<p>Выбор сотрудника для отправителя</p>
+		<p>Выбор курьера для отправителя</p>
 	</div>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Сотрудник</th>
+				<th>Курьер</th>
 				<th>Адрес</th>
 				<th>Выполнено / В процессе</th>
 				<th>Выбрать</th>
@@ -110,8 +110,9 @@ if ($user['rankname']!='admin' && $user['rankname']!='support') {
 			$isdropselected = 'btn-info'; 
 			$isShowShops = 'none'; 
 		}
-
-		echo '<tr><td>'.$drop->first_name.' '.$drop->middle_name.' '.$drop->last_name.'</td><td>'.$drop->address.' '.$drop->city.' '.$drop->state.' '.$drop->zip.' '.$drop->country.'</td><td>'.getDropCompleatePkgs($drop->id).'/'.getDropInworkPkgs($drop->id).'</td><td><span class="btn '.$isdropselected.' btn-xs btnSelectDrop'.$drop->id.'" onclick="enableDrop('.$drop->id.');">select</span></td></tr>';
+		
+		$totalPackages = getDropCompleatePkgs($drop->id) + getDropInworkPkgs($drop->id);
+		echo '<tr><td>'.$drop->first_name.' '.$drop->middle_name.' '.$drop->last_name.'</td><td>'.$drop->address.' '.$drop->city.' '.$drop->state.' '.$drop->zip.' '.$drop->country.'</td><td align=center>'.$totalPackages.'</td><td align=center><span class="btn '.$isdropselected.' btn-xs btnSelectDrop'.$drop->id.'" onclick="enableDrop('.$drop->id.');">select</span></td></tr>';
 		echo '<tr id="dropShopSelect_'.$drop->id.'" style="display:'.$isShowShops.';"><td colspan=4>';
 		if (isset($shops[0])) {
 			// перечисляем все шопы

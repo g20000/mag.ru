@@ -3059,7 +3059,7 @@ pre code
 
 table
 {
-	background-color:#2e3338
+	background-color:#ffffff;
 }
 
 th
@@ -7057,7 +7057,7 @@ button.close
 .modal-content
 {
 	position:relative;
-	background-color:#2e3338;
+	background-color:#c7c9cc;
 	border:1px solid #999;
 	border:1px solid rgba(0,0,0,0.2);
 	border-radius:6px;

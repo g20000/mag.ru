@@ -150,20 +150,7 @@ $_page_scripts = "
 	<tbody>
 	<?php
 		$pkg = getPackagesWithSortByDrop();
-		
-	    /*function objectToarray($data)
-	    {
-		    $array = (array)$data;
-		    foreach($array as $key => &$field){
-			    if(is_object($field))$field = objectToarray($field);
-		    }
-		    return $array;
-	    }*/
-		
-		//var_dump($pkg);
-		
 		if ($pkg!==false) {
-			//debug($pkg);
 			foreach($pkg as $k=>$v) {
 				if (!is_array($v)) {
 					$pkg_status = getPackageStatus($v->id);
@@ -202,7 +189,14 @@ $_page_scripts = "
 									<option value="shoprefund" <?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "selected = selected";?>>Возврат магазином</option>
 								</select>
 							<?php else: ?>
-								<?php echo $v->status_text ?>
+								<?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "Получатель не найден";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "Обработка";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "На доставке";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "delivered")) echo "Доставлено";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "resent")) echo "Переотправлен";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "refund")) echo "Возврат";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "filial")) echo "Филиал";?>
+								<?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "Возврат магазином";?>
 							<?php endif; ?>
 						</td>
 						<td><?php if(isset($pkg_status->time)){ 
@@ -212,22 +206,8 @@ $_page_scripts = "
 						</td>
 						
 						<?php if($user['rankname']=='admin') { ?>
-							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>
-							
+							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
 							<td><?php echo getLinkToUserProfile($v->shipper_id);?></td>
-
-							<!--<td><?php echo $v->action;?></td>-->
-
-
-
-
-							<!--<td><?php echo getLinkToUserProfile($v->buyer_id);?></td>-->
-							<!--<td><?php echo getLinkToUserProfile($v->labler_id);?></td>-->
-
-	<!--						<td><?php foreach (getPackageNotes($v->id) as $n_user_type=>$n_text) { 
-								echo '<strong>'.$n_user_type.'</strong>';
-								if (isset($n_text['public'])) { echo '<div class="tbl-notes"><p>'.$n_text['public'].'</p></div>'; }
-							};?></td>-->
 						<?php } ?>
 												
 						<td class="text-center">

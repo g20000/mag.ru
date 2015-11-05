@@ -48,12 +48,28 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 <?php else: ?>
 	<span>
 		<?php
-		$blackShopArray = preg_split('~[|!,\s]+~', $cfg['options']['bslist']);
-		$blackShopColumn = '';
-		foreach($blackShopArray as $shop){
-			$blackShopColumn .= $shop . '<br/>';
-		}
-		echo $blackShopColumn;
+			//echo $cfg['options']['bslist'];
+			$buf = $cfg['options']['bslist'];
+			$buf = str_replace("&#10;", " ", $buf);
+			$buf = str_replace(",", " ", $buf);
+			//echo $cfg;
+			//exit();
+			$blackShopArray = explode(" ", $buf);
+			//var_dump($blackShopArray);
+			//exit();
+			//$blackShopArray = preg_split("~[|!,\s\n\b\Q\E]+~", $cfg['options']['bslist']);
+			//$blackShopArray = preg_split("~[^а-яА-Яa-zA-Z0-9.]+~", $cfg['options']['bslist']);
+			//$blackShopArray = preg_split('~[|!,\s\n\]+~', $cfg['options']['bslist']);
+			//$blackShopArray = preg_split('/[\s,]+/(['<br>'])', $cfg['options']['bslist'], 0, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+			//$blackShopArray = str_split($cfg);
+			$blackShopColumn = '';
+			foreach($blackShopArray as $shop){
+				if($shop != ""){
+					$blackShopColumn .= $shop . '<br/>';
+				}
+			}
+			//var_dump($blackShopArray);
+			echo $blackShopColumn;
 		?>
 	</span>
 <?php endif ?>  

@@ -48,12 +48,17 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 <?php else: ?>
 	<span>
 		<?php
-		$blackShopArray = preg_split('~[|!,\s]+~', $cfg['options']['bslist']);
-		$blackShopColumn = '';
-		foreach($blackShopArray as $shop){
-			$blackShopColumn .= $shop . '<br/>';
-		}
-		echo $blackShopColumn;
+			$buf = $cfg['options']['bslist'];
+			$buf = str_replace("&#10;", " ", $buf);
+			$buf = str_replace(",", " ", $buf);
+			$blackShopArray = explode(" ", $buf);
+			$blackShopColumn = '';
+			foreach($blackShopArray as $shop){
+				if($shop != ""){
+					$blackShopColumn .= $shop . '<br/>';
+				}
+			}
+			echo $blackShopColumn;
 		?>
 	</span>
 <?php endif ?>  

@@ -79,8 +79,8 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-					<button type="button" class="btn btn-primary" onclick="createPackage();">Создать</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-success" onclick="createPackage();">Создать</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
@@ -238,7 +238,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 	});
 </script>
 
-<h1 class="page-header">Сотрудники</h1>
+<h1 class="page-header">Курьеры</h1>
 
 
 <div class="table-responsive">

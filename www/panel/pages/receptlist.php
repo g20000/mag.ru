@@ -46,10 +46,15 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 <?php else: ?>
 	<span>
 		<?php
-		$receiptArray = preg_split('~[|!,\s]+~', $cfg['options']['rlist']);
+		$buf = $cfg['options']['rlist'];
+		$buf = str_replace("&#10;", " ", $buf);
+		$buf = str_replace(",", " ", $buf);
+		$receiptArray = explode(" ", $buf);
 		$receiptColumn = '';
 		foreach($receiptArray as $receipt){
-			$receiptColumn .= $receipt . '<br/>';
+			if($receipt != ""){
+				$receiptColumn .= $receipt . '<br/>';
+			}
 		}
 		echo $receiptColumn;
 		?>
