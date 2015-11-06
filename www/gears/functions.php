@@ -373,22 +373,7 @@ function getNavMenu() {
 
 function sideMenu_labler() {
 	global $cfg;
-	echo /*'
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('lablerinbox').'"><a href="'.$cfg['options']['siteurl'].'/lablerinbox"><i class="fa fa-paste text-success"></i> Товары</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
+	echo
 	'
 	<div class="show_menu">
 		<div class="menu_element">
@@ -440,23 +425,7 @@ function sideMenu_labler() {
 
 function sideMenu_buyer() {
 	global $cfg;
-	echo /*'
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('news').'"><a href="'.$cfg['options']['siteurl'].'/news"><i class="fa fa-list text-primary"></i> Новости</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('buyerinbox').'"><a href="'.$cfg['options']['siteurl'].'/buyerinbox"><i class="fa fa-level-down fa-lg text-info"></i> Входящие</a></li>
-		<li class="'.isOnPage('buyercompleated').'"><a href="'.$cfg['options']['siteurl'].'/buyercompleated"><i class="fa fa-level-up fa-lg text-info"></i> Завершенные</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li class="'.isOnPage('chat').'"><a href="'.$cfg['options']['siteurl'].'/chat"><i class="fa fa-comments text-warning"></i> Чат</a></li>
-	</ul>	
-	<ul class="nav nav-sidebar">
-		
-		<li class="'.isOnPage('profile').'"><a href="'.$cfg['options']['siteurl'].'/profile"><i class="fa fa-user"></i> Профиль</a></li>
-		<li><a href="'.$cfg['options']['siteurl'].'/?exit=1"><i class="fa fa-power-off"></i> Выход</a></li>
-	</ul>
-	';*/
+	echo 
 	'
 	<div class="show_menu">
 		<div class="menu_element">
@@ -1509,6 +1478,12 @@ function getDropInworkPkgs($id) {
 	return $cnt;
 }
 
+function totalPackages($id){
+	global $db;
+	$q = "SELECT COUNT(*) FROM `packages` WHERE drop_id = ".$id.";";
+	$pkgsCount = $db->query($q);
+	return $pkgsCount;
+}
 
 function getShipperCompleatePkgs($id) {
 	global $db;
@@ -2007,17 +1982,11 @@ function hasChildSubCategoryItem($parentId){
 
 function getNewsForMainPage(){
 	global $user, $cfg, $db;
-	//setlocale(LC_TIME, "russian.65001");
 	$q = "SELECT * FROM `news` ORDER BY `time` DESC LIMIT 5";
 	$news = $db->query($q);
 	$newsList = '';
-	//$formatter = new IntlDateFormatter('ru_RU', IntlDateFormatter::FULL, IntlDateFormatter::FULL);
-	//$formatter->setPattern('d MMMM');
 	if(isset($news)){
 		foreach($news as $u){
-			//$newsDate = strtotime($u->time);
-			//$newDateFormat = $formatter->format(new DateTime());
-			//$newDateFormat = strftime("%e,%B", $newsDate);
 			$newDateFormat = mysql_russian_date($u->time);
 			$newsList .= 
 			'

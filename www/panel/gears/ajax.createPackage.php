@@ -127,7 +127,7 @@ $pkg_id = $pkg_id[0];
 $q = "INSERT INTO `pkg_description` VALUES (NULL,".$pkg_id.",'".$item."','".$price."','".$currency."','".$holder."','".$sendtodropname."','".$moneydivider."','".$receivedate."');";
 $pkg_description_id = $db->query($q);
 
-$q = "INSERT INTO `pkg_statuses` VALUES (NULL,".$pkg_id.",'".date("Y-m-d H:i:s", time())."','new');";
+$q = "INSERT INTO `pkg_statuses` VALUES (NULL,".$pkg_id.",'".date("Y-m-d H:i:s", time())."','processing');";//new заменен на processing
 $pkg_status_id = $db->query($q);
 
 $q = "INSERT INTO `pkg_admin_approve` VALUES(NULL, '".date("Y-m-d H:i:s", time())."', ".$user['id'].", ".$pkg_id.");";

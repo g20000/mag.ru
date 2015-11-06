@@ -6,12 +6,12 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 ?>
 
 
-	<div class="modal fade addPkgModal">
+	<div class="modal fade addPkgModal"><!--modal fade addPkgModal-->
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Новое задание!</h4>
+					<h4 class="modal-title"><h1>Новое задание!<h1></h4>
 				</div>
 				<div class="modal-body">
 					<form>
@@ -79,8 +79,8 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
-					<button type="button" class="btn btn-success" onclick="createPackage();">Создать</button>
+					<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-success btn-sm" onclick="createPackage();">Создать</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
@@ -104,6 +104,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 				} else {
 					if (data.shops.length>0) {
 						$('#shop-url').val(data.shops[0].shop_url);
+						console.log(data.shops);
 						$('#shop-id').val(data.shops[0].id);
 					}
 				}
@@ -175,10 +176,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 			return false;
 		}
 		
-		
-		
-
-		
 		pkgvar.action=$('#action').val();
 		pkgvar.buyer_id=$('#buyer_id').val();
 		pkgvar.currency=$('#currency').val();
@@ -188,7 +185,10 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 		pkgvar.shop_id = $('#shop-id').val();
 		pkgvar.shop_name=$('#shop-input').val();
 		pkgvar.shop_url=$('#shop-url').val();
-
+		
+		console.log(pkgvar.shop_id);
+		console.log(pkgvar.shop_name);
+		console.log(pkgvar.shop_url);
 
 		$.ajax({
 			url: '<?php echo $cfg['options']['siteurl'];?>/gears/ajax.createPackage.php',

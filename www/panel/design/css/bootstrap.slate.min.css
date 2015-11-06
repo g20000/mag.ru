@@ -7057,7 +7057,7 @@ button.close
 .modal-content
 {
 	position:relative;
-	background-color:#c7c9cc;
+	background-color:#ffffff;
 	border:1px solid #999;
 	border:1px solid rgba(0,0,0,0.2);
 	border-radius:6px;
@@ -7093,7 +7093,7 @@ button.close
 .modal-header
 {
 	padding:15px;
-	border-bottom:1px solid #1c1e22;
+	border-bottom:1px solid #d7d7d7;
 	min-height:16.42857143px
 }
 
@@ -7118,7 +7118,7 @@ button.close
 {
 	padding:20px;
 	text-align:right;
-	border-top:1px solid #1c1e22
+	border-top:1px solid #d7d7d7
 }
 
 .modal-footer .btn+.btn

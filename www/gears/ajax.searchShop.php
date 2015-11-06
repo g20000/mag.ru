@@ -34,7 +34,7 @@ include($cfg['realpath'].'/gears/auth_init.php');
 $name = addslashes(strip_tags(filter_input(INPUT_POST, 'shop_name', FILTER_UNSAFE_RAW)));
 
 // есть ли вообще такой ID
-$q = "SELECT * FROM `shops` WHERE `shop_name` LIKE '%".$name."%';";
+$q = "SELECT * FROM `shops` WHERE `shop_name` RLIKE '%".$name."%';";
 $isIDexist = $db->query($q);
 if (isset($isIDexist[0])) {
 	exit(json_encode(array('type'=>'ok','shops'=>$isIDexist)));
