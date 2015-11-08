@@ -82,14 +82,14 @@
 		});
 	}
 	
-	function executeDeletingPackage(id){
+	function executeDeletingPackage(event){
 		var subMenuId = $('#subMenuItem').val();
 		$.ajax({
 			url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.deletePackageFromDDList.php',
 			type: 'POST',
 			dataType: 'JSON',
 			data: {
-				idItem:id,
+				idItem:event.data.idSubCat,
 				parentMenuId:subMenuId
 			},
 			success: function(data) {
@@ -106,10 +106,11 @@
 				console.log(v1,v2,v3);
 			}
 		});
+		$('.deletePackageModal .modal-footer .btn-success').off("click");
 	}
 	
 	function deletePackage(id){		
-		$.confirm({
+		/*$.confirm({
 			'title'		: 'Подтверждение удаления',
 			'message'	: 'Вы решили удалить товар. <br />Продолжить?',
 			'buttons'	: {
@@ -124,13 +125,19 @@
 					'action': function(){}	// В данном случае ничего не делаем. Данную опцию можно просто опустить.
 				}
 			}
+		});*/
+		$('.deletePackageModal').modal({
+		  keyboard: false,
+		  backdrop: 'static',
+		  show: true,
 		});
+		$('.deletePackageModal .modal-footer .btn-success').on("click", {idSubCat: id}, executeDeletingPackage);
 	}
 	
-	function executeSavingPackage(idPackage){
-		var id = idPackage;
-		var selectedName = "span#" + idPackage;
-		var selectedPercent = "span#percentCell" + idPackage;
+	function executeSavingPackage(event){
+		var id = event.data.idPack;
+		var selectedName = "span#" + event.data.idPack;
+		var selectedPercent = "span#percentCell" + event.data.idPack;
 		var name = $(selectedName).text();
 		var percent = $(selectedPercent).text();
 		var menuId = $('#subMenuItem').val();
@@ -158,10 +165,11 @@
 				console.log(v1,v2,v3);
 			}
 		});
+		$('.editPackageModal .modal-footer .btn-success').off("click");
 	}
 	
 	function editPackage(idPackage){
-		$.confirm({
+		/*$.confirm({
 			'title'		: 'Подтверждение изменений',
 			'message'	: 'Сохранить изменения?',
 			'buttons'	: {
@@ -176,9 +184,51 @@
 					'action': function(){}	// В данном случае ничего не делаем. Данную опцию можно просто опустить.
 				}
 			}
+		});*/
+		$('.editPackageModal').modal({
+		  keyboard: false,
+		  backdrop: 'static',
+		  show: true,
 		});
+		$('.editPackageModal .modal-footer .btn-success').on("click", {idPack: idPackage}, executeSavingPackage);
 	}
 </script>
+
+<div class="modal fade editPackageModal"><!--modal fade editSubCatModal-->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><h1>Подтверждение изменений<h1></h4>
+			</div>
+			<div class="modal-body">
+				<p>Сохранить изменения?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Нет</button>
+				<button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Да</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade deletePackageModal"><!--modal fade deleteSubCatModal-->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><h1>Подтверждение удаления<h1></h4>
+			</div>
+			<div class="modal-body">
+				<p>Вы решили удалить пункт. <br />После удаления его нельзя будет восстановить! Продолжаем?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Закрыть</button>
+				<button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Удалить</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <h1 class="page-header">Редактирование информации о товаре</h1>
 

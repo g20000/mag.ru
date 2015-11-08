@@ -86,21 +86,20 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 		});
 	}
 	
-	function executeSaving(idCat){
-		var id = idCat;
-		var nameSelect = "span#" + idCat;
+	function executeSaving(event){
+		var id = event.data.idAsideCat;
+		var nameSelect = "span#" + event.data.idAsideCat;
 		var name = $(nameSelect).text();
 		$.ajax({
 			url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.updatePkgCatAsideMenu.php',
 			type: 'POST',
 			dataType: 'JSON',
 			data: {
-					idItem: idCat,
+					idItem: event.data.idAsideCat,
 					nameItem: name
 					
 			},
 			success: function(data) {
-				console.log(data);
 				if (data.type=='error') {
 					notify(data.type, data.type, data.text);
 				} else{
@@ -113,10 +112,11 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 				console.log(v1,v2,v3);
 			}
 		});
+		$('.editCatModal .modal-footer .btn-success').off("click");
 	}
 	
 	function editCategory(idCat){
-		$.confirm({
+		/*$.confirm({
 			'title'		: 'Подтверждение изменений',
 			'message'	: 'Сохранить изменения?',
 			'buttons'	: {
@@ -131,9 +131,33 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 					'action': function(){}	// В данном случае ничего не делаем. Данную опцию можно просто опустить.
 				}
 			}
+		});*/
+		$('.editCatModal').modal({
+		  keyboard: false,
+		  backdrop: 'static',
+		  show: true,
 		});
+		$('.editCatModal .modal-footer .btn-success').on("click", {idAsideCat: idCat}, executeSaving);
 	}
 </script>
+
+<div class="modal fade editCatModal"><!--modal fade editCatModal-->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><h1>Подтверждение изменений<h1></h4>
+			</div>
+			<div class="modal-body">
+				<p>Сохранить изменения?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Нет</button>
+				<button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Да</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <h1 class="page-header">Редактирование пунктов товаров выпадающего списка меню</h1>
 
