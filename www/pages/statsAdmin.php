@@ -59,7 +59,7 @@ function getFinishedPacks($t) {
 			<tr><td width="25%">Админы:</td><td><?php echo getUsersTypeOnline(4);?></td><td width="25%">Всего:</td><td><?php echo count(getUsersListRank(4));?></td></tr>
 			<tr><td>Помощники:</td><td><?php echo getUsersTypeOnline(1);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(1));?></td></tr>
 			<tr><td>Сортировщики:</td><td><?php echo getUsersTypeOnline(6);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(6));?></td></tr>
-			<tr><td>Сотрудники:</td><td><?php echo getUsersTypeOnline(3);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(3));?></td></tr>
+			<tr><td>Курьеры:</td><td><?php echo getUsersTypeOnline(3);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(3));?></td></tr>
 			<tr><td>Покупатели:</td><td><?php echo getUsersTypeOnline(5);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(5));?></td></tr>
 			<tr><td>Отправители:</td><td><?php echo getUsersTypeOnline(2);?></td><td>Всего:</td><td><?php echo count(getUsersListRank(2));?></td></tr>
 		</tbody>

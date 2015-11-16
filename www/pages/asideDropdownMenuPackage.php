@@ -30,7 +30,6 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 					dataType: 'JSON',
 					data: {itemName:menuItem},
 					success: function(data) {
-						console.log(data);
 						if (data.type=='error') {
 							notify(data.type, data.type, data.text);
 						} else{
@@ -52,7 +51,6 @@ if(isset($_POST['replaceIcon'], $_POST['catId']))
 			dataType: 'JSON',
 			data: {idItem:id},
 			success: function(data) {
-				console.log(data);
 				if (data.type=='error') {
 					notify(data.type, data.type, data.text);
 				} else{

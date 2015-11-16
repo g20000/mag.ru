@@ -1164,8 +1164,6 @@ function getPackagesWithSortByDrop($id = false) {
 		$compar_drop_id = null;
 		$pack_drop_counter = 0;
 		foreach ($pkg as $k=>$v) {
-			/*var_dump($pkg[$k]->drop_id);
-			exit();*/
 			if($compar_drop_id != $pkg[$k]->drop_id){
 				$compar_drop_id = $pkg[$k]->drop_id;
 				$pack_drop_counter = 1;
@@ -1449,7 +1447,7 @@ function getShipperShops($id) {
 	}	
 }
 
-function getDropCompleatePkgs($id) {
+function getDropCompleatePkgs($id) {//из старой реализации, возможно следует удалить, рассмотреть на удаление
 	global $db;
 	$q = "SELECT * FROM `packages` WHERE drop_id = ".$id.";";
 	$pkgs = $db->query($q);
@@ -1464,7 +1462,7 @@ function getDropCompleatePkgs($id) {
 	return $cnt;
 }
 
-function getDropInworkPkgs($id) {
+function getDropInworkPkgs($id) {//из старой реализации, возможно следует удалить, рассмотреть на удаление
 	global $db;
 	$q = "SELECT * FROM `packages` WHERE drop_id = ".$id.";";
 	$pkgs = $db->query($q);
@@ -1482,7 +1480,9 @@ function totalPackages($id){
 	global $db;
 	$q = "SELECT COUNT(*) FROM `packages` WHERE drop_id = ".$id.";";
 	$pkgsCount = $db->query($q);
-	return $pkgsCount;
+	$countCell = "COUNT(*)";
+	$cnt = $pkgsCount[0]->$countCell;
+	return $cnt;
 }
 
 function getShipperCompleatePkgs($id) {
@@ -1617,7 +1617,7 @@ function iconPkgStatuses($status) {
 	return $out;
 }
 
-function old_iconPkgStatuses($status) {
+function old_iconPkgStatuses($status) {//из старой реализации, старые статусы
 	$statuses = array(
 		'approve'	=> '<i style="color:#FF9966;" class="fa fa-play" data-placement="top" data-toggle="tooltip" title="Добавлен но не одобрен администратором" alt="Добавлен но не одобрен администратором"> Добавлен, но не одобрен администратором</i>',
 		'new'		=> '<i style="color:#FF9966;" class="fa fa-bookmark" data-placement="top" data-toggle="tooltip" title="Добавлен но не отправлен" alt="Добавлен но не отправлен"> Добавлен, но не отправлен</i>',

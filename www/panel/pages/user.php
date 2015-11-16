@@ -214,7 +214,7 @@ $userProfile = getUserInfoById($route->param);
 						<option value="4" <?php echo $userProfile->rank == '4' ? 'selected' : '';?>>Админ</option>
 						<option value="1" <?php echo $userProfile->rank == '1' ? 'selected' : '';?>>Помощник</option>
 						<option value="2" <?php echo $userProfile->rank == '2' ? 'selected' : '';?>>Отправитель</option>
-						<option value="3" <?php echo $userProfile->rank == '3' ? 'selected' : '';?>>Сотрудник</option>
+						<option value="3" <?php echo $userProfile->rank == '3' ? 'selected' : '';?>>Курьер</option>
 						<option value="5" <?php echo $userProfile->rank == '5' ? 'selected' : '';?>>Покупатель</option>
 					</select>	
 				</div>

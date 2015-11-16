@@ -283,10 +283,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 						<td><?php echo $v->first_name.' '.$v->middle_name.' '.$v->last_name;?></td>
 						<?php } ?>
 						<td><?php echo $v->address.' '.$v->city.' '.$v->state.' '.$v->zip.' '.$v->country;?></td>
-						<td align=center><?php $totalPackages = getDropCompleatePkgs($v->id) +  getDropInworkPkgs($v->id);
-						echo $totalPackages;
-						?>
-						</td>
+						<td align=center><?php echo totalPackages($v->id); ?></td>
 						<?php if ($user['rankname']=='admin' || $user['rankname']=='support') { ?>
 						<td class="allowedShops_<?php echo $v->id;?>">
 							<?php 
