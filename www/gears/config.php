@@ -11,7 +11,7 @@ $cfg = array (
 												'dsn' 			=>  array (
 																			'dbhost' => 'localhost',
 																			'dbport' => '3306', /* 3306 */
-																			'dbname' => 'database',
+																			'dbname' => 'database2',
 																			'charset' => 'utf8',
 																	),
 												'dboptions' 	=> array ( 'PDO::MYSQL_ATTR_INIT_COMMAND' => 'set names utf8' ),

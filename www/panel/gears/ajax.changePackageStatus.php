@@ -39,17 +39,17 @@ if ($user['rankname']!='support' && $user['rankname']!='admin' && $user['ranknam
 
 // фильтруем входящие данные
 
-$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+//$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 //$type = addslashes(strip_tags(filter_input(INPUT_POST, 'type', FILTER_UNSAFE_RAW)));
 //$num = addslashes(strip_tags(filter_input(INPUT_POST, 'num', FILTER_UNSAFE_RAW)));
-$statusKind = addslashes(strip_tags(filter_input(INPUT_POST, 'statusKind', FILTER_UNSAFE_RAW)));
+//$statusKind = addslashes(strip_tags(filter_input(INPUT_POST, 'statusKind', FILTER_UNSAFE_RAW)));
 
 // есть ли вообще такой ID
-$q = "SELECT * FROM `packages` WHERE `id` = ".$id.";";
+/*$q = "SELECT * FROM `packages` WHERE `id` = ".$id.";";
 $isIDexist = $db->query($q);
 if (!isset($isIDexist[0])) {
 	exit(json_encode(array('type'=>'error','text'=>'Товар не найден!')));
-}
+}*/
 
 // есть ли такой трек
 /*$q = "SELECT * FROM `trackers` WHERE `pkg_id` = ".$id." AND `track_type` = '".$type."';";
@@ -70,14 +70,32 @@ if (!isset($isIdExist[0])) {
 	$status = 'tobuyer';
 }*/
 
+/*
 $status = $statusKind;
 
 // к этой странице только шиперы и администрация имеют доступ, так что ...
 $q = "INSERT INTO `pkg_statuses` VALUES (NULL, ".$id.", '".date("Y-m-d H:i:s", time())."', '".$status."');";
 $db->query($q);
+*/
+$statuses = $_POST['statusesAndIds'];
+$newStatus = array();
+$newStatuses = array();
 
-exit(json_encode(array('type'=>'ok','text'=>'Сохранено!')));
 
+foreach($statuses as $status){
+	if(($status[0] != "") && ($status[1] != ""))
+	{
+		if(isNewStatus(intval($status[0]), $status[1])){
+			$q = "INSERT INTO `pkg_statuses` VALUES (NULL, ".$status[0].", '".date("Y-m-d H:i:s", time())."', '".$status[1]."');";
+			$db->query($q);
+			array_push($newStatus, intval($status[0]));
+			array_push($newStatus, $status[1]);
+			array_push($newStatuses, $newStatus);
+			array_pop($newStatus);
+			array_pop($newStatus);
+		}
+	}
+}
 
-
+	exit(json_encode(array('type'=>'ok','text'=>'Сохранено','info'=>$newStatuses)));
 ?>

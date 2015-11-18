@@ -159,7 +159,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 			success: function(data) {
 				console.log(data);
 				if (data.type=='ok') {
-					//notify('info','Note!',data.text);
+					notify('info','Note!',data.text);
 					//console.log();
 					document.location.href="<?php echo $cfg['options']['siteurl']; ?>/packages";
 				} else {
@@ -188,7 +188,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 	$pkg_info = getPackageInfo($route->param);
 
 	if (count($pkg_info)>1) { 
-		echo '<h1 class="page-header">Инормация о группе товаров</h1>'; 
+		echo '<h1 class="page-header">Информация о группе товаров</h1>'; 
 	} elseif ($pkg_info!=false) {
 		$pkg_statuses = getPackageStatuses($route->param);
 		echo '<div class="clearfix" style="margin: 0 0 2em 0;">';

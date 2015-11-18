@@ -31,7 +31,6 @@ $_page_scripts = "
 	});
 
 	function groupPkgs() {
-
 		var checkedCount = 0;
 		var preGrouping = [];
 		$('.group-chkbox').each(function(){
@@ -83,8 +82,6 @@ $_page_scripts = "
 					}
 				}); 
 		}
-
-
 	}
 		
 	function changePackageStatus(itemName, itemId) {
@@ -115,11 +112,47 @@ $_page_scripts = "
 			return;
 		}
 	}
+	
+	function changeAllPackageStatus(){
+		var packagesStatusesAndIds = [];
+		var packageStatusAndId = [];
+		var targetOption;
+		var packageId;
+		$('tr').each(function(){
+			targetOption = '#' + $(this).children('td').eq(8).text();
+			packageId = $(this).children('td').eq(8).text();
+			packageStatusAndId.push(packageId);//первый элемент - id
+			packageStatusAndId.push($(targetOption).val());//второй элемент - значение выпадающего списка
+			packagesStatusesAndIds.push(packageStatusAndId);
+			packageStatusAndId = [];
+		});
+		console.log(packagesStatusesAndIds);
+		$.ajax({
+			url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
+			type: 'POST',
+			dataType: 'JSON',
+			data: {
+				statusesAndIds: packagesStatusesAndIds
+			},
+			success: function(data) {
+				if (data.type=='ok') {
+					notify('info','Note!',data.text);
+					//document.location.reload();
+					console.log(data.info);
+				} else {
+					notify('error','Замечание!',data.text);
+				}
+			},
+			error: function(v1,v2,v3,data) {
+				console.log(data);
+				console.log(v1,v2,v3);
+			}
+		});
+	}
 </script>
 <h1 class="page-header">Packages</h1>
 
 <div class="pull-right" style="margin: 1em 0 1em 1em;">
-	<!--<a href="<?php echo $cfg['options']['siteurl']; ?>/addPackage" class="btn btn-info">Добавить</a>-->
 	<span class="btn btn-warning groupPkgBtn" disabled="disabled" onclick="groupPkgs();">Группировать</span>
 </div>
 
@@ -127,7 +160,7 @@ $_page_scripts = "
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Номер товара</th>
+			<th>№</th>
 			<th>Треки</th>
 			<th>Курьер</th>
 			<th class="text-center">Статус</th>
@@ -156,7 +189,7 @@ $_page_scripts = "
 					$pkg_status = getPackageStatus($v->id);
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
-						<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
+						<td width="30px" style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
 								
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<td><?php 
@@ -167,7 +200,7 @@ $_page_scripts = "
 						</td>
 						<td>
 							<?php if($user['rankname']=='admin'): ?>
-								<select class="status_change" id="<?php echo $v->id ?>" onchange="changePackageStatus(
+								<select class="status_change" id="<?php echo $v->id ?>" <!--onchange="changePackageStatus(
 									'<?php if((isset($v->item))&&($user['rankname']=='admin')){
 										echo $v->item;
 									}else{
@@ -177,8 +210,8 @@ $_page_scripts = "
 									'<?php echo $v->id;
 									?>',
 									'<?php echo $user['rankname'];?>'
-								)
-								">
+								)-->
+								>
 									<option value="norecipient" <?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "selected = selected";?>>Получатель не найден</option>
 									<option value="processing" <?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "selected = selected";?>>Обработка</option>
 									<option value="ondelivery" <?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "selected = selected";?>>На доставке</option>
@@ -199,7 +232,7 @@ $_page_scripts = "
 								<?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "Возврат магазином";?>
 							<?php endif; ?>
 						</td>
-						<td><?php if(isset($pkg_status->time)){ 
+						<td  width="170px"><?php if(isset($pkg_status->time)){ 
 									echo $pkg_status->time;
 								  }
 							?>
@@ -247,4 +280,7 @@ $_page_scripts = "
 	?>
 	</tbody>
 </table>
+<div class="pull-right" style="margin: 1em 0 1em 1em;">
+	<span class="btn btn-warning savePkgBtn" onclick="changeAllPackageStatus()">Сохранить</span>
+</div>
 </div>

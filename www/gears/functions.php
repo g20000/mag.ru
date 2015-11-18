@@ -916,9 +916,26 @@ function getPackageStatus($id) {
 	$q = "SELECT * FROM `pkg_statuses` WHERE `pkg_id` = ".$id." ORDER BY `time` DESC";
 	$status = $db->query($q);
 	if (isset($status[0])) {
+		var_dump($status[0]->status_text);
 		$out = $status[0];
 	}
 	return $out;
+}
+
+function isNewStatus($id, $newStatus){
+	global $db;
+	$out = null;
+	$q = "SELECT * FROM `pkg_statuses` WHERE `pkg_id` = ".$id." ORDER BY `time` DESC";
+	$oldStatus = $db->query($q);
+	if (isset($oldStatus[0])) {
+		if($oldStatus[0]->status_text != $newStatus){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return true;
+	}
 }
 
 function getLablerPackages($status) {
