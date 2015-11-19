@@ -666,3 +666,7 @@ margin-right: 5px;
 .options-input {
 	width: 300px;
 }
+
+.saveProfileBtn {
+	padding-left : 0;
+}

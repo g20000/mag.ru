@@ -68,12 +68,23 @@ $userProfile = getUserInfoById($user['id']);
 	
 	<div class="container-fluid">
 		<div class="row">
+			<?php if ($userProfile->rank == intval(2)): ?>
+			<div class="row">
+				<div class="col-md-2 col-xs-12">
+					<div class="form-group-sm">
+						<label for="profile-name"><h3>Логин</h3></label>
+						<input id="profile-name" type="text" value="<?php echo $userProfile->name;?>" placeholder="" class="form-control input-sm" name="nickname" required="">
+					</div>
+				</div>
+			</div>
+			<?php else: ?>
 			<div class="col-md-4 col-xs-12">
 				<div class="form-group-sm">
 					<label for="profile-name"><h3>Логин</h3></label>
 					<input id="profile-name" type="text" value="<?php echo $userProfile->name;?>" placeholder="" class="form-control input-sm" name="nickname" required="">
 				</div>
 			</div>
+			<?php endif ?>
 			<?php if ($userProfile->rank == intval(4)) { ?>
 			<div class="col-md-4 col-xs-12">
 				<div class="form-group-sm">
@@ -82,12 +93,23 @@ $userProfile = getUserInfoById($user['id']);
 				</div>
 			</div>
 			<?php } ?>
+			<?php if ($userProfile->rank == intval(2)): ?>
+			<div class="row">
+				<div class="col-md-2 col-xs-12">
+					<div class="form-group-sm">
+						<label for="profile-xmpp"><h3>XMPP</h3></label>
+						<input id="profile-xmpp" type="email" value="<?php echo $userProfile->xmpp;?>" placeholder="" class="form-control input-sm" name="xmpp" required="">
+					</div>
+				</div>
+			</div>
+			<?php else: ?>
 			<div class="col-md-4 col-xs-12">
 				<div class="form-group-sm">
 					<label for="profile-xmpp"><h3>XMPP</h3></label>
 					<input id="profile-xmpp" type="email" value="<?php echo $userProfile->xmpp;?>" placeholder="" class="form-control input-sm" name="xmpp" required="">
 				</div>
 			</div>
+			<?php endif ?>
 		</div>
 	</div>
 
@@ -176,7 +198,39 @@ $userProfile = getUserInfoById($user['id']);
 	</div>
 	<?php } ?>			
 
+	<?php if ($userProfile->rank == intval(2)): ?>
 	<div class="container-fluid">
+		<div class="row">
+			<div class="row">
+				<div class="col-md-2 col-xs-12">
+					<div class="form-group-sm">
+						<label for="profile-password1"><h3>Пароль</h3></label>
+						<input id="profile-password1" type="password" value="" class="form-control input-sm" name="password1">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 col-xs-12">		
+					<div class="form-group-sm">
+						<label for="profile-password2"><h3>Проверка пароля</h3></label>
+						<input id="profile-password2" type="password" value="" class="form-control input-sm" name="password2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row">
+			 <div class="col-xs-12 saveProfileBtn">
+				<div class="form-group-lg" style="margin: 20px 0 140px 0;">
+					<span class="pull-left btn btn-success" onclick="editUser();">Сохранить</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php else: ?>
+		<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 col-xs-12">
 				<div class="form-group-sm">
@@ -202,12 +256,5 @@ $userProfile = getUserInfoById($user['id']);
 			</div>
 		</div>
 	</div>
-		
-		
-	
-	
-
-	
-	
-		
+	<?php endif ?>		
 </form>

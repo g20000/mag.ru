@@ -137,7 +137,7 @@ $_page_scripts = "
 			success: function(data) {
 				if (data.type=='ok') {
 					notify('info','Note!',data.text);
-					//document.location.reload();
+					document.location.href = '../';
 					console.log(data.info);
 				} else {
 					notify('error','Замечание!',data.text);
@@ -200,18 +200,7 @@ $_page_scripts = "
 						</td>
 						<td>
 							<?php if($user['rankname']=='admin'): ?>
-								<select class="status_change" id="<?php echo $v->id ?>" <!--onchange="changePackageStatus(
-									'<?php if((isset($v->item))&&($user['rankname']=='admin')){
-										echo $v->item;
-									}else{
-										echo "NO_INSTANCE_OR_NOT_ADMIN";
-									}							
-									?>',
-									'<?php echo $v->id;
-									?>',
-									'<?php echo $user['rankname'];?>'
-								)-->
-								>
+								<select class="status_change" id="<?php echo $v->id ?>">
 									<option value="norecipient" <?php if((isset($v->status_text))&&($v->status_text == "norecipient")) echo "selected = selected";?>>Получатель не найден</option>
 									<option value="processing" <?php if((isset($v->status_text))&&($v->status_text == "processing")) echo "selected = selected";?>>Обработка</option>
 									<option value="ondelivery" <?php if((isset($v->status_text))&&($v->status_text == "ondelivery")) echo "selected = selected";?>>На доставке</option>
