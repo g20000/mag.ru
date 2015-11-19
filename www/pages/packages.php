@@ -73,7 +73,6 @@ $_page_scripts = "
 					dataType: 'JSON',
 					data: {hash:group_hash},
 					success: function(data) {
-						//console.log(data);
 						document.location.reload();
 					},
 					error: function(v1,v2,v3) {
@@ -162,6 +161,9 @@ $_page_scripts = "
 		<tr>
 			<th>№</th>
 			<th>Треки</th>
+			<?php if($user['rankname']=='shipper') { ?>
+				<th>Товар</th>
+			<?php } ?>
 			<th>Курьер</th>
 			<th class="text-center">Статус</th>
 			<th>Дата создания</th>
@@ -189,9 +191,11 @@ $_page_scripts = "
 					$pkg_status = getPackageStatus($v->id);
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
-						<td width="30px" style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>
-								
+						<td width="30px" style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>							
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
+						<?php if($user['rankname']=='shipper') { ?>
+							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
+						<?php } ?>
 						<td><?php 
 								$res = getLinkToUserProfile($v->drop_id);
 								$input_endoding = mb_detect_encoding($res);

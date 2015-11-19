@@ -8,7 +8,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 
 	function rgb2hex(rgb) {
 		if (rgb=='') {
-			//console.log('empty');
 			return '';
 		}
 		if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
@@ -28,14 +27,10 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 	function selectColor(color) {
 		$('#selected-color').css({'background-color':color});
 		$('#profile-color').val(rgb2hex(color));
-		//console.log('selectColor: Input color: '+color);
-		//console.log('selectColor: Profile color: '+$('#profile-color').val());
 	}
 
 	function saveColor(colorVal) {
-		//console.log('saveColor: '+colorVal);
 		colorVal = rgb2hex(colorVal);
-		//console.log('saveColor: '+colorVal);
 		
 		$.ajax({
 			url: '<?php echo $cfg['options']['siteurl']; ?>/gears/ajax.savePkgColor.php',
@@ -111,7 +106,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 				if (data.type=='ok') {
 					console.log(data);
 					//notify('info','Note!',data.text);
-					document.location.reload();
+					document.location.href = '/dropslist';
 				} else {
 					notify('error','Замечание!',data.text);
 				}
@@ -160,7 +155,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 				console.log(data);
 				if (data.type=='ok') {
 					notify('info','Note!',data.text);
-					//console.log();
 					document.location.href="<?php echo $cfg['options']['siteurl']; ?>/packages";
 				} else {
 					notify('error','Замечание!',data.text);
@@ -254,12 +248,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 								<div class="col-xs-4">Отправитель:</div>
 								<div class="col-xs-8"><?php echo getLinkToUserProfile($v->shipper_id); ?></div>
 							</div>
-							<!--
-							<div class="row" style="margin-bottom: 1em;">
-								<div class="col-xs-4">Buyer:</div>
-								<div class="col-xs-8"><?php echo getLinkToUserProfile($v->buyer_id); ?></div>
-							</div>
-							-->
 							<div class="row" style="margin-bottom: 1em;">
 								<div class="col-xs-4">Сортировщик:</div>
 								<div class="col-xs-8"><?php echo getLinkToUserProfile($v->labler_id); ?></div>
@@ -333,7 +321,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 												console.log(data);
 												if (data.type=='ok') {
 													//notify('info','Note!',data.text);
-													//console.log();
 													document.location.href="<?php echo $cfg['options']['siteurl']; ?>/package/<?php echo $v->id; ?>";
 												} else {
 													notify('error','Замечание!',data.text);
@@ -531,23 +518,9 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 					}
 				
 				?>
-				
-				
 			</div>
-			
-
-
-			
-
 		</div>
-
-		
-		
-
 	</div>
 <?php
-
-	}
-	
-	
+	}	
 ?>

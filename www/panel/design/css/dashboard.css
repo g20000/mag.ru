@@ -670,3 +670,7 @@ margin-right: 5px;
 .saveProfileBtn {
 	padding-left : 0;
 }
+
+.glyphicon-envelope {
+	color: #ff0000;
+}

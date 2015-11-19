@@ -111,7 +111,8 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 				if (data.type=='ok') {
 					console.log(data);
 					//notify('info','Note!',data.text);
-					document.location.reload();
+					//document.location.reload();
+					document.location.href = '/dropslist';
 				} else {
 					notify('error','Замечание!',data.text);
 				}

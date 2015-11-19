@@ -11,9 +11,16 @@ $chats = getAllChats();
 	?>
 
 	<a href="<?php echo $cfg['options']['siteurl']; ?>/chatroom/<?php echo $v[0]->hash; ?>">
-		<div class="row <?php if ($v[0]->is_read==0 && $v[0]->to_id==$user['id']) { echo 'bg-unread'; } ?>" style="padding:1em;">
-
-			<div class="col-md-3 col-xs-12">
+		<div class="row" style="padding:1em;">
+			<?php if (($v[0]->is_read == 0) && ($v[0]->to_id == $user['id'])): ?>
+				<div class="col-md-1 col-xs-12">
+					<span class="glyphicon glyphicon-envelope"></span>
+				</div>
+			<?php else: ?>
+				<div class="col-md-1 col-xs-12">
+				</div>
+			<?php endif ?>
+			<div class="col-md-2 col-xs-12">
 				Чат с <?php if ($v[0]->from_id==$user['id']) { $chatwith = $v[0]->to_id; } else { $chatwith = $v[0]->from_id ; } ?>
 				<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>
 			</div>
@@ -32,8 +39,6 @@ $chats = getAllChats();
 	<h3>Вы можете создать чат с новым собеседником:</h3>
 	
 	<?php 
-	//var_dump($user);
-	//exit();
 	$users = getUsersNotInChat($user['id']); ?>
 	<?php
 		if(isset($users)){
@@ -48,7 +53,6 @@ $chats = getAllChats();
 								echo $v->name;
 								//var_dump($v);
 							?>
-							<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
 						</div>
 					</div>
 				</a>
@@ -63,7 +67,6 @@ $chats = getAllChats();
 								echo $v->name;
 								//var_dump($v);
 							?>
-							<!--<?php echo getUserIconById($chatwith);echo " ";echo getUserNameById($chatwith);  ?>-->
 						</div>
 					</div>
 				</a>

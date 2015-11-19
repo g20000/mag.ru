@@ -916,7 +916,6 @@ function getPackageStatus($id) {
 	$q = "SELECT * FROM `pkg_statuses` WHERE `pkg_id` = ".$id." ORDER BY `time` DESC";
 	$status = $db->query($q);
 	if (isset($status[0])) {
-		var_dump($status[0]->status_text);
 		$out = $status[0];
 	}
 	return $out;
