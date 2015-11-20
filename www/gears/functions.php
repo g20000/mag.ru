@@ -537,7 +537,7 @@ function sideMenu_shipper() {
 			<div class="menu_icon icon8">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Лист приемки</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Правила работы</a></div></div>
 		</div>
 	</div>	
 	
@@ -866,7 +866,7 @@ function sideMenu_admin() {
 			<div class="menu_icon icon8">
 			
 			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Лист приемки</a></div></div>
+			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/receptlist"> Правила работы</a></div></div>
 		</div>
 	</div>	
 	
@@ -1167,7 +1167,7 @@ function getPackagesWithSortByDrop($id = false) {
 	}
 	
 	$q = "
-		SELECT p.*, pd.item, pd.price, pd.currency
+		SELECT p.*, pd.item, pd.price, pd.currency, pd.euro
 		FROM `packages` AS p 
 		LEFT JOIN `pkg_description` AS pd ON pd.pkg_id = p.id 
 		".$where." ORDER BY `drop_id`
@@ -1289,7 +1289,7 @@ function getPackageInfo($id) {
 	}
 
 	$q = '
-		SELECT p.*, pd.item, pd.price, pd.currency
+		SELECT p.*, pd.item, pd.price, pd.currency, pd.euro
 		FROM `packages` AS p 
 		LEFT JOIN `pkg_description` AS pd ON pd.pkg_id = p.id 
 		WHERE '.$where.'

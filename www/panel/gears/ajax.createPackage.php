@@ -38,6 +38,7 @@ $action = addslashes(strip_tags(filter_input(INPUT_POST, 'action', FILTER_UNSAFE
 $currency = addslashes(strip_tags(filter_input(INPUT_POST, 'currency', FILTER_UNSAFE_RAW)));
 $drop_id = addslashes(strip_tags(filter_input(INPUT_POST, 'drop_id', FILTER_VALIDATE_INT)));
 $item = addslashes(strip_tags(filter_input(INPUT_POST, 'item', FILTER_UNSAFE_RAW)));
+$euro = addslashes(strip_tags(filter_input(INPUT_POST, 'euro', FILTER_VALIDATE_INT)));
 $price = addslashes(strip_tags(filter_input(INPUT_POST, 'price', FILTER_VALIDATE_INT)));
 
 $shop_id = addslashes(strip_tags(filter_input(INPUT_POST, 'shop_id', FILTER_VALIDATE_INT)));
@@ -124,7 +125,8 @@ $q = "INSERT INTO `packages` VALUES (NULL,'',".$shop_id.",".$drop_id.",".$user['
 $pkg_id = $db->query($q);
 $pkg_id = $pkg_id[0];
 
-$q = "INSERT INTO `pkg_description` VALUES (NULL,".$pkg_id.",'".$item."','".$price."','".$currency."','".$holder."','".$sendtodropname."','".$moneydivider."','".$receivedate."');";
+//INSERT INTO `pkg_description` VALUES (NULL,28,'Сигареты парламент','2','eur','','1','','2015-11-24 22:08:08')
+$q = "INSERT INTO `pkg_description` VALUES (NULL,".$pkg_id.",'".$item."','".$euro."','".$price."','".$currency."','".$holder."','".$sendtodropname."','".$moneydivider."','".$receivedate."');";
 $pkg_description_id = $db->query($q);
 
 $q = "INSERT INTO `pkg_statuses` VALUES (NULL,".$pkg_id.",'".date("Y-m-d H:i:s", time())."','processing');";//new заменен на processing

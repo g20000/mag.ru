@@ -164,6 +164,7 @@ $_page_scripts = "
 			<?php if($user['rankname']=='shipper') { ?>
 				<th>Товар</th>
 			<?php } ?>
+			<th>€</th>
 			<th>Курьер</th>
 			<th class="text-center">Статус</th>
 			<th>Дата создания</th>
@@ -196,6 +197,10 @@ $_page_scripts = "
 						<?php if($user['rankname']=='shipper') { ?>
 							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
 						<?php } ?>
+						<td width="120px"><?php
+							echo $v->euro; 
+						?>
+						</td>
 						<td><?php 
 								$res = getLinkToUserProfile($v->drop_id);
 								$input_endoding = mb_detect_encoding($res);
