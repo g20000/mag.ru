@@ -923,11 +923,25 @@ function getPackageStatus($id) {
 
 function isNewStatus($id, $newStatus){
 	global $db;
-	$out = null;
 	$q = "SELECT * FROM `pkg_statuses` WHERE `pkg_id` = ".$id." ORDER BY `time` DESC";
 	$oldStatus = $db->query($q);
 	if (isset($oldStatus[0])) {
 		if($oldStatus[0]->status_text != $newStatus){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return true;
+	}
+}
+
+function isNewEuroValue($id, $newEuro){
+	global $db;
+	$q = "SELECT * FROM `pkg_description` WHERE `pkg_id` = ".$id;
+	$oldEuroValue = $db->query($q);
+	if (isset($oldEuroValue[0])) {
+		if($oldEuroValue[0]->euro != $newEuro){
 			return true;
 		}else{
 			return false;

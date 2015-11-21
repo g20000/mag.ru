@@ -117,15 +117,18 @@ $_page_scripts = "
 		var packageStatusAndId = [];
 		var targetOption;
 		var packageId;
+		var euro;
 		$('tr').each(function(){
-			targetOption = '#' + $(this).children('td').eq(8).text();
-			packageId = $(this).children('td').eq(8).text();
+			targetOption = '#' + $(this).children('td').eq(9).text();
+			packageId = $(this).children('td').eq(9).text();
+			euro = $(this).children('td').eq(2).text();
 			packageStatusAndId.push(packageId);//первый элемент - id
 			packageStatusAndId.push($(targetOption).val());//второй элемент - значение выпадающего списка
+			packageStatusAndId.push(euro);
 			packagesStatusesAndIds.push(packageStatusAndId);
 			packageStatusAndId = [];
 		});
-		console.log(packagesStatusesAndIds);
+		//console.log(packagesStatusesAndIds);
 		$.ajax({
 			url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changePackageStatus.php',
 			type: 'POST',
@@ -136,8 +139,9 @@ $_page_scripts = "
 			success: function(data) {
 				if (data.type=='ok') {
 					notify('info','Note!',data.text);
-					document.location.href = '../';
+					//document.location.href = '../';
 					console.log(data.info);
+					console.log(data.newEuro);
 				} else {
 					notify('error','Замечание!',data.text);
 				}
@@ -197,7 +201,7 @@ $_page_scripts = "
 						<?php if($user['rankname']=='shipper') { ?>
 							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
 						<?php } ?>
-						<td width="120px"><?php
+						<td width="120px" class="euro" <?php if($user['rankname']=='admin'){echo 'contenteditable="true"';} ?>><?php
 							echo $v->euro; 
 						?>
 						</td>
@@ -278,7 +282,10 @@ $_page_scripts = "
 	?>
 	</tbody>
 </table>
-<div class="pull-right" style="margin: 1em 0 1em 1em;">
-	<span class="btn btn-warning savePkgBtn" onclick="changeAllPackageStatus()">Сохранить</span>
-</div>
+<?php if($user['rankname']=='admin'): ?>
+	<div class="pull-right" style="margin: 1em 0 1em 1em;">
+		<span class="btn btn-warning savePkgBtn" onclick="changeAllPackageStatus()">Сохранить</span>
+	</div>
+<?php else: ?>
+<?php endif; ?>
 </div>

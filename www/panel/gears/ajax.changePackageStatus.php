@@ -40,7 +40,7 @@ if ($user['rankname']!='support' && $user['rankname']!='admin' && $user['ranknam
 $statuses = $_POST['statusesAndIds'];
 $newStatus = array();
 $newStatuses = array();
-
+$newEuro = array();
 
 foreach($statuses as $status){
 	if(($status[0] != "") && ($status[1] != ""))
@@ -57,5 +57,18 @@ foreach($statuses as $status){
 	}
 }
 
-	exit(json_encode(array('type'=>'ok','text'=>'Сохранено','info'=>$newStatuses)));
+foreach($statuses as $status){
+	if(($status[0] != "") && ($status[2] != "")){
+		$id = intval($status[0]);
+		$euro = intval($status[2]);
+		if(isNewEuroValue($id, $euro)){
+			$q = "UPDATE `pkg_description` SET `euro` = '".$euro."' WHERE `pkg_id` = ".$id;
+			$db->query($q);
+			array_push($newEuro, intval($status[0]));
+			array_push($newEuro, intval($status[2]));
+		}
+	}
+}
+
+	exit(json_encode(array('type'=>'ok','text'=>'Сохранено','info'=>$newStatuses,'newEuro'=>$newEuro)));
 ?>

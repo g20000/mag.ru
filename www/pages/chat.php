@@ -1,3 +1,11 @@
+<script>
+	$( document ).ready(function() {
+		if(!($('span').hasClass('glyphicon-envelope'))){
+			$('.envelope').remove();
+		}
+	});
+</script>
+
 <?php
 $chats = getAllChats();
 //debug($chats);
@@ -13,11 +21,12 @@ $chats = getAllChats();
 	<a href="<?php echo $cfg['options']['siteurl']; ?>/chatroom/<?php echo $v[0]->hash; ?>">
 		<div class="row" style="padding:1em;">
 			<?php if (($v[0]->is_read == 0) && ($v[0]->to_id == $user['id'])): ?>
-				<div class="col-md-1 col-xs-12">
+				<div class="col-md-1 col-xs-12 envelope">
 					<span class="glyphicon glyphicon-envelope"></span>
 				</div>
 			<?php else: ?>
-				<div class="col-md-1 col-xs-12">
+				<div class="col-md-1 col-xs-12 envelope">
+					<span></span>
 				</div>
 			<?php endif ?>
 			<div class="col-md-2 col-xs-12">
@@ -51,7 +60,6 @@ $chats = getAllChats();
 							<?php echo getUserIconById($v->id);
 								echo " "; 
 								echo $v->name;
-								//var_dump($v);
 							?>
 						</div>
 					</div>
@@ -65,7 +73,6 @@ $chats = getAllChats();
 							<?php echo getUserIconById($v->id);
 								echo " "; 
 								echo $v->name;
-								//var_dump($v);
 							?>
 						</div>
 					</div>

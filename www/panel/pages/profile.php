@@ -68,7 +68,7 @@ $userProfile = getUserInfoById($user['id']);
 	
 	<div class="container-fluid">
 		<div class="row">
-			<?php if ($userProfile->rank == intval(2)): ?>
+			<?php if (($userProfile->rank == intval(2)) || ($userProfile->rank == intval(4))): ?>
 			<div class="row">
 				<div class="col-md-2 col-xs-12">
 					<div class="form-group-sm">
@@ -86,14 +86,16 @@ $userProfile = getUserInfoById($user['id']);
 			</div>
 			<?php endif ?>
 			<?php if ($userProfile->rank == intval(4)) { ?>
-			<div class="col-md-4 col-xs-12">
-				<div class="form-group-sm">
-					<label for="profile-email"><h3>Email</h3></label>
-					<input id="profile-email" type="email" value="<?php echo $userProfile->email;?>" placeholder="" class="form-control input-sm" name="email" required="">
+			<div class="row">
+				<div class="col-md-2 col-xs-12">
+					<div class="form-group-sm">
+						<label for="profile-email"><h3>Email</h3></label>
+						<input id="profile-email" type="email" value="<?php echo $userProfile->email;?>" placeholder="" class="form-control input-sm" name="email" required="">
+					</div>
 				</div>
 			</div>
 			<?php } ?>
-			<?php if ($userProfile->rank == intval(2)): ?>
+			<?php if (($userProfile->rank == intval(2)) || ($userProfile->rank == intval(4))): ?>
 			<div class="row">
 				<div class="col-md-2 col-xs-12">
 					<div class="form-group-sm">
@@ -198,7 +200,7 @@ $userProfile = getUserInfoById($user['id']);
 	</div>
 	<?php } ?>			
 
-	<?php if ($userProfile->rank == intval(2)): ?>
+	<?php if (($userProfile->rank == intval(2)) || ($userProfile->rank == intval(4))): ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="row">
