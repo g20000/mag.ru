@@ -121,7 +121,7 @@ $_page_scripts = "
 		$('tr').each(function(){
 			targetOption = '#' + $(this).children('td').eq(9).text();
 			packageId = $(this).children('td').eq(9).text();
-			euro = $(this).children('td').eq(2).text();
+			euro = $(this).children('td').eq(3).text();
 			packageStatusAndId.push(packageId);//первый элемент - id
 			packageStatusAndId.push($(targetOption).val());//второй элемент - значение выпадающего списка
 			packageStatusAndId.push(euro);
@@ -165,15 +165,15 @@ $_page_scripts = "
 		<tr>
 			<th>№</th>
 			<th>Треки</th>
-			<?php if($user['rankname']=='shipper') { ?>
+			<?php if(($user['rankname']=='shipper') || ($user['rankname']=='admin')) { ?>
 				<th>Товар</th>
 			<?php } ?>
-			<th>€</th>
+			<th width="80px" >€</th>
 			<th>Курьер</th>
 			<th class="text-center">Статус</th>
 			<th>Дата создания</th>
 			<?php if($user['rankname']!='shipper') { ?>
-			    <th>Товар</th> 
+			    <!--<th>Товар</th> -->
 				<th>Отправитель</th>
 				<?php if($user['rankname']!='admin') { ?>
 					<th>Описание</th>
@@ -183,7 +183,7 @@ $_page_scripts = "
 					<th class='text-center'>Действия</th>
 				<?php } ?>
 			<?php } ?>
-			<th></th>
+			<th width="80px"></th>
 			<th>Id</th>
 		</tr>
 	</thead>
@@ -198,10 +198,10 @@ $_page_scripts = "
 					<tr data-user-id="<?php echo $v->id;?>">
 						<td width="30px" style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>							
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
-						<?php if($user['rankname']=='shipper') { ?>
+						<?php if(($user['rankname']=='shipper') || ($user['rankname']=='admin')) { ?>
 							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
 						<?php } ?>
-						<td width="120px" class="euro" <?php if($user['rankname']=='admin'){echo 'contenteditable="true"';} ?>><?php
+						<td class="euro" <?php if($user['rankname']=='admin'){echo 'contenteditable="true"';} ?>><?php
 							echo $v->euro; 
 						?>
 						</td>
@@ -241,10 +241,10 @@ $_page_scripts = "
 						</td>
 						
 						<?php if($user['rankname']=='admin') { ?>
-							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
+							<!--<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>-->
 							<td><?php echo getLinkToUserProfile($v->shipper_id);?></td>
 						<?php } ?>
-												
+											
 						<td class="text-center">
 							<a href="<?php echo $cfg['options']['siteurl'];?>/package/<?php echo $v->id;?>"><i class="fa fa-cogs"></i></a> | 
 							<input type="checkbox" class="group-chkbox" data-placement="left" data-toggle="tooltip" data-pkg-id="<?php echo $v->id; ?>" title="Отметить для группировки">

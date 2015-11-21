@@ -27,15 +27,11 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 
 						<div class="content">
 							<div class="row">
-								<div class="col-xs-4">
+								<div class="col-xs-6">
 									<h5>Цена</h5>
 									<input class="form-control input-sm" id="price" placeholder="" type="number">
 								</div>
-								<div class="col-xs-4">
-									<h5>€</h5>
-									<input class="form-control input-sm" id="euro" placeholder="" type="number">
-								</div>
-								<div class="col-xs-4">
+								<div class="col-xs-6">
 									<h5>Валюта</h5>
 									<select class="form-control input-sm" id="currency">
 										<option value="eur" selected>Евро €</option>

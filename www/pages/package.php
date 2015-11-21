@@ -162,31 +162,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 			}
 		});	
 	}
-	
-	function changeEuro(pkg_id){
-		$.ajax({
-			url: '<?php echo $cfg['options']['siteurl'] ?>/gears/ajax.changeEuro.php',
-			type: 'POST',
-			dataType: 'JSON',
-			data: {
-				id: pkg_id,
-				euro: $('#euro').val()
-			},
-			success: function(data) {
-				if (data.type=='ok') {
-					//notify('info','Note!',data.text);
-					document.location.reload();
-				} else {
-					notify('error','Замечание!',data.text);
-				}
-			},
-			error: function(v1,v2,v3,data) {
-				console.log(data);
-				console.log(v1,v2,v3);
-			}
-		});
-	}
-	
+		
 	$(document).ready(function() {
 		if ($('#sureDeleteTask').is('checked')) { $('#deleteTaskBtn').toggleClass('disabled'); }
 		$('#sureDeleteTask').bind('click', function(){ $('#deleteTaskBtn').toggleClass('disabled'); }); 
@@ -331,15 +307,6 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 								<div class="col-xs-4">Статус:</div>
 								<div class="col-xs-8"><?php echo readablePkgStatuses($pkg_statuses[0]->status_text);?></div>
 							</div>
-							<div class="row" style="margin-bottom: 1em;">
-							<?php if($user['rankname']=='admin') { ?>
-								<div class="col-xs-4">Изменить euro:</div>
-								<div class="col-xs-8">
-									<input type="text" class="form-control" id="euro">
-									<button onClick="changeEuro('<?php echo $v->id; ?>');" class="btn btn-sm btn-info pull-right" style="margin: 10px 0 0 0;">Изменить euro</button>
-								</div>
-							<?php } ?>
-						</div>
 							<?php if (($user['rankname']=='admin' || $user['rankname']=='support') && $pkg_statuses[0]->status_text=='approve') { ?>
 								<script>
 									function approvePack(pkg_id){
