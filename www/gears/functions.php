@@ -548,17 +548,7 @@ function sideMenu_shipper() {
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
 		</div>
-	</div>	
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon icon10>
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
-		</div>
-	</div>	
-	';
+	</div>';
 }
 
 function sideMenu_drop() {
@@ -877,17 +867,7 @@ function sideMenu_admin() {
 			</div>
 			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/profile"> Профиль</a></div></div>
 		</div>
-	</div>	
-	
-	<div class="show_menu">
-		<div class="menu_element">
-			<div class="menu_icon icon10">
-			
-			</div>
-			<div class="menu_title"><div class="triangle-right"></div><div class="link_wrap"><a href="'.$cfg['options']['siteurl'].'/?exit=1"> Выход</a></div></div>
-		</div>
-	</div>	
-	';
+	</div>';
 }
 
 function getSideMenu() {

@@ -39,7 +39,7 @@ if ($user['rankname']!='admin' && $user['rankname']!='support' && $user['ranknam
 
 </script>
 
-<h1 class="page-header">Лист получения</h1>
+<h1 class="page-header">Правила работы</h1>
 <?php if ($user['rankname']=='admin') :?>
 	<textarea class="form-control" id="list"><?php echo isset($cfg['options']['rlist']) ? $cfg['options']['rlist'] : '';?></textarea>
 	<span class="btn btn-success pull-right" id="saveRList">Сохранить</span>

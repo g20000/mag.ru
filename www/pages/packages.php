@@ -28,6 +28,7 @@ $_page_scripts = "
 ?>
 <script>
 	$( document ).ready(function() {
+		//$('tr').css('height', '39px');
 	});
 
 	function groupPkgs() {
@@ -163,15 +164,15 @@ $_page_scripts = "
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>№</th>
-			<th>Треки</th>
+			<th width="40px">№</th>
+			<th max-width="100px">Треки</th>
 			<?php if(($user['rankname']=='shipper') || ($user['rankname']=='admin')) { ?>
 				<th>Товар</th>
 			<?php } ?>
-			<th width="80px" >€</th>
-			<th>Курьер</th>
+			<th width="70px" >€</th>
+			<th width="250px">Курьер</th>
 			<th class="text-center">Статус</th>
-			<th>Дата создания</th>
+			<th width="135px">Дата создания</th>
 			<?php if($user['rankname']!='shipper') { ?>
 			    <!--<th>Товар</th> -->
 				<th>Отправитель</th>
@@ -196,10 +197,10 @@ $_page_scripts = "
 					$pkg_status = getPackageStatus($v->id);
 				?>
 					<tr data-user-id="<?php echo $v->id;?>">
-						<td width="30px" style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>							
+						<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->pkg_drop_number;?></td>							
 						<td><?php echo $v->track_type.' '.getTrackCheckLink($v->track_type,$v->track_num);?></td>
 						<?php if(($user['rankname']=='shipper') || ($user['rankname']=='admin')) { ?>
-							<td style="max-width:220px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
+							<td style="max-width:120px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $v->item;?></td>						
 						<?php } ?>
 						<td class="euro" <?php if($user['rankname']=='admin'){echo 'contenteditable="true"';} ?>><?php
 							echo $v->euro; 
@@ -234,8 +235,9 @@ $_page_scripts = "
 								<?php if((isset($v->status_text))&&($v->status_text == "shoprefund")) echo "Возврат магазином";?>
 							<?php endif; ?>
 						</td>
-						<td  width="170px"><?php if(isset($pkg_status->time)){ 
-									echo $pkg_status->time;
+						<td ><?php if(isset($pkg_status->time)){
+                                    $date = strtotime($pkg_status->time);							
+									echo date('Y-m-d', $date);
 								  }
 							?>
 						</td>
